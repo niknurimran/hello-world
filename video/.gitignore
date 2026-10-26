@@ -1,0 +1,7 @@
+node_modules/
+models/
+.venv/
+*.wav
+prev-*.png
+log-*.txt
+__pycache__/

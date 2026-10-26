@@ -1,0 +1,107 @@
+1
+00:00:00,200 --> 00:00:01,744
+Everyone shows you the upside.
+
+2
+00:00:01,744 --> 00:00:03,016
+Let’s do the other side.
+
+3
+00:00:03,516 --> 00:00:05,333
+Goldmap EA lets you set a
+
+4
+00:00:05,333 --> 00:00:06,837
+daily profit target.
+
+5
+00:00:06,837 --> 00:00:08,090
+Say 1.5 percent,
+
+6
+00:00:08,090 --> 00:00:10,471
+on a five-thousand-dollar account.
+
+7
+00:00:10,971 --> 00:00:12,728
+The upside panel assumes you win
+
+8
+00:00:12,728 --> 00:00:13,754
+every single day.
+
+9
+00:00:13,754 --> 00:00:15,707
+The website itself says that doesn’t
+
+10
+00:00:15,707 --> 00:00:17,025
+happen in real trading,
+
+11
+00:00:17,025 --> 00:00:18,245
+so we’re skipping it.
+
+12
+00:00:18,745 --> 00:00:19,963
+Now the other side.
+
+13
+00:00:19,963 --> 00:00:22,134
+One bad basket costing thirty percent
+
+14
+00:00:22,134 --> 00:00:24,676
+leaves five thousand at thirty-five hundred.
+
+15
+00:00:25,176 --> 00:00:26,382
+To get back to even,
+
+16
+00:00:26,382 --> 00:00:28,241
+you now need plus forty-two point
+
+17
+00:00:28,241 --> 00:00:29,699
+nine percent. Not thirty.
+
+18
+00:00:30,199 --> 00:00:31,970
+At a 1.5 percent target,
+
+19
+00:00:31,970 --> 00:00:34,436
+that’s roughly 24 winning days just
+
+20
+00:00:34,436 --> 00:00:35,575
+to climb back.
+
+21
+00:00:36,075 --> 00:00:37,431
+That’s why the lot cap and
+
+22
+00:00:37,431 --> 00:00:39,194
+equity guard in the settings matter
+
+23
+00:00:39,194 --> 00:00:40,640
+more than the target itself.
+
+24
+00:00:42,075 --> 00:00:44,019
+Try the calculator yourself,
+
+25
+00:00:44,019 --> 00:00:45,842
+then tap Get Goldmap EA at
+
+26
+00:00:45,842 --> 00:00:48,334
+goldmapea.com. Only run money you can
+
+27
+00:00:48,334 --> 00:00:50,096
+genuinely afford to lose.

@@ -1,0 +1,168 @@
+{
+ "total": 44.595,
+ "scenes": [
+  {
+   "start": 0.0,
+   "dur": 4.02,
+   "voDur": 3.52,
+   "subs": [
+    {
+     "t0": 0.2,
+     "t1": 2.077,
+     "text": "This gold EA has zero profit"
+    },
+    {
+     "t0": 2.077,
+     "t1": 3.72,
+     "text": "screenshots. On purpose."
+    }
+   ],
+   "sfx": "slam",
+   "slamWords": 7
+  },
+  {
+   "start": 4.02,
+   "dur": 4.169,
+   "voDur": 3.669,
+   "subs": [
+    {
+     "t0": 4.22,
+     "t1": 5.711,
+     "text": "No profit screenshots."
+    },
+    {
+     "t0": 5.711,
+     "t1": 7.889,
+     "text": "No testimonials. No member counts."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 8.189,
+   "dur": 5,
+   "voDur": 3.84,
+   "subs": [
+    {
+     "t0": 8.389,
+     "t1": 10.261,
+     "text": "Why? Because results depend on your"
+    },
+    {
+     "t0": 10.261,
+     "t1": 12.229,
+     "text": "settings, your broker and the market."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 13.189,
+   "dur": 10.612,
+   "voDur": 10.112,
+   "subs": [
+    {
+     "t0": 13.389,
+     "t1": 15.732,
+     "text": "So instead, you get the mechanics:"
+    },
+    {
+     "t0": 15.732,
+     "t1": 17.397,
+     "text": "gold only, MT4 and MT5,"
+    },
+    {
+     "t0": 17.397,
+     "t1": 19.0,
+     "text": "basket order handling,"
+    },
+    {
+     "t0": 19.0,
+     "t1": 20.603,
+     "text": "lot cap, equity guard,"
+    },
+    {
+     "t0": 20.603,
+     "t1": 23.501,
+     "text": "spread filter, and a pause around rollover."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 23.801,
+   "dur": 5.364,
+   "voDur": 4.864,
+   "subs": [
+    {
+     "t0": 24.001,
+     "t1": 25.657,
+     "text": "It runs on your own terminal"
+    },
+    {
+     "t0": 25.657,
+     "t1": 27.261,
+     "text": "or VPS, and your funds stay"
+    },
+    {
+     "t0": 27.261,
+     "t1": 28.865,
+     "text": "in your own broker account."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 29.165,
+   "dur": 8.095,
+   "voDur": 7.595,
+   "subs": [
+    {
+     "t0": 29.365,
+     "t1": 31.732,
+     "text": "Want proof? Check our Telegram channel."
+    },
+    {
+     "t0": 31.732,
+     "t1": 33.328,
+     "text": "Updates, setting changes,"
+    },
+    {
+     "t0": 33.328,
+     "t1": 35.474,
+     "text": "and whatever users post themselves."
+    },
+    {
+     "t0": 35.474,
+     "t1": 36.96,
+     "text": "Good days and bad days."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 37.26,
+   "dur": 7.335,
+   "voDur": 5.035,
+   "subs": [
+    {
+     "t0": 37.46,
+     "t1": 39.829,
+     "text": "Check it yourself before you decide."
+    },
+    {
+     "t0": 39.829,
+     "t1": 42.495,
+     "text": "Then tap Get Goldmap EA at goldmapea.com."
+    }
+   ],
+   "sfx": "tap",
+   "slamWords": 0
+  }
+ ]
+}

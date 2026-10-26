@@ -1,0 +1,79 @@
+1
+00:00:00,200 --> 00:00:02,077
+This gold EA has zero profit
+
+2
+00:00:02,077 --> 00:00:03,720
+screenshots. On purpose.
+
+3
+00:00:04,220 --> 00:00:05,711
+No profit screenshots.
+
+4
+00:00:05,711 --> 00:00:07,889
+No testimonials. No member counts.
+
+5
+00:00:08,389 --> 00:00:10,261
+Why? Because results depend on your
+
+6
+00:00:10,261 --> 00:00:12,229
+settings, your broker and the market.
+
+7
+00:00:13,389 --> 00:00:15,732
+So instead, you get the mechanics:
+
+8
+00:00:15,732 --> 00:00:17,397
+gold only, MT4 and MT5,
+
+9
+00:00:17,397 --> 00:00:19,000
+basket order handling,
+
+10
+00:00:19,000 --> 00:00:20,603
+lot cap, equity guard,
+
+11
+00:00:20,603 --> 00:00:23,501
+spread filter, and a pause around rollover.
+
+12
+00:00:24,001 --> 00:00:25,657
+It runs on your own terminal
+
+13
+00:00:25,657 --> 00:00:27,261
+or VPS, and your funds stay
+
+14
+00:00:27,261 --> 00:00:28,865
+in your own broker account.
+
+15
+00:00:29,365 --> 00:00:31,732
+Want proof? Check our Telegram channel.
+
+16
+00:00:31,732 --> 00:00:33,328
+Updates, setting changes,
+
+17
+00:00:33,328 --> 00:00:35,474
+and whatever users post themselves.
+
+18
+00:00:35,474 --> 00:00:36,960
+Good days and bad days.
+
+19
+00:00:37,460 --> 00:00:39,829
+Check it yourself before you decide.
+
+20
+00:00:39,829 --> 00:00:42,495
+Then tap Get Goldmap EA at goldmapea.com.
