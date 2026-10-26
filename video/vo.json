@@ -1,0 +1,195 @@
+[
+ {
+  "id": "v1",
+  "file": "goldmap-ea-v1-one-repeating-cycle",
+  "scenes": [
+   {
+    "vo": "Still trying to guess where gold goes next?",
+    "min": 3,
+    "hold": 0,
+    "sfx": "hit",
+    "slamWords": 0
+   },
+   {
+    "vo": "Goldmap EA doesn’t predict. It runs the same six-step cycle on gold, inside your own MetaTrader.",
+    "min": 4,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "One: it waits for its own structure condition on gold, then places the first position by itself.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Two: every open position goes into one basket. It watches total exposure, not one trade at a time.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Three: if price goes against the basket, built-in recovery rules adjust the plan instead of panicking.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Four: take profit is calculated for the whole basket. Once it’s reached, everything closes together.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Five: reset, wait for the next valid condition. Same routine, day after day.",
+    "min": 4,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Six: around rollover and thin-liquidity hours, new entries pause.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Plus a lot cap, equity guard, spread filter, and an optional daily target that stops new cycles.",
+    "min": 4,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Want to see it for yourself? Tap Get Goldmap EA at goldmapea.com.",
+    "min": 5,
+    "hold": 1.8,
+    "sfx": "tap",
+    "slamWords": 0
+   }
+  ]
+ },
+ {
+  "id": "v2",
+  "file": "goldmap-ea-v2-count-both-sides",
+  "scenes": [
+   {
+    "vo": "Everyone shows you the upside. Let’s do the other side.",
+    "min": 3,
+    "hold": 0,
+    "sfx": "hit",
+    "slamWords": 0
+   },
+   {
+    "vo": "Goldmap EA lets you set a daily profit target. Say 1.5 percent, on a five-thousand-dollar account.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "The upside panel assumes you win every single day. The website itself says that doesn’t happen in real trading, so we’re skipping it.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Now the other side. One bad basket costing thirty percent leaves five thousand at thirty-five hundred.",
+    "min": 6,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "To get back to even, you now need plus forty-two point nine percent. Not thirty.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "At a 1.5 percent target, that’s roughly 24 winning days just to climb back.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "That’s why the lot cap and equity guard in the settings matter more than the target itself.",
+    "min": 6,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Try the calculator yourself, then tap Get Goldmap EA at goldmapea.com. Only run money you can genuinely afford to lose.",
+    "min": 5,
+    "hold": 1.8,
+    "sfx": "tap",
+    "slamWords": 0
+   }
+  ]
+ },
+ {
+  "id": "v3",
+  "file": "goldmap-ea-v3-zero-profit-screenshots",
+  "scenes": [
+   {
+    "vo": "This gold EA has zero profit screenshots. On purpose.",
+    "min": 3,
+    "hold": 0,
+    "sfx": "slam",
+    "slamWords": 7
+   },
+   {
+    "vo": "No profit screenshots. No testimonials. No member counts.",
+    "min": 4,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Why? Because results depend on your settings, your broker and the market.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "So instead, you get the mechanics: gold only, MT4 and MT5, basket order handling, lot cap, equity guard, spread filter, and a pause around rollover.",
+    "min": 7,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "It runs on your own terminal or VPS, and your funds stay in your own broker account.",
+    "min": 5,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Want proof? Check our Telegram channel. Updates, setting changes, and whatever users post themselves. Good days and bad days.",
+    "min": 6,
+    "hold": 0,
+    "sfx": "",
+    "slamWords": 0
+   },
+   {
+    "vo": "Check it yourself before you decide. Then tap Get Goldmap EA at goldmapea.com.",
+    "min": 5,
+    "hold": 1.8,
+    "sfx": "tap",
+    "slamWords": 0
+   }
+  ]
+ }
+]

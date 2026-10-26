@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: "Archivo"; font-weight: 700; src: url("node_modules/@fontsource/archivo/files/archivo-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "Archivo"; font-weight: 800; src: url("node_modules/@fontsource/archivo/files/archivo-latin-800-normal.woff2") format("woff2"); }
+@font-face { font-family: "Public Sans"; font-weight: 500; src: url("node_modules/@fontsource/public-sans/files/public-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "Public Sans"; font-weight: 600; src: url("node_modules/@fontsource/public-sans/files/public-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Public Sans"; font-weight: 700; src: url("node_modules/@fontsource/public-sans/files/public-sans-latin-700-normal.woff2") format("woff2"); }
+:root {
+  --f-bg: #0A0E1E; --f-card: #141A30; --f-line: #252D4A; --f-text: #F4F6FB; --f-mute: #8C96B4;
+  --f-red: #E0262E; --f-gold: #D8A938; --f-orange: #F0A33A; --f-pink: #FF8C8C; --f-hand: #B79C86;
+}
+html, body { margin: 0; padding: 0; background: #000; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--f-bg); font-family: "Public Sans", sans-serif; }
+#content { position: absolute; inset: 0; transform-origin: 540px 900px; }
+svg.art { position: absolute; inset: 0; width: 1080px; height: 1920px; }
+svg text { font-family: "Public Sans", sans-serif; }
+#ost { position: absolute; left: 70px; right: 70px; top: 200px; text-align: center; color: var(--f-text); font-family: "Archivo", sans-serif; display: grid; gap: 18px; }
+#ost.mid { top: 50%; transform: translateY(-50%); }
+#ost .l1 { text-wrap: balance; font-weight: 800; font-size: 84px; line-height: 1.06; }
+#ost .l2 { text-wrap: balance; font-weight: 700; font-size: 56px; line-height: 1.18; color: #C9D0E4; }
+#ost.mid .l1 { font-size: 112px; }
+#ost.mid .l2 { font-size: 76px; color: var(--f-mute); font-style: italic; }
+#ost .r { color: var(--f-red); }
+#ost .w { display: inline-block; }
+#sub { position: absolute; left: 80px; right: 80px; top: 1390px; text-align: center; }
+#sub span { display: inline; font-weight: 700; font-size: 48px; line-height: 1.45; color: #fff; background: rgba(0,0,0,.62); padding: 6px 18px; border-radius: 10px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+#sub.cta { top: 1460px; }
+#risk { position: absolute; left: 110px; right: 110px; top: 1300px; text-align: center; font-size: 30px; line-height: 1.4; color: var(--f-mute); font-weight: 500; }
+#fade { position: absolute; inset: 0; background: #000; pointer-events: none; }
+
+.fbg { fill: var(--f-bg); } .fbgc { fill: var(--f-bg); }
+.fc { fill: var(--f-card); stroke: var(--f-line); } .fc5 { fill: #2A1020; stroke: var(--f-red); }
+.fl { fill: var(--f-line); } .fr { fill: var(--f-red); } .frd { fill: #A9161D; } .fg { fill: var(--f-gold); } .fgd { fill: var(--f-gold); }
+.fo { fill: var(--f-orange); } .ft { fill: var(--f-text); } .fm { fill: var(--f-mute); } .fpink { fill: var(--f-pink); } .fhand { fill: var(--f-hand); }
+.fin { fill: var(--f-bg); stroke: var(--f-line); } .fknob { fill: var(--f-bg); stroke: var(--f-red); }
+.fbask { fill: #17203A; stroke: var(--f-gold); } .fbadge { fill: #2A1020; stroke: var(--f-red); } .fbadgeG { fill: #2B2412; stroke: var(--f-gold); }
+.fredcard { fill: #1E0F1D; stroke: #5A1A26; } .fphone { fill: #0E1328; stroke: var(--f-line); }
+.ftap { fill: var(--f-text); } .fring { fill: none; stroke: var(--f-red); stroke-width: 1.4; }
+.fmark { fill: var(--f-red); opacity: .38; } .frow { fill: var(--f-red); opacity: .22; } .fshield { fill: #2A1020; stroke: var(--f-red); }
+.hl { fill: none; stroke: var(--f-red); } .sr { fill: none; stroke: var(--f-red); } .sg { fill: none; stroke: var(--f-gold); }
+.sm { fill: none; stroke: var(--f-mute); } .st { fill: none; stroke: var(--f-text); } .sl { fill: none; stroke: var(--f-line); } .sp { fill: none; stroke: var(--f-pink); }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="content">
+    <svg class="art" id="art" viewBox="0 0 180 320" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <filter id="blur" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="2.4"/></filter>
+        <marker id="ah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 Z" fill="#E0262E"/></marker>
+        <clipPath id="phoneclip"><rect x="44" y="114" width="92" height="148"/></clipPath>
+      </defs>
+      <g id="dyn"></g>
+    </svg>
+    <div id="ost"></div>
+    <div id="risk" hidden></div>
+    <div id="sub"></div>
+  </div>
+  <div id="fade"></div>
+</div>
+<script src="scenes.js"></script>
+<script>
+const { A, VIDEOS, STAGGER, clamp, prog, pe, lerp } = window.GM;
+const RISK = 'Trading gold with leverage can lose your entire capital. Not investment advice. No guaranteed returns.';
+const LOGO = '<circle cx="14" cy="16" r="5.5" class="fr"/><text x="23" y="18.6" font-size="7" class="ft" font-weight="800">GOLDMAP</text><text x="62" y="18.6" font-size="5.5" class="fm" font-weight="700">EA</text>';
+let V, TL, lastScene = -1;
+
+window.setup = function (id, timeline) {
+  V = VIDEOS.find(v => v.id === id); TL = timeline; lastScene = -1;
+};
+
+function buildOst(s) {
+  const ost = document.getElementById('ost');
+  ost.className = s.mid ? 'mid' : '';
+  ost.innerHTML = s.ost.map((l, i) => {
+    if (s.slam && i === 0) {
+      const html = l.replace(/<span class="r">(.*?)<\/span>/, '§$1§');
+      return '<div class="l1">' + html.split(' ').map(w => w.includes('§') ? `<span class="w r">${w.replace(/§/g, '')}</span>` : `<span class="w">${w}</span>`).join(' ') + '</div>';
+    }
+    return `<div class="l${i === 0 ? 1 : 2}">${l}</div>`;
+  }).join('');
+  const risk = document.getElementById('risk');
+  risk.hidden = !s.cta; risk.textContent = RISK;
+  document.getElementById('sub').className = s.cta ? 'cta' : '';
+}
+
+window.renderAt = function (t) {
+  let i = TL.scenes.findIndex(sc => t >= sc.start && t < sc.start + sc.dur);
+  if (i < 0) i = TL.scenes.length - 1;
+  const sc = TL.scenes[i], s = V.scenes[i], lt = t - sc.start;
+  if (i !== lastScene) { buildOst(s); lastScene = i; }
+
+  // art
+  const kb = 1 + .035 * clamp(lt / sc.dur);
+  const art = A[s.art](lt);
+  document.getElementById('dyn').innerHTML = (s.nologo ? '' : LOGO) +
+    `<g transform="translate(90 170) scale(${kb.toFixed(4)}) translate(-90 -170)"><g id="artg" transform="translate(90 93) scale(.8) translate(-90 -95)">${art}</g></g>`;
+  const stg = STAGGER[s.art];
+  if (stg) {
+    [...document.getElementById('artg').children].forEach((el, j) => {
+      const v = pe(lt, .15 + j * stg, .3);
+      el.setAttribute('opacity', v.toFixed(3));
+      el.setAttribute('transform', `translate(0 ${(8 * (1 - v)).toFixed(2)})`);
+    });
+  }
+
+  // scene entrance: quick dip + punch-in
+  const content = document.getElementById('content');
+  const inn = pe(lt, 0, .3);
+  content.style.transform = `scale(${lerp(1.045, 1, inn).toFixed(4)})`;
+  content.style.opacity = clamp(lt / .16).toFixed(3);
+
+  // on-screen text
+  const lines = document.querySelectorAll('#ost > div');
+  if (s.slam) {
+    const words = document.querySelectorAll('#ost .l1 .w');
+    words.forEach((w, j) => { const v = prog(lt, j * .22, .12); w.style.opacity = v; w.style.transform = `scale(${lerp(1.35, 1, v).toFixed(3)})`; });
+    if (lines[1]) { const v = pe(lt, words.length * .22 + .15, .3); lines[1].style.opacity = v; lines[1].style.transform = `translateY(${(30 * (1 - v)).toFixed(1)}px)`; }
+  } else {
+    lines.forEach((el, j) => {
+      const v = pe(lt, .1 + j * .25, .35);
+      el.style.opacity = v.toFixed(3);
+      el.style.transform = `translateY(${(40 * (1 - v)).toFixed(1)}px) scale(${lerp(.94, 1, v).toFixed(4)})`;
+    });
+  }
+  document.getElementById('risk').style.opacity = pe(lt, .6, .4).toFixed(3);
+
+  // subtitles: hold each chunk until the next one starts
+  const subs = sc.subs;
+  let cur = null;
+  for (let j = 0; j < subs.length; j++) {
+    const end = j + 1 < subs.length ? subs[j + 1].t0 : sc.start + sc.dur - .05;
+    if (t >= subs[j].t0 && t < end) { cur = subs[j]; break; }
+  }
+  document.getElementById('sub').innerHTML = cur ? `<span>${cur.text}</span>` : '';
+
+  // fade in/out of the whole video
+  const f = Math.max(1 - clamp(t / .25), clamp((t - (TL.total - .4)) / .4));
+  document.getElementById('fade').style.opacity = f.toFixed(3);
+};
+</script>
+</body>
+</html>

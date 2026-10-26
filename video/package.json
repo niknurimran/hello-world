@@ -1,0 +1,14 @@
+{
+  "name": "goldmap-ea-faceless-videos",
+  "private": true,
+  "description": "Renders the Goldmap EA faceless video rough cuts (1080x1920) from scenes.js.",
+  "scripts": {
+    "export-vo": "node export-vo.js",
+    "render": "node capture.js"
+  },
+  "dependencies": {
+    "@fontsource/archivo": "5.1.0",
+    "@fontsource/public-sans": "5.1.0",
+    "playwright-core": "1.56.1"
+  }
+}

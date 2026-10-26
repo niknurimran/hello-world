@@ -1,0 +1,235 @@
+{
+ "total": 58.023,
+ "scenes": [
+  {
+   "start": 0.0,
+   "dur": 3,
+   "voDur": 2.155,
+   "subs": [
+    {
+     "t0": 0.2,
+     "t1": 2.355,
+     "text": "Still trying to guess where gold goes next?"
+    }
+   ],
+   "sfx": "hit",
+   "slamWords": 0
+  },
+  {
+   "start": 3.0,
+   "dur": 6.58,
+   "voDur": 6.08,
+   "subs": [
+    {
+     "t0": 3.2,
+     "t1": 4.978,
+     "text": "Goldmap EA doesn\u2019t predict."
+    },
+    {
+     "t0": 4.978,
+     "t1": 6.986,
+     "text": "It runs the same six-step cycle"
+    },
+    {
+     "t0": 6.986,
+     "t1": 9.28,
+     "text": "on gold, inside your own MetaTrader."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 9.58,
+   "dur": 5.961,
+   "voDur": 5.461,
+   "subs": [
+    {
+     "t0": 9.78,
+     "t1": 11.274,
+     "text": "One: it waits for its own"
+    },
+    {
+     "t0": 11.274,
+     "t1": 12.923,
+     "text": "structure condition on gold,"
+    },
+    {
+     "t0": 12.923,
+     "t1": 15.241,
+     "text": "then places the first position by itself."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 15.541,
+   "dur": 6.751,
+   "voDur": 6.251,
+   "subs": [
+    {
+     "t0": 15.741,
+     "t1": 17.941,
+     "text": "Two: every open position goes into"
+    },
+    {
+     "t0": 17.941,
+     "t1": 20.371,
+     "text": "one basket. It watches total exposure,"
+    },
+    {
+     "t0": 20.371,
+     "t1": 21.992,
+     "text": "not one trade at a time."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 22.292,
+   "dur": 6.239,
+   "voDur": 5.739,
+   "subs": [
+    {
+     "t0": 22.492,
+     "t1": 24.337,
+     "text": "Three: if price goes against the"
+    },
+    {
+     "t0": 24.337,
+     "t1": 26.694,
+     "text": "basket, built-in recovery rules adjust the"
+    },
+    {
+     "t0": 26.694,
+     "t1": 28.231,
+     "text": "plan instead of panicking."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 28.531,
+   "dur": 6.153,
+   "voDur": 5.653,
+   "subs": [
+    {
+     "t0": 28.731,
+     "t1": 30.682,
+     "text": "Four: take profit is calculated for"
+    },
+    {
+     "t0": 30.682,
+     "t1": 31.732,
+     "text": "the whole basket."
+    },
+    {
+     "t0": 31.732,
+     "t1": 32.833,
+     "text": "Once it\u2019s reached,"
+    },
+    {
+     "t0": 32.833,
+     "t1": 34.384,
+     "text": "everything closes together."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 34.684,
+   "dur": 5.385,
+   "voDur": 4.885,
+   "subs": [
+    {
+     "t0": 34.884,
+     "t1": 36.815,
+     "text": "Five: reset, wait for the next"
+    },
+    {
+     "t0": 36.815,
+     "t1": 38.747,
+     "text": "valid condition. Same routine,"
+    },
+    {
+     "t0": 38.747,
+     "t1": 39.769,
+     "text": "day after day."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 40.069,
+   "dur": 5,
+   "voDur": 3.797,
+   "subs": [
+    {
+     "t0": 40.269,
+     "t1": 42.906,
+     "text": "Six: around rollover and thin-liquidity hours,"
+    },
+    {
+     "t0": 42.906,
+     "t1": 44.067,
+     "text": "new entries pause."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 45.069,
+   "dur": 6.153,
+   "voDur": 5.653,
+   "subs": [
+    {
+     "t0": 45.269,
+     "t1": 46.255,
+     "text": "Plus a lot cap,"
+    },
+    {
+     "t0": 46.255,
+     "t1": 47.914,
+     "text": "equity guard, spread filter,"
+    },
+    {
+     "t0": 47.914,
+     "t1": 49.833,
+     "text": "and an optional daily target that"
+    },
+    {
+     "t0": 49.833,
+     "t1": 50.923,
+     "text": "stops new cycles."
+    }
+   ],
+   "sfx": "",
+   "slamWords": 0
+  },
+  {
+   "start": 51.223,
+   "dur": 6.8,
+   "voDur": 4.288,
+   "subs": [
+    {
+     "t0": 51.423,
+     "t1": 53.328,
+     "text": "Want to see it for yourself?"
+    },
+    {
+     "t0": 53.328,
+     "t1": 55.711,
+     "text": "Tap Get Goldmap EA at goldmapea.com."
+    }
+   ],
+   "sfx": "tap",
+   "slamWords": 0
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+1
+00:00:00,200 --> 00:00:02,355
+Still trying to guess where gold goes next?
+
+2
+00:00:03,200 --> 00:00:04,978
+Goldmap EA doesn’t predict.
+
+3
+00:00:04,978 --> 00:00:06,986
+It runs the same six-step cycle
+
+4
+00:00:06,986 --> 00:00:09,280
+on gold, inside your own MetaTrader.
+
+5
+00:00:09,780 --> 00:00:11,274
+One: it waits for its own
+
+6
+00:00:11,274 --> 00:00:12,923
+structure condition on gold,
+
+7
+00:00:12,923 --> 00:00:15,241
+then places the first position by itself.
+
+8
+00:00:15,741 --> 00:00:17,941
+Two: every open position goes into
+
+9
+00:00:17,941 --> 00:00:20,371
+one basket. It watches total exposure,
+
+10
+00:00:20,371 --> 00:00:21,992
+not one trade at a time.
+
+11
+00:00:22,492 --> 00:00:24,337
+Three: if price goes against the
+
+12
+00:00:24,337 --> 00:00:26,694
+basket, built-in recovery rules adjust the
+
+13
+00:00:26,694 --> 00:00:28,231
+plan instead of panicking.
+
+14
+00:00:28,731 --> 00:00:30,682
+Four: take profit is calculated for
+
+15
+00:00:30,682 --> 00:00:31,732
+the whole basket.
+
+16
+00:00:31,732 --> 00:00:32,833
+Once it’s reached,
+
+17
+00:00:32,833 --> 00:00:34,384
+everything closes together.
+
+18
+00:00:34,884 --> 00:00:36,815
+Five: reset, wait for the next
+
+19
+00:00:36,815 --> 00:00:38,747
+valid condition. Same routine,
+
+20
+00:00:38,747 --> 00:00:39,769
+day after day.
+
+21
+00:00:40,269 --> 00:00:42,906
+Six: around rollover and thin-liquidity hours,
+
+22
+00:00:42,906 --> 00:00:44,067
+new entries pause.
+
+23
+00:00:45,269 --> 00:00:46,255
+Plus a lot cap,
+
+24
+00:00:46,255 --> 00:00:47,914
+equity guard, spread filter,
+
+25
+00:00:47,914 --> 00:00:49,833
+and an optional daily target that
+
+26
+00:00:49,833 --> 00:00:50,923
+stops new cycles.
+
+27
+00:00:51,423 --> 00:00:53,328
+Want to see it for yourself?
+
+28
+00:00:53,328 --> 00:00:55,711
+Tap Get Goldmap EA at goldmapea.com.
