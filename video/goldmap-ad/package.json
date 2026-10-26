@@ -7,7 +7,8 @@
     "check": "npx --yes hyperframes@0.8.205 check",
     "render": "npx --yes hyperframes@0.8.205 render",
     "publish": "npx --yes hyperframes@0.8.205 publish",
-    "sync": "node tools/sync.mjs"
+    "sync": "node tools/sync.mjs",
+    "audio": "node tools/make-audio.mjs && node tools/sync.mjs"
   },
   "dependencies": {
     "@fontsource/anton": "^5.3.0",
