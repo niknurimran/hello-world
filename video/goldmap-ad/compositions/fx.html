@@ -1,0 +1,52 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+    #fx-grain { position: absolute; inset: -64px; opacity: 0.075; mix-blend-mode: screen; }
+    #fx-vig { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 70% at 50% 46%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.55) 100%); }
+    #fx-cuts { position: absolute; inset: 0; }
+    .cutbar { position: absolute; left: 0; width: 1080px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="fx" data-width="1080" data-height="1920">
+    <div id="fx-grain"></div>
+    <div id="fx-vig"></div>
+    <div id="fx-cuts"></div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM;
+      const total = GM.beat(Math.max(...Object.values(C.slots).map((s) => s[1])));
+      const tl = gsap.timeline({ paused: true });
+
+      // Film grain: a seeded noise tile, re-positioned every frame.
+      const cv = document.createElement("canvas");
+      cv.width = cv.height = 256;
+      const ctx = cv.getContext("2d");
+      const img = ctx.createImageData(256, 256);
+      const r = GM.prng(5150);
+      for (let i = 0; i < img.data.length; i += 4) { const v = Math.floor(r() * 255); img.data[i] = img.data[i + 1] = img.data[i + 2] = v; img.data[i + 3] = 255; }
+      ctx.putImageData(img, 0, 0);
+      const grain = document.getElementById("fx-grain");
+      grain.style.backgroundImage = `url(${cv.toDataURL()})`;
+      const frames = Math.round(total * C.fps);
+      const offs = Array.from({ length: frames }, () => [Math.floor(r() * 64), Math.floor(r() * 64)]);
+      offs.forEach(([x, y], f) => tl.set(grain, { x: -x, y: -y }, f / C.fps));
+
+      // Cut accents: a few thin gold/red bars flicker for 3 frames on every slot change.
+      const cuts = document.getElementById("fx-cuts");
+      Object.values(C.slots).map((s) => s[0]).filter((b) => b > 0).forEach((b, k) => {
+        const t = GM.beat(b);
+        for (let j = 0; j < 4; j++) {
+          const bar = GM.el("div", { class: "cutbar" }, cuts);
+          bar.style.top = Math.floor(250 + r() * 1300) + "px";
+          bar.style.height = Math.floor(4 + r() * 22) + "px";
+          bar.style.background = j % 2 ? C.colors.gold : (k % 2 ? C.colors.red : C.colors.goldHi);
+          // set + to (not fromTo) so the bar stays hidden on a cold seek before its cut.
+          tl.set(bar, { opacity: 0.85, x: (r() - 0.5) * 300 }, t - 1 / C.fps);
+          tl.to(bar, { opacity: 0, x: (r() - 0.5) * 300, duration: 3 / C.fps, ease: "steps(3)" }, t);
+        }
+      });
+
+      window.__timelines["fx"] = tl;
+    })();
+  </script>
+</template>
