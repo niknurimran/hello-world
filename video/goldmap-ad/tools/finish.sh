@@ -13,15 +13,19 @@ STATS=$(ffmpeg -hide_banner -nostats -i "$RAW" -vn \
 get() { echo "$STATS" | sed -n "s/.*\"$1\" : \"\(.*\)\".*/\1/p"; }
 
 # Pass 2: apply with the measured values (linear mode), re-mux, copy video.
+# loudnorm flushes ~0.1 s of extra audio; trim it back to the video's length.
+DUR=$(ffprobe -v error -select_streams v:0 -show_entries stream=duration -of csv=p=0 "$RAW")
 mkdir -p "$(dirname "$OUT")"
 ffmpeg -hide_banner -loglevel error -y -i "$RAW" -c:v copy \
-  -af "loudnorm=I=${TARGET_I}:TP=${TARGET_TP}:LRA=${TARGET_LRA}:measured_I=$(get input_i):measured_TP=$(get input_tp):measured_LRA=$(get input_lra):measured_thresh=$(get input_thresh):offset=$(get target_offset):linear=true,aresample=48000" \
+  -af "loudnorm=I=${TARGET_I}:TP=${TARGET_TP}:LRA=${TARGET_LRA}:measured_I=$(get input_i):measured_TP=$(get input_tp):measured_LRA=$(get input_lra):measured_thresh=$(get input_thresh):offset=$(get target_offset):linear=true,aresample=48000,atrim=0:${DUR}" \
   -c:a aac -b:a 192k -ar 48000 -movflags +faststart "$OUT"
 
-# Contact sheet: one frame per second (t = 0, 1, …), timestamped, 9 x 4 grid.
+# Contact sheet: one frame per second, taking the frame AT each whole second
+# (frame 0, 30, 60 … at 30 fps; the fps filter would pick the last frame of each second).
 FONT=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+FPS=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of csv=p=0 "$OUT" | awk -F/ '{printf "%d", $1/$2}')
 ffmpeg -hide_banner -loglevel error -y -i "$OUT" \
-  -vf "fps=1:round=down,scale=270:480,drawtext=fontfile=${FONT}:text='%{eif\:t\:d}s':x=8:y=8:fontsize=26:fontcolor=white:box=1:boxcolor=black@0.6:boxborderw=6,tile=9x4:padding=6:color=0x202020" \
+  -vf "select='not(mod(n\,${FPS}))',scale=270:480,drawtext=fontfile=${FONT}:text='%{eif\:n*1\:d}s':x=8:y=8:fontsize=26:fontcolor=white:box=1:boxcolor=black@0.6:boxborderw=6,tile=9x4:padding=6:color=0x202020" -fps_mode vfr \
   -frames:v 1 -q:v 3 "$SHEET"
 
 echo "--- $OUT"

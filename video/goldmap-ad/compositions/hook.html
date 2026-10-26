@@ -74,7 +74,7 @@
         if (i < w1.length) return; // the whole first line punches in together (below)
         else {
           tl.set(w, { opacity: 0 }, 0);
-          GM.slam(tl, w, B(i), { from: i === words.length - 1 ? 2.4 : 1.8 });
+          GM.slam(tl, w, B(i), { from: i === words.length - 1 ? 1.7 : 1.5, origin: "0% 0%" });
         }
       });
 

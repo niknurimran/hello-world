@@ -36,9 +36,9 @@
       // Impact on beat 0: gold burst + logo.
       tl.fromTo("#cta-burst", { opacity: 1, scale: 0.3 }, { opacity: 0.35, scale: 1.3, duration: 0.9, ease: "expo.out" }, 0);
       const icon = GM.icon(document.getElementById("cta-iconwrap"), 220);
-      tl.fromTo("#cta-iconwrap", { scale: 2.2, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "expo.out" }, 0);
+      tl.fromTo("#cta-iconwrap", { scale: 2.2, opacity: 0.3, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.25, ease: "expo.out" }, 0);
       document.getElementById("cta-word").textContent = C.brand.wordmark;
-      tl.fromTo("#cta-word", { clipPath: "inset(0% 50% 0% 50%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "expo.out" }, 0.08);
+      tl.fromTo("#cta-word", { clipPath: "inset(0% 50% 0% 50%)" }, { clipPath: "inset(0% 0% 0% 0%)", duration: 0.3, ease: "expo.out" }, 0);
       tl.fromTo("#cta-word", { backgroundPosition: "100% 0%" }, { backgroundPosition: "0% 0%", duration: 1.2, ease: "power2.inOut" }, B(1));
       tl.to("#cta-word", { backgroundPosition: "100% 0%", duration: 1.2, ease: "power2.inOut" }, B(5));
       GM.shake(tl, "#cta-cam", 0, { amp: 16, dur: 0.24, seed: 81 });
@@ -46,7 +46,8 @@
       // CTA line on the beat.
       const w1 = GM.words(document.getElementById("cta-l1"), T.lines[0]);
       const w2 = GM.words(document.getElementById("cta-l2"), T.lines[1]);
-      w1.concat(w2).forEach((w, i) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, B(1) + i * 0.08 + (i >= w1.length ? 0.2 : 0), { from: 1.8 }); });
+      GM.slamLine(tl, document.getElementById("cta-l1"), w1, B(1), { from: 1.6 });
+      GM.slamLine(tl, document.getElementById("cta-l2"), w2, B(1) + 0.28, { from: 1.6 });
       document.getElementById("cta-url").textContent = C.brand.url;
       tl.fromTo("#cta-url", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, B(2));
 

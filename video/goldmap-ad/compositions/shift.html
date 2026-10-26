@@ -45,7 +45,7 @@
 
       // Headline, one line per beat (the drop lands on beat 0).
       const lines = T.lines.map((t, i) => GM.words(document.getElementById("shift-l" + (i + 1)), t, T.accent, "acc"));
-      lines.forEach((ws, i) => ws.forEach((w, j) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, B(i) + j * 0.06, { from: 1.8 }); }));
+      lines.forEach((ws, i) => GM.slamLine(tl, document.getElementById("shift-l" + (i + 1)), ws, B(i), { from: 1.6 }));
       GM.shake(tl, "#shift-cam", 0, { amp: 20, dur: 0.3, seed: 41 });
 
       // BUY button → struck through → becomes the AUTO toggle.

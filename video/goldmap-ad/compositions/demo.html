@@ -22,9 +22,9 @@
   <div id="root" data-composition-id="demo" data-width="1080" data-height="1920">
     <div id="demo-cam">
       <div id="demo-lines" class="disp">
-        <div id="demo-l0" class="dl"></div>
-        <div id="demo-l1" class="dl"></div>
-        <div id="demo-l2" class="dl"></div>
+        <div id="demo-l0" class="dl"><div id="demo-l0i"></div></div>
+        <div id="demo-l1" class="dl"><div id="demo-l1i"></div></div>
+        <div id="demo-l2" class="dl"><div id="demo-l2i"></div></div>
       </div>
       <div id="demo-wrap">
         <div id="demo-card">
@@ -77,9 +77,10 @@
       // Lines, one per 6 beats.
       const lt = [0, B(6), B(12)];
       T.beats.forEach((txt, i) => {
-        const ws = GM.words(document.getElementById("demo-l" + i), txt);
+        const inner = document.getElementById("demo-l" + i + "i");
+        const ws = GM.words(inner, txt);
         tl.set("#demo-l" + i, { opacity: 1 }, lt[i]);
-        ws.forEach((w, j) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, lt[i] + j * 0.08, { from: 1.6, blur: 10 }); });
+        GM.slamLine(tl, inner, ws, lt[i], { from: 1.5, blur: 10, stagger: 0.06 });
         if (i < 2) tl.to("#demo-l" + i, { opacity: 0, filter: "blur(10px)", duration: 0.12 }, lt[i + 1] - 0.1);
       });
 
@@ -90,7 +91,7 @@
       document.getElementById("demo-cap").innerHTML = `<b>${C.chart.symbol}</b> · ${C.chart.timeframe}`;
       GM.label(document.getElementById("demo-wrap"), { right: "24px", top: "18px" });
       tl.set(ch.bid, { attr: { y1: ch.items[PRE - 1].yC, y2: ch.items[PRE - 1].yC } }, 0);
-      tl.fromTo("#demo-wrap", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 0);
+      tl.fromTo("#demo-wrap", { y: 120, opacity: 0.3 }, { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 0);
 
       // 1) It waits for its setup: a scan beam sweeps, then a structure bracket.
       tl.fromTo("#demo-scan", { x: -160, opacity: 1 }, { x: ch.x(PRE - 1) - 140, opacity: 1, duration: 1.4, ease: "power1.inOut" }, 0.2);

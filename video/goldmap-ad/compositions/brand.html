@@ -40,7 +40,7 @@
       // Icon is built from code: the pin outline draws on, then the candles rise.
       const icon = GM.icon(document.getElementById("brand-iconwrap"), 320);
       const L = icon.pin.getTotalLength();
-      tl.fromTo(icon.pin, { attr: { "stroke-dasharray": L, "stroke-dashoffset": L } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power3.out" }, 0);
+      tl.fromTo(icon.pin, { attr: { "stroke-dasharray": L, "stroke-dashoffset": L * 0.75 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power3.out" }, 0);
       icon.parts.forEach((p, i) => tl.fromTo(p, { scaleY: 0, opacity: 0, transformOrigin: "50% 100%" }, { scaleY: 1, opacity: 1, duration: 0.28, ease: "back.out(2)" }, 0.18 + i * 0.09));
 
       // Burst + rings
@@ -55,7 +55,7 @@
       tl.to("#brand-word", { backgroundPosition: "100% 0%", duration: 0.9, ease: "power2.inOut" }, B(5));
 
       // Tagline per word on the beat, then the rule and meta line.
-      tagWords.forEach((w, i) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, B(4 + i), { from: 1.7 }); });
+      tagWords.forEach((w, i) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, B(4 + i), { from: 1.6, origin: i ? "0% 0%" : "50% 50%" }); });
       tl.fromTo("#brand-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "expo.out" }, B(4) + 0.1);
       tl.fromTo("#brand-meta", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, B(4) + 0.2);
       GM.shake(tl, "#brand-cam", B(4), { amp: 10, dur: 0.2, seed: 12 });

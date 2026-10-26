@@ -124,13 +124,26 @@
   };
 
   // Slam: lands big-to-size with blur on a hard ease (on the beat).
+  // A slam at t = 0 starts at 25% opacity so a scene's first frame is never empty
+  // (later slams start hidden: fromTo applies its from-state as soon as it is built).
+  // `origin` lets a word grow away from a neighbour that is already on screen.
   GM.slam = function (tl, el, t, o = {}) {
     tl.fromTo(
       el,
-      { scale: o.from ?? 1.9, opacity: o.fromOpacity ?? 0, filter: `blur(${o.blur ?? 14}px)` },
+      { scale: o.from ?? 1.9, opacity: o.fromOpacity ?? (t === 0 ? 0.25 : 0), filter: `blur(${o.blur ?? 14}px)`, transformOrigin: o.origin ?? "50% 50%" },
       { scale: 1, opacity: 1, filter: "blur(0px)", duration: o.dur ?? 0.16, ease: o.ease ?? "expo.out" },
       t
     );
+  };
+
+  // Slam a whole line as one block (words scaled together never overlap),
+  // with its words switching on `stagger` apart.
+  GM.slamLine = function (tl, line, words, t, o = {}) {
+    words.forEach((w, i) => {
+      tl.set(w, { opacity: 0 }, 0);
+      tl.set(w, { opacity: 1 }, t + i * (o.stagger ?? 0.05));
+    });
+    GM.slam(tl, line, t, o);
   };
 
   // Small decaying camera shake on a wrapper.
