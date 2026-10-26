@@ -1,0 +1,163 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #prob-cam { position: absolute; inset: 0; transform-origin: 540px 1000px; }
+    #prob-red { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 60%, rgba(239,68,68,0.5), rgba(239,68,68,0) 65%); opacity: 0; }
+    #prob-head { position: absolute; left: 0; right: 0; top: 280px; text-align: center; font-size: 120px; color: var(--gold); }
+    #prob-words { position: absolute; left: 0; right: 0; top: 420px; height: 240px; }
+    #prob-words .bw { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 250px; color: var(--white); opacity: 0; }
+    #prob-words .bw.red { color: var(--red); }
+    #prob-panel { position: absolute; left: 120px; top: 760px; width: 840px; height: 700px; border-radius: 34px; background: #14141b; border: 2px solid #2b2b36; overflow: hidden; }
+    #prob-chart { position: absolute; left: 0; top: 0; width: 840px; height: 440px; }
+    #prob-cap { left: 30px; top: 20px; }
+    #prob-btns { position: absolute; left: 30px; right: 30px; top: 500px; height: 160px; display: flex; gap: 30px; }
+    .pbtn { flex: 1; border-radius: 22px; display: flex; align-items: center; justify-content: center; font-family: "Bebas Neue"; font-size: 96px; color: #fff; }
+    #prob-sell { background: #3a1a1d; border: 3px solid var(--red); color: var(--red); }
+    #prob-buy { background: #12331f; border: 3px solid var(--green); color: var(--green); }
+    #prob-cursorwrap { position: absolute; left: 0; top: 0; width: 120px; height: 120px; }
+    .qm { position: absolute; font-family: "Bebas Neue"; font-size: 150px; color: var(--gold); opacity: 0; }
+    .drop { position: absolute; width: 44px; height: 60px; opacity: 0; }
+    #prob-alarm { position: absolute; left: 860px; top: 520px; width: 170px; height: 170px; opacity: 0; }
+    #prob-rew { position: absolute; left: 120px; top: 760px; width: 840px; height: 700px; border-radius: 34px; overflow: hidden; opacity: 0;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.10) 0 3px, rgba(0,0,0,0) 3px 14px); }
+    #prob-rewicon { position: absolute; left: 330px; top: 230px; width: 180px; height: 120px; }
+    #prob-loop { position: absolute; left: 820px; top: 440px; width: 190px; height: 190px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="problem" data-width="1080" data-height="1920">
+    <div id="prob-cam">
+      <div id="prob-red"></div>
+      <div id="prob-head" class="disp"></div>
+      <div id="prob-words" class="disp">
+        <div id="prob-w0" class="bw"></div>
+        <div id="prob-w1" class="bw red"></div>
+        <div id="prob-w2" class="bw"></div>
+      </div>
+      <svg id="prob-loop" viewBox="0 0 100 100">
+        <path d="M80 50 A30 30 0 1 1 65 24" fill="none" stroke="#D4A73C" stroke-width="9" stroke-linecap="round" />
+        <path d="M58 10 L74 24 L56 34 Z" fill="#D4A73C" />
+      </svg>
+      <div id="prob-panel">
+        <div id="prob-chart"></div>
+        <div id="prob-cap" class="gm-chartcap"></div>
+        <div id="prob-btns"><div id="prob-sell" class="pbtn">SELL</div><div id="prob-buy" class="pbtn">BUY</div></div>
+      </div>
+      <svg id="prob-alarm" viewBox="0 0 100 100">
+        <g id="prob-rays" stroke="#EF4444" stroke-width="6" stroke-linecap="round">
+          <line x1="50" y1="4" x2="50" y2="16" /><line x1="14" y1="20" x2="22" y2="29" /><line x1="86" y1="20" x2="78" y2="29" />
+          <line x1="4" y1="52" x2="16" y2="52" /><line x1="96" y1="52" x2="84" y2="52" />
+        </g>
+        <path d="M26 78 L26 54 A24 24 0 0 1 74 54 L74 78 Z" fill="#EF4444" />
+        <rect x="18" y="78" width="64" height="12" rx="4" fill="#B91C1C" />
+        <rect x="40" y="46" width="9" height="22" rx="4" fill="#FFD3D3" />
+      </svg>
+      <div id="prob-qa" class="qm">?</div>
+      <div id="prob-qb" class="qm">?</div>
+      <div id="prob-qc" class="qm">?</div>
+      <svg id="prob-d1" class="drop" viewBox="0 0 44 60"><path d="M22 2 C 30 20 40 30 40 40 A18 18 0 0 1 4 40 C 4 30 14 20 22 2 Z" fill="#9FD8FF" /></svg>
+      <svg id="prob-d2" class="drop" viewBox="0 0 44 60"><path d="M22 2 C 30 20 40 30 40 40 A18 18 0 0 1 4 40 C 4 30 14 20 22 2 Z" fill="#9FD8FF" /></svg>
+      <svg id="prob-d3" class="drop" viewBox="0 0 44 60"><path d="M22 2 C 30 20 40 30 40 40 A18 18 0 0 1 4 40 C 4 30 14 20 22 2 Z" fill="#9FD8FF" /></svg>
+      <div id="prob-rew">
+        <svg id="prob-rewicon" viewBox="0 0 180 120"><path d="M88 10 L10 60 L88 110 Z M170 10 L92 60 L170 110 Z" fill="#FFFFFF" fill-opacity="0.9" /></svg>
+      </div>
+      <div id="prob-cursorwrap"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.problem;
+      const S = GM.slot("problem"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      document.getElementById("prob-head").textContent = T.header;
+      T.beats.forEach((w, i) => (document.getElementById("prob-w" + i).textContent = w));
+
+      // Chart inside the trade panel.
+      const N = 34, PRE = 24;
+      const ev = {}; for (let i = PRE; i < N; i++) ev[i] = i === PRE ? -3.2 : -0.9 - (i % 3) * 0.35;
+      const candles = GM.candles(C.chart.seeds.problem, N, { vol: 1, drift: 0.32, events: ev });
+      const ch = GM.chart(document.getElementById("prob-chart"), candles, { w: 840, h: 440, step: 24, padT: 80, padB: 30, scaleW: 0, seedId: 202 });
+      document.getElementById("prob-cap").innerHTML = `<b>${C.chart.symbol}</b> · ${C.chart.timeframe}`;
+      GM.label(document.getElementById("prob-panel"), { right: "26px", top: "18px" });
+      tl.set(ch.bid, { attr: { y1: ch.items[PRE - 1].yC, y2: ch.items[PRE - 1].yC } }, 0);
+
+      // Header + panel entrance.
+      GM.slam(tl, "#prob-head", 0, { from: 1.6 });
+      tl.fromTo("#prob-panel", { y: 380, opacity: 0.3 }, { y: 0, opacity: 1, duration: 0.45, ease: "expo.out" }, 0);
+
+      // Big beat words swap on the beat.
+      const wt = [B(2), B(5), B(8)];
+      wt.forEach((t, i) => {
+        GM.slam(tl, "#prob-w" + i, t, { from: 2.0 });
+        if (i < 2) tl.to("#prob-w" + i, { opacity: 0, filter: "blur(10px)", scale: 0.9, duration: 0.08 }, wt[i + 1] - 0.04);
+      });
+
+      // --- HESITATE: the cursor creeps toward BUY and backs off. ---
+      const cur = GM.cursor(document.getElementById("prob-cursorwrap"), 120);
+      const buy = { x: 700, y: 1310 }; // centre of the BUY button
+      const path = [
+        [B(2), 1000, 1700, 0], [B(2) + 0.22, 760, 1420, 0.2], [B(2) + 0.36, 800, 1470, 0.12],
+        [B(2) + 0.56, 735, 1395, 0.16], [B(2) + 0.7, 830, 1480, 0.12], [B(2) + 0.92, 720, 1360, 0.18], [B(2) + 1.06, 860, 1500, 0.12],
+      ];
+      tl.set("#prob-cursorwrap", { x: 1100, y: 1750 }, 0);
+      path.forEach(([t, x, y, d]) => tl.to("#prob-cursorwrap", { x, y, duration: d || 0.001, ease: "power2.inOut" }, t));
+      [["#prob-qa", 640, 1090, 0], ["#prob-qb", 850, 1120, 0.3], ["#prob-qc", 760, 990, 0.6]].forEach(([id, x, y, d], i) => {
+        tl.set(id, { x, y }, 0);
+        tl.fromTo(id, { opacity: 0, scale: 0.2, rotation: -20 }, { opacity: 1, scale: 1, rotation: (i - 1) * 12, duration: 0.22, ease: "back.out(2.6)" }, B(2) + 0.2 + d);
+        tl.to(id, { opacity: 0, scale: 0.6, duration: 0.1 }, B(5) - 0.05);
+      });
+      tl.to("#prob-buy", { scale: 1.04, duration: 0.12, yoyo: true, repeat: 3, ease: "sine.inOut" }, B(2) + 0.2);
+
+      // --- PANIC: crash candles, alarm, sweat, shaking. ---
+      for (let i = PRE; i < N; i++) {
+        const it = ch.items[i];
+        it.g.setAttribute("opacity", 0);
+        const t = B(5) + (i - PRE) * 0.07;
+        GM.growCandle(tl, it, t, 0.07);
+        tl.to(ch.bid, { attr: { y1: it.yC, y2: it.yC }, duration: 0.07, ease: "none" }, t);
+      }
+      tl.fromTo("#prob-red", { opacity: 0 }, { opacity: 1, duration: 0.05 }, B(5));
+      tl.to("#prob-red", { opacity: 0.35, duration: 0.5 }, B(5) + 0.05);
+      tl.to("#prob-red", { opacity: 0, duration: 0.2 }, B(8) - 0.1);
+      GM.shake(tl, "#prob-panel", B(5), { amp: 22, dur: 0.5, n: 10, rot: 1.2, seed: 31 });
+      GM.shake(tl, "#prob-cam", B(5), { amp: 14, dur: 0.25, seed: 32 });
+      tl.fromTo("#prob-alarm", { opacity: 0, scale: 0.3 }, { opacity: 1, scale: 1, duration: 0.18, ease: "back.out(3)" }, B(5) + 0.05);
+      for (let k = 0; k < 5; k++) tl.fromTo("#prob-rays", { opacity: 1 }, { opacity: 0.1, duration: 0.11, ease: "steps(1)" }, B(5) + 0.1 + k * 0.2);
+      tl.fromTo("#prob-alarm", { rotation: -10 }, { rotation: 10, duration: 0.1, yoyo: true, repeat: 9, ease: "sine.inOut" }, B(5) + 0.1);
+      // cursor panics: zig-zags between SELL and BUY
+      [[B(5), 380, 1330], [B(5) + 0.15, 760, 1290], [B(5) + 0.3, 330, 1350], [B(5) + 0.45, 780, 1300], [B(5) + 0.6, 420, 1340]].forEach(([t, x, y]) =>
+        tl.to("#prob-cursorwrap", { x, y, duration: 0.13, ease: "power3.out" }, t)
+      );
+      [["#prob-d1", -1], ["#prob-d2", 1], ["#prob-d3", 0]].forEach(([id, dir], i) => {
+        const t = B(5) + 0.12 + i * 0.22;
+        tl.fromTo(id, { x: 520 + dir * 30, y: 1260, opacity: 0, rotation: dir * 20 },
+          { x: 520 + dir * 200, y: 1080 - i * 40, opacity: 1, duration: 0.25, ease: "power2.out" }, t);
+        tl.to(id, { y: 1180, opacity: 0, duration: 0.3, ease: "power2.in" }, t + 0.3);
+      });
+      tl.to("#prob-alarm", { opacity: 0, duration: 0.1 }, B(8) - 0.08);
+
+      // --- REPEAT: rewind (scanlines, reverse), then the loop restarts. ---
+      tl.fromTo("#prob-rew", { opacity: 0 }, { opacity: 1, duration: 0.05 }, B(8));
+      tl.fromTo("#prob-rew", { backgroundPositionY: "0px" }, { backgroundPositionY: "-140px", duration: 0.7, ease: "none" }, B(8));
+      tl.to("#prob-rew", { opacity: 0, duration: 0.08 }, B(8) + 0.72);
+      for (let i = N - 1; i >= PRE; i--) tl.to(ch.items[i].g, { opacity: 0, duration: 0.001 }, B(8) + (N - 1 - i) * 0.06);
+      tl.to(ch.bid, { attr: { y1: ch.items[PRE - 1].yC, y2: ch.items[PRE - 1].yC }, duration: 0.6, ease: "steps(6)" }, B(8));
+      tl.to("#prob-cursorwrap", { x: 900, y: 1480, duration: 0.6, ease: "steps(8)" }, B(8));
+      tl.fromTo("#prob-panel", { skewX: 0 }, { skewX: -4, duration: 0.05, yoyo: true, repeat: 7, ease: "steps(1)" }, B(8));
+      tl.fromTo("#prob-loop", { opacity: 0, rotation: 0, scale: 0.4 }, { opacity: 1, scale: 1, duration: 0.2, ease: "back.out(2)" }, B(8));
+      tl.to("#prob-loop", { rotation: -720, duration: B(12) - B(8), ease: "none" }, B(8));
+      // quick replay of the loop: hesitate, panic again (faster)
+      [[B(10), 760, 1420], [B(10) + 0.12, 840, 1480], [B(10) + 0.24, 740, 1390], [B(10) + 0.36, 420, 1340], [B(10) + 0.46, 760, 1300]].forEach(([t, x, y]) =>
+        tl.to("#prob-cursorwrap", { x, y, duration: 0.1, ease: "power3.out" }, t)
+      );
+      for (let i = PRE; i < N; i++) tl.to(ch.items[i].g, { opacity: 1, duration: 0.001 }, B(10) + 0.3 + (i - PRE) * 0.03);
+      tl.fromTo("#prob-red", { opacity: 0 }, { opacity: 0.8, duration: 0.05 }, B(11));
+      GM.shake(tl, "#prob-cam", B(11), { amp: 16, dur: 0.3, seed: 33 });
+
+      // Build into the drop: punch in and glitch on the last half beat.
+      tl.to("#prob-cam", { scale: 1.25, duration: B(12) - B(11) + 0.01, ease: "power3.in" }, B(11));
+      GM.glitch(tl, "#prob-cam", B(12) - 0.2, { frames: 6, amp: 34, seed: 34 });
+
+      window.__timelines["problem"] = tl;
+    })();
+  </script>
+</template>

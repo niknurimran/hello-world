@@ -1,0 +1,69 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #brand-cam { position: absolute; inset: 0; transform-origin: 540px 1000px; }
+    #brand-burst { position: absolute; left: 140px; top: 320px; width: 800px; height: 800px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(244,210,122,0.55) 0%, rgba(212,167,60,0.18) 35%, rgba(212,167,60,0) 70%); }
+    #brand-rings { position: absolute; left: 140px; top: 320px; width: 800px; height: 800px; }
+    #brand-iconwrap { position: absolute; left: 380px; top: 400px; width: 320px; height: 320px; }
+    #brand-word { position: absolute; left: 0; right: 0; top: 790px; text-align: center; font-size: 236px;
+      background: linear-gradient(100deg, #8c6a1e 0%, #d4a73c 30%, #f4d27a 44%, #fff6d8 50%, #f4d27a 56%, #d4a73c 70%, #8c6a1e 100%);
+      background-size: 300% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; }
+    #brand-tag { position: absolute; left: 0; right: 0; top: 1060px; text-align: center; font-size: 130px; color: var(--white); }
+    #brand-rule { position: absolute; left: 340px; width: 400px; top: 1200px; height: 6px; background: var(--gold); border-radius: 3px; }
+    #brand-meta { position: absolute; left: 0; right: 0; top: 1240px; text-align: center; font-family: "Inter", sans-serif; font-weight: 600; font-size: 34px; letter-spacing: 0.14em; color: var(--mute); }
+  </style>
+  <div id="root" data-composition-id="brand" data-width="1080" data-height="1920">
+    <div id="brand-cam">
+      <div id="brand-burst"></div>
+      <svg id="brand-rings" width="800" height="800" viewBox="0 0 800 800">
+        <circle id="brand-r1" cx="400" cy="400" r="250" fill="none" stroke="#D4A73C" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="4 14" />
+        <circle id="brand-r2" cx="400" cy="400" r="320" fill="none" stroke="#D4A73C" stroke-opacity="0.22" stroke-width="2" stroke-dasharray="60 30 6 30" />
+        <circle id="brand-r3" cx="400" cy="400" r="380" fill="none" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5" />
+      </svg>
+      <div id="brand-iconwrap"></div>
+      <div id="brand-word" class="disp"></div>
+      <div id="brand-tag" class="disp"></div>
+      <div id="brand-rule"></div>
+      <div id="brand-meta"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.brand;
+      const S = GM.slot("brand"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+      document.getElementById("brand-word").textContent = C.brand.wordmark;
+      document.getElementById("brand-meta").textContent = T.meta;
+      const tagWords = GM.words(document.getElementById("brand-tag"), T.tagline);
+
+      // Icon is built from code: the pin outline draws on, then the candles rise.
+      const icon = GM.icon(document.getElementById("brand-iconwrap"), 320);
+      const L = icon.pin.getTotalLength();
+      tl.fromTo(icon.pin, { attr: { "stroke-dasharray": L, "stroke-dashoffset": L * 0.75 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.5, ease: "power3.out" }, 0);
+      icon.parts.forEach((p, i) => tl.fromTo(p, { scaleY: 0, opacity: 0, transformOrigin: "50% 100%" }, { scaleY: 1, opacity: 1, duration: 0.28, ease: "back.out(2)" }, 0.18 + i * 0.09));
+
+      // Burst + rings
+      tl.fromTo("#brand-burst", { scale: 0.3, opacity: 1 }, { scale: 1.5, opacity: 0.25, duration: 1.2, ease: "expo.out" }, 0);
+      tl.fromTo("#brand-r1", { rotation: 0, svgOrigin: "400 400" }, { rotation: 120, duration: S.dur, ease: "none" }, 0);
+      tl.fromTo("#brand-r2", { rotation: 0, svgOrigin: "400 400" }, { rotation: -80, duration: S.dur, ease: "none" }, 0);
+      tl.fromTo("#brand-rings", { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: "expo.out" }, 0);
+
+      // Wordmark: mask reveal from the centre, then a gold light sweep.
+      tl.fromTo("#brand-word", { clipPath: "inset(0% 50% 0% 50%)", scale: 1.12 }, { clipPath: "inset(0% 0% 0% 0%)", scale: 1, duration: 0.36, ease: "expo.out" }, B(1));
+      tl.fromTo("#brand-word", { backgroundPosition: "100% 0%" }, { backgroundPosition: "0% 0%", duration: 1.0, ease: "power2.inOut" }, B(2));
+      tl.to("#brand-word", { backgroundPosition: "100% 0%", duration: 0.9, ease: "power2.inOut" }, B(5));
+
+      // Tagline per word on the beat, then the rule and meta line.
+      tagWords.forEach((w, i) => { tl.set(w, { opacity: 0 }, 0); GM.slam(tl, w, B(4 + i), { from: 1.6, origin: i ? "0% 0%" : "50% 50%" }); });
+      tl.fromTo("#brand-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.4, ease: "expo.out" }, B(4) + 0.1);
+      tl.fromTo("#brand-meta", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2 }, B(4) + 0.2);
+      GM.shake(tl, "#brand-cam", B(4), { amp: 10, dur: 0.2, seed: 12 });
+
+      // Exit: zoom through the wordmark into the next scene.
+      tl.to("#brand-cam", { scale: 2.4, opacity: 0, filter: "blur(10px)", duration: B(8) - B(7) + 0.02, ease: "power3.in" }, B(7));
+
+      window.__timelines["brand"] = tl;
+    })();
+  </script>
+</template>

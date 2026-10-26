@@ -1,0 +1,64 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; background: var(--bg); }
+    #bg-grid {
+      position: absolute; inset: -120px;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1.5px, transparent 1.5px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1.5px, transparent 1.5px),
+        linear-gradient(rgba(212,167,60,0.07) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(212,167,60,0.07) 2px, transparent 2px);
+      background-size: 60px 60px, 60px 60px, 240px 240px, 240px 240px;
+    }
+    #bg-glow-a, #bg-glow-b { position: absolute; border-radius: 50%; }
+    #bg-glow-a { width: 1300px; height: 1300px; left: -110px; top: 120px; background: radial-gradient(circle, rgba(212,167,60,0.26) 0%, rgba(212,167,60,0.08) 38%, rgba(212,167,60,0) 68%); }
+    #bg-glow-b { width: 1100px; height: 1100px; left: 300px; top: 1000px; background: radial-gradient(circle, rgba(244,210,122,0.16) 0%, rgba(212,167,60,0.05) 40%, rgba(212,167,60,0) 70%); }
+    #bg-fx { position: absolute; inset: 0; }
+    #bg-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,11,15,0.0) 0%, rgba(11,11,15,0.0) 60%, rgba(11,11,15,0.65) 100%); }
+  </style>
+  <div id="root" data-composition-id="bg" data-width="1080" data-height="1920">
+    <div id="bg-grid"></div>
+    <div id="bg-glow-a"></div>
+    <div id="bg-glow-b"></div>
+    <svg id="bg-fx" width="1080" height="1920" viewBox="0 0 1080 1920"></svg>
+    <div id="bg-shade"></div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM;
+      const total = GM.beat(Math.max(...Object.values(C.slots).map((s) => s[1])));
+      const tl = gsap.timeline({ paused: true });
+      const r = GM.prng(404);
+
+      // Grid drifts up-left at constant speed for the whole film.
+      tl.fromTo("#bg-grid", { x: 0, y: 0 }, { x: -60, y: -240, duration: total, ease: "none" }, 0);
+
+      // Glows wander slowly and breathe up on every bar.
+      tl.fromTo("#bg-glow-a", { x: 0, y: 0 }, { x: 160, y: 260, duration: total, ease: "sine.inOut" }, 0);
+      tl.fromTo("#bg-glow-b", { x: 0, y: 0 }, { x: -220, y: -340, duration: total, ease: "sine.inOut" }, 0);
+      const beatsPerBar = 4, nBars = Math.floor(total / GM.beat(beatsPerBar));
+      for (let b = 0; b < nBars; b++) {
+        const t = GM.beat(b * beatsPerBar);
+        tl.fromTo("#bg-glow-a", { opacity: 1 }, { opacity: 0.6, duration: GM.beat(beatsPerBar) * 0.9, ease: "power2.out" }, t);
+      }
+
+      // Data streaks (horizontal) and rising particles, wrapped around the frame.
+      const fx = document.getElementById("bg-fx");
+      const wrapX = gsap.utils.wrap(-400, 1480), wrapY = gsap.utils.wrap(-40, 1960);
+      for (let i = 0; i < 16; i++) {
+        const y = Math.round(140 + r() * 1640), len = 80 + r() * 260, x0 = r() * 1880 - 400;
+        const ln = GM.el("line", { x1: 0, x2: len, y1: y, y2: y, stroke: i % 3 ? C.colors.gold : C.colors.white, "stroke-width": 1.5 + r() * 1.5, "stroke-linecap": "round", opacity: 0.12 + r() * 0.22 }, fx);
+        const speed = 120 + r() * 380;
+        tl.fromTo(ln, { x: x0 }, { x: x0 + speed * total, duration: total, ease: "none", modifiers: { x: gsap.utils.unitize(wrapX) } }, 0);
+      }
+      for (let i = 0; i < 46; i++) {
+        const cx = r() * 1080, y0 = r() * 2000, rad = 1.5 + r() * 3.5;
+        const dot = GM.el("circle", { cx, cy: 0, r: rad, fill: i % 4 ? C.colors.gold : C.colors.white, opacity: 0.18 + r() * 0.4 }, fx);
+        const speed = 30 + r() * 90;
+        tl.fromTo(dot, { y: y0 }, { y: y0 - speed * total, duration: total, ease: "none", modifiers: { y: gsap.utils.unitize(wrapY) } }, 0);
+      }
+
+      window.__timelines["bg"] = tl;
+    })();
+  </script>
+</template>

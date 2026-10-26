@@ -1,0 +1,99 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #shift-cam { position: absolute; inset: 0; }
+    #shift-text { position: absolute; left: 60px; right: 60px; top: 280px; text-align: center; }
+    #shift-text .ln { display: block; font-size: 150px; }
+    #shift-stage { position: absolute; left: 0; top: 760px; width: 1080px; height: 760px; }
+    #shift-buy { position: absolute; left: 250px; top: 140px; width: 580px; height: 230px; border-radius: 40px; background: var(--green);
+      display: flex; align-items: center; justify-content: center; font-family: "Bebas Neue"; font-size: 170px; color: #06260f;
+      box-shadow: 0 20px 60px rgba(34,197,94,0.35); }
+    #shift-x { position: absolute; left: 220px; top: 110px; width: 640px; height: 290px; }
+    #shift-toggle { position: absolute; left: 250px; top: 140px; width: 580px; height: 230px; border-radius: 115px; background: #2a2a33; border: 4px solid #3a3a46; }
+    #shift-knob { position: absolute; left: 16px; top: 16px; width: 190px; height: 190px; border-radius: 50%; background: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.4); }
+    #shift-auto { position: absolute; left: 70px; top: 0; height: 222px; display: flex; align-items: center; font-family: "Bebas Neue"; font-size: 140px; color: #0b2a16; opacity: 0; }
+    #shift-grid { position: absolute; left: 90px; top: 30px; width: 900px; height: 700px; }
+    .tile { position: absolute; width: 280px; height: 152px; border-radius: 18px; background: #14141b; border: 2px solid #2b2b36; overflow: hidden; }
+    .tile .dot { position: absolute; left: 16px; bottom: 10px; display: flex; align-items: center; gap: 8px; font-family: "Inter"; font-weight: 800; font-size: 30px; color: var(--green); }
+    .tile .dot i { display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); }
+    .tile .mc { position: absolute; left: 0; top: 0; }
+    #shift-lbl { right: 90px; top: -30px; opacity: 0; }
+  </style>
+  <div id="root" data-composition-id="shift" data-width="1080" data-height="1920">
+    <div id="shift-cam">
+      <div id="shift-text" class="disp">
+        <span id="shift-l1" class="ln"></span>
+        <span id="shift-l2" class="ln"></span>
+        <span id="shift-l3" class="ln"></span>
+      </div>
+      <div id="shift-stage">
+        <div id="shift-grid"></div>
+        <div id="shift-buy"></div>
+        <svg id="shift-x" viewBox="0 0 640 290">
+          <line id="shift-x1" x1="30" y1="20" x2="610" y2="270" stroke="#EF4444" stroke-width="30" stroke-linecap="round" />
+          <line id="shift-x2" x1="610" y1="20" x2="30" y2="270" stroke="#EF4444" stroke-width="30" stroke-linecap="round" />
+        </svg>
+        <div id="shift-toggle"><div id="shift-auto"></div><div id="shift-knob"></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.shift;
+      const S = GM.slot("shift"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      // Headline, one line per beat (the drop lands on beat 0).
+      const lines = T.lines.map((t, i) => GM.words(document.getElementById("shift-l" + (i + 1)), t, T.accent, "acc"));
+      lines.forEach((ws, i) => GM.slamLine(tl, document.getElementById("shift-l" + (i + 1)), ws, B(i), { from: 1.6 }));
+      GM.shake(tl, "#shift-cam", 0, { amp: 20, dur: 0.3, seed: 41 });
+
+      // BUY button → struck through → becomes the AUTO toggle.
+      document.getElementById("shift-buy").textContent = T.buyButton;
+      document.getElementById("shift-auto").textContent = T.toggle;
+      tl.fromTo("#shift-buy", { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "back.out(1.8)" }, B(1));
+      ["#shift-x1", "#shift-x2"].forEach((id, i) => {
+        const len = 632;
+        tl.fromTo(id, { attr: { "stroke-dasharray": len, "stroke-dashoffset": len } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.14, ease: "power3.out" }, B(3) + i * 0.1);
+      });
+      GM.shake(tl, "#shift-stage", B(3) + 0.1, { amp: 12, dur: 0.2, seed: 42 });
+      tl.to("#shift-buy", { filter: "grayscale(1) brightness(0.55)", duration: 0.15 }, B(3) + 0.1);
+      tl.to(["#shift-buy", "#shift-x"], { scaleY: 0, opacity: 0, duration: 0.14, ease: "power3.in" }, B(4) - 0.1);
+      tl.fromTo("#shift-toggle", { scaleY: 0, opacity: 0 }, { scaleY: 1, opacity: 1, duration: 0.2, ease: "back.out(2)" }, B(4) + 0.04);
+      tl.set("#shift-x", { opacity: 1, scaleY: 1 }, 0);
+      // Switch ON on beat 5 (click SFX).
+      tl.to("#shift-knob", { x: 358, duration: 0.18, ease: "back.out(1.6)" }, B(5));
+      tl.to("#shift-toggle", { backgroundColor: "#22C55E", borderColor: "#4ADE80", boxShadow: "0 0 80px rgba(34,197,94,0.6)", duration: 0.15 }, B(5));
+      tl.fromTo("#shift-auto", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.18, ease: "expo.out" }, B(5) + 0.04);
+
+      // Pull back: the toggle becomes one screen in a wall of running screens.
+      const grid = document.getElementById("shift-grid");
+      const lbl = GM.label(grid, { right: "0px", top: "-30px" });
+      const cols = 3, rows = 4, tw = 280, th = 152, gx = 30, gy = 30;
+      const order = [];
+      for (let r = 0; r < rows; r++) for (let c = 0; c < cols; c++) order.push([r, c]);
+      order.forEach(([r, c], k) => {
+        const tile = GM.el("div", { class: "tile" }, grid);
+        tile.style.left = c * (tw + gx) + "px";
+        tile.style.top = r * (th + gy) + 40 + "px";
+        const mc = GM.el("div", { class: "mc" }, tile);
+        const cs = GM.candles(C.chart.seeds.shift * 100 + k, 26, { vol: 1, drift: 0.12 });
+        const ch = GM.chart(mc, cs, { w: 280, h: 150, step: 16, bodyW: 9, padT: 18, padB: 46, scaleW: 0, seedId: 300 + k, x0: 10 });
+        ch.bid.setAttribute("opacity", 0);
+        tl.fromTo(ch.plot, { x: 0 }, { x: -150, duration: S.dur - B(6), ease: "none" }, B(6));
+        GM.el("div", { class: "dot" }, tile).innerHTML = `<i></i>${T.toggle}`;
+        const dist = Math.abs(r - 1.5) + Math.abs(c - 1);
+        tl.fromTo(tile, { scale: 0.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.7)" }, B(6) + 0.08 + dist * 0.07);
+      });
+      tl.to("#shift-toggle", { scale: 0.47, x: 0, y: 70, opacity: 0, duration: 0.3, ease: "power3.inOut" }, B(6));
+      tl.fromTo(lbl, { opacity: 0 }, { opacity: 1, duration: 0.2 }, B(6) + 0.1);
+      tl.fromTo("#shift-grid", { scale: 1.25 }, { scale: 1, duration: 0.6, ease: "expo.out" }, B(6));
+      tl.to("#shift-grid", { scale: 0.96, duration: S.dur - B(6) - 0.6, ease: "none" }, B(6) + 0.6);
+
+      // Exit: whip left.
+      tl.to("#shift-cam", { x: -1080, filter: "blur(12px)", duration: 0.2, ease: "power3.in" }, S.dur - 0.2);
+
+      window.__timelines["shift"] = tl;
+    })();
+  </script>
+</template>

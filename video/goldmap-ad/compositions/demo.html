@@ -1,0 +1,147 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #demo-cam { position: absolute; inset: 0; }
+    #demo-lines { position: absolute; left: 50px; right: 50px; top: 280px; height: 330px; }
+    #demo-lines .dl { position: absolute; left: 0; right: 0; top: 0; text-align: center; font-size: 160px; opacity: 0; }
+    #demo-wrap { position: absolute; left: 60px; top: 660px; width: 960px; height: 820px; transform-origin: 50% 0%; }
+    #demo-card { position: absolute; inset: 0; border-radius: 30px; background: #111118; border: 2px solid #2b2b36; overflow: hidden; }
+    #demo-chart { position: absolute; left: 0; top: 0; }
+    #demo-cap { left: 30px; top: 22px; }
+    #demo-scan { position: absolute; top: 70px; left: 0; width: 160px; height: 720px; opacity: 0;
+      background: linear-gradient(90deg, rgba(212,167,60,0) 0%, rgba(212,167,60,0.28) 70%, rgba(244,210,122,0.95) 96%, rgba(244,210,122,0) 100%); }
+    #demo-ov { position: absolute; left: 0; top: 0; }
+    .otag { position: absolute; right: 18px; padding: 8px 18px; border-radius: 10px; font-family: "Inter"; font-weight: 800; font-size: 30px; letter-spacing: 0.04em; opacity: 0; }
+    #demo-tag-buy { background: var(--green); color: #052e14; }
+    #demo-tag-tp { background: var(--gold); color: #2a1f05; }
+    #demo-icons { position: absolute; left: 60px; right: 60px; top: 760px; height: 420px; }
+    .ic { position: absolute; top: 0; width: 290px; height: 290px; border-radius: 50%; background: #17171f; border: 3px solid rgba(212,167,60,0.6);
+      box-shadow: 0 0 60px rgba(212,167,60,0.25); opacity: 0; }
+    .ic svg { position: absolute; inset: 0; }
+  </style>
+  <div id="root" data-composition-id="demo" data-width="1080" data-height="1920">
+    <div id="demo-cam">
+      <div id="demo-lines" class="disp">
+        <div id="demo-l0" class="dl"><div id="demo-l0i"></div></div>
+        <div id="demo-l1" class="dl"><div id="demo-l1i"></div></div>
+        <div id="demo-l2" class="dl"><div id="demo-l2i"></div></div>
+      </div>
+      <div id="demo-wrap">
+        <div id="demo-card">
+          <div id="demo-chart"></div>
+          <div id="demo-scan"></div>
+          <svg id="demo-ov" width="960" height="820" viewBox="0 0 960 820"></svg>
+          <div id="demo-tag-buy" class="otag"></div>
+          <div id="demo-tag-tp" class="otag"></div>
+          <div id="demo-cap" class="gm-chartcap"></div>
+        </div>
+      </div>
+      <div id="demo-icons">
+        <div id="demo-ic0" class="ic" style="left: 0px">
+          <svg viewBox="0 0 290 290">
+            <g id="demo-steam" stroke="#F4D27A" stroke-width="9" stroke-linecap="round" fill="none" opacity="0.85">
+              <path d="M112 92 C 100 72 124 62 112 40" /><path d="M146 92 C 134 72 158 62 146 40" /><path d="M180 92 C 168 72 192 62 180 40" />
+            </g>
+            <path d="M80 110 L210 110 L200 200 C 198 216 186 226 170 226 L120 226 C 104 226 92 216 90 200 Z" fill="#D4A73C" />
+            <path d="M208 128 C 246 128 246 184 204 184" fill="none" stroke="#D4A73C" stroke-width="14" />
+            <rect x="70" y="232" width="150" height="12" rx="6" fill="#8C6A1E" />
+          </svg>
+        </div>
+        <div id="demo-ic1" class="ic" style="left: 335px">
+          <svg viewBox="0 0 290 290">
+            <path d="M170 60 A 90 90 0 1 0 230 190 A 72 72 0 1 1 170 60 Z" fill="#F4D27A" />
+            <g id="demo-z" font-family="Bebas Neue" fill="#FFFFFF">
+              <text id="demo-z1" x="196" y="104" font-size="58">Z</text>
+              <text id="demo-z2" x="226" y="70" font-size="44">Z</text>
+            </g>
+          </svg>
+        </div>
+        <div id="demo-ic2" class="ic" style="left: 670px">
+          <svg viewBox="0 0 290 290">
+            <circle cx="145" cy="145" r="96" fill="none" stroke="#D4A73C" stroke-width="14" />
+            <g fill="#D4A73C"><circle cx="145" cy="62" r="6" /><circle cx="228" cy="145" r="6" /><circle cx="145" cy="228" r="6" /><circle cx="62" cy="145" r="6" /></g>
+            <line id="demo-hh" x1="145" y1="145" x2="145" y2="98" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round" />
+            <line id="demo-mh" x1="145" y1="145" x2="145" y2="72" stroke="#F4D27A" stroke-width="8" stroke-linecap="round" />
+            <circle cx="145" cy="145" r="10" fill="#FFFFFF" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.demo, col = C.colors;
+      const S = GM.slot("demo"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      // Lines, one per 6 beats.
+      const lt = [0, B(6), B(12)];
+      T.beats.forEach((txt, i) => {
+        const inner = document.getElementById("demo-l" + i + "i");
+        const ws = GM.words(inner, txt);
+        tl.set("#demo-l" + i, { opacity: 1 }, lt[i]);
+        GM.slamLine(tl, inner, ws, lt[i], { from: 1.5, blur: 10, stagger: 0.06 });
+        if (i < 2) tl.to("#demo-l" + i, { opacity: 0, filter: "blur(10px)", duration: 0.12 }, lt[i + 1] - 0.1);
+      });
+
+      // Chart: 30 candles on screen, 8 more form during "It executes."
+      const N = 38, PRE = 30;
+      const candles = GM.candles(C.chart.seeds.demo, N, { vol: 1, drift: (i) => (i < 22 ? -0.05 : i < PRE ? 0.02 : 0.18) });
+      const ch = GM.chart(document.getElementById("demo-chart"), candles, { w: 960, h: 820, step: 24, padT: 110, padB: 60, scaleW: 0, seedId: 404, x0: 20 });
+      document.getElementById("demo-cap").innerHTML = `<b>${C.chart.symbol}</b> · ${C.chart.timeframe}`;
+      GM.label(document.getElementById("demo-wrap"), { right: "24px", top: "18px" });
+      tl.set(ch.bid, { attr: { y1: ch.items[PRE - 1].yC, y2: ch.items[PRE - 1].yC } }, 0);
+      tl.fromTo("#demo-wrap", { y: 120, opacity: 0.3 }, { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, 0);
+
+      // 1) It waits for its setup: a scan beam sweeps, then a structure bracket.
+      tl.fromTo("#demo-scan", { x: -160, opacity: 1 }, { x: ch.x(PRE - 1) - 140, opacity: 1, duration: 1.4, ease: "power1.inOut" }, 0.2);
+      tl.to("#demo-scan", { opacity: 0, duration: 0.2 }, 1.6);
+      const ov = document.getElementById("demo-ov");
+      let lo = -Infinity, hi = Infinity; // screen y of the lowest low / highest high
+      for (let i = 22; i < PRE; i++) { lo = Math.max(lo, ch.y(ch.items[i].k.l)); hi = Math.min(hi, ch.y(ch.items[i].k.h)); }
+      const bx = ch.x(22) - 22, bw = ch.x(PRE - 1) - ch.x(22) + 44;
+      const br = GM.el("rect", { x: bx, y: hi - 22, width: bw, height: lo - hi + 44, rx: 18, fill: "rgba(212,167,60,0.08)", stroke: col.gold, "stroke-width": 4, "stroke-dasharray": "14 10" }, ov);
+      tl.fromTo(br, { opacity: 0, scale: 1.3, svgOrigin: `${bx + bw / 2} ${(hi + lo) / 2}` }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, B(3) + 0.1);
+      tl.to(br, { opacity: 0.35, duration: 0.4 }, B(6));
+
+      // 2) It executes: BUY line and basket TP line draw themselves (no money values).
+      const entryY = ch.items[PRE - 1].yC, tpY = entryY - 250;
+      const buyL = GM.el("line", { x1: 0, x2: 960, y1: entryY, y2: entryY, stroke: col.green, "stroke-width": 4, "stroke-dasharray": "16 10" }, ov);
+      const tpL = GM.el("line", { x1: 0, x2: 960, y1: tpY, y2: tpY, stroke: col.gold, "stroke-width": 4, "stroke-dasharray": "16 10" }, ov);
+      const tri = GM.el("path", { d: `M ${ch.x(PRE - 1) + 24} ${entryY + 46} l 22 -34 l 22 34 z`, fill: col.green }, ov);
+      document.getElementById("demo-tag-buy").textContent = T.orderBuy;
+      document.getElementById("demo-tag-tp").textContent = T.orderTp;
+      document.getElementById("demo-tag-buy").style.top = entryY - 28 + "px";
+      document.getElementById("demo-tag-tp").style.top = tpY - 28 + "px";
+      tl.fromTo(buyL, { attr: { x1: 960 } }, { attr: { x1: 0 }, duration: 0.3, ease: "expo.out" }, B(6) + 0.04);
+      tl.fromTo("#demo-tag-buy", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.2, ease: "expo.out" }, B(6) + 0.1);
+      tl.fromTo(tri, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.2, ease: "back.out(2)" }, B(6) + 0.1);
+      tl.fromTo(tpL, { attr: { x1: 960 } }, { attr: { x1: 0 }, duration: 0.3, ease: "expo.out" }, B(8) + 0.04);
+      tl.fromTo("#demo-tag-tp", { opacity: 0, x: 40 }, { opacity: 1, x: 0, duration: 0.2, ease: "expo.out" }, B(8) + 0.1);
+      GM.shake(tl, "#demo-wrap", B(6), { amp: 8, dur: 0.16, seed: 51 });
+      for (let i = PRE; i < N; i++) {
+        const it = ch.items[i];
+        it.g.setAttribute("opacity", 0);
+        const t = B(7) + (i - PRE) * 0.4;
+        GM.growCandle(tl, it, t, 0.3, "power1.out");
+        tl.to(ch.bid, { attr: { y1: it.yC, y2: it.yC }, duration: 0.3, ease: "power1.out" }, t);
+      }
+
+      // 3) You live your life: chart steps back, everyday icons pop on the beat.
+      tl.to("#demo-card", { opacity: 0.3, duration: 0.3 }, B(12));
+      tl.to("#demo-wrap", { scale: 0.92, y: 40, duration: 0.5, ease: "power3.out" }, B(12));
+      [0, 1, 2].forEach((k) => {
+        tl.fromTo("#demo-ic" + k, { opacity: 0, scale: 0.3, y: 60 }, { opacity: 1, scale: 1, y: 0, duration: 0.32, ease: "back.out(2)" }, B(13 + k));
+      });
+      tl.fromTo("#demo-steam", { y: 8, opacity: 0.4 }, { y: -10, opacity: 1, duration: 0.5, yoyo: true, repeat: 3, ease: "sine.inOut" }, B(13));
+      tl.fromTo("#demo-z", { y: 10 }, { y: -14, duration: 0.6, yoyo: true, repeat: 2, ease: "sine.inOut" }, B(14));
+      tl.fromTo("#demo-mh", { rotation: 0, svgOrigin: "145 145" }, { rotation: 1440, duration: S.dur - B(15), ease: "none" }, B(15));
+      tl.fromTo("#demo-hh", { rotation: 0, svgOrigin: "145 145" }, { rotation: 120, duration: S.dur - B(15), ease: "none" }, B(15));
+
+      // Exit: icons and chart drop away quickly.
+      tl.to("#demo-cam", { y: -140, opacity: 0, filter: "blur(10px)", duration: 0.18, ease: "power3.in" }, S.dur - 0.18);
+
+      window.__timelines["demo"] = tl;
+    })();
+  </script>
+</template>

@@ -1,0 +1,74 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; font-weight: 400; src: url("assets/fonts/Anton-400.woff2") format("woff2"); }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #how-cam { position: absolute; inset: 0; }
+    #how-bgchart { position: absolute; left: 0; top: 420px; width: 1080px; height: 1100px; opacity: 0.42; filter: blur(7px); }
+    #how-title { position: absolute; left: 70px; top: 284px; font-size: 130px; color: var(--gold); }
+    #how-cards { position: absolute; left: 70px; top: 450px; width: 940px; height: 1060px; }
+    .hcard { position: absolute; left: 0; width: 940px; height: 316px; border-radius: 28px; background: rgba(20,20,27,0.94);
+      border: 3px solid #2b2b36; overflow: hidden; display: flex; align-items: center; }
+    .hcard .num { width: 210px; flex: none; text-align: center; font-family: "Anton", sans-serif; font-size: 150px; line-height: 1; color: var(--gold); }
+    .hcard .sep { width: 3px; height: 200px; flex: none; background: rgba(212,167,60,0.4); }
+    .hcard .txt { padding: 0 36px 0 40px; }
+    .hcard .tt { font-family: "Bebas Neue"; font-size: 92px; line-height: 0.92; color: #fff; text-transform: uppercase; }
+    .hcard .sb { margin-top: 14px; font-family: "Inter"; font-weight: 500; font-size: 34px; line-height: 1.25; color: #c4c4cf; }
+    .hcard .bar { position: absolute; left: 0; bottom: 0; height: 8px; width: 940px; background: var(--gold); transform-origin: 0 50%; }
+  </style>
+  <div id="root" data-composition-id="how" data-width="1080" data-height="1920">
+    <div id="how-cam">
+      <div id="how-bgchart"></div>
+      <div id="how-title" class="disp"></div>
+      <div id="how-cards">
+        <div id="how-c0" class="hcard"><div class="num"></div><div class="sep"></div><div class="txt"><div class="tt"></div><div class="sb"></div></div><div id="how-b0" class="bar"></div></div>
+        <div id="how-c1" class="hcard"><div class="num"></div><div class="sep"></div><div class="txt"><div class="tt"></div><div class="sb"></div></div><div id="how-b1" class="bar"></div></div>
+        <div id="how-c2" class="hcard"><div class="num"></div><div class="sep"></div><div class="txt"><div class="tt"></div><div class="sb"></div></div><div id="how-b2" class="bar"></div></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.how;
+      const S = GM.slot("how"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      // Blurred chart behind the cards; the label stays sharp.
+      const candles = GM.candles(C.chart.seeds.how, 70, { vol: 1, drift: 0.04 });
+      const ch = GM.chart(document.getElementById("how-bgchart"), candles, { w: 1080 + 70 * 30, h: 1100, step: 30, padT: 80, padB: 80, scaleW: 0, seedId: 505 });
+      tl.fromTo(ch.plot, { x: 0 }, { x: -900, duration: S.dur, ease: "none" }, 0);
+      ch.bid.setAttribute("opacity", 0);
+      GM.label(document.getElementById("how-cam"), { right: "70px", top: "312px" });
+
+      document.getElementById("how-title").textContent = T.title;
+      GM.slam(tl, "#how-title", 0, { from: 1.5 });
+      tl.fromTo("#how-bgchart", { scale: 1.1 }, { scale: 1, duration: S.dur, ease: "none" }, 0);
+
+      // Three cards, one every 6 beats (~2.4 s each).
+      const starts = [B(1), B(7), B(13)];
+      T.cards.forEach((c, i) => {
+        const card = document.getElementById("how-c" + i);
+        card.style.top = i * 340 + "px";
+        card.querySelector(".num").textContent = c.num;
+        card.querySelector(".tt").textContent = c.title;
+        card.querySelector(".sb").textContent = c.sub;
+        const t = starts[i];
+        tl.fromTo(card, { x: 1100, opacity: 1, filter: "blur(14px)" }, { x: 0, filter: "blur(0px)", duration: 0.5, ease: "expo.out" }, t);
+        tl.fromTo(card.querySelector(".num"), { scale: 1.8, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "expo.out" }, t + 0.18);
+        tl.fromTo(card, { borderColor: "#2b2b36", boxShadow: "0 0 0px rgba(212,167,60,0)" }, { borderColor: "#D4A73C", boxShadow: "0 0 50px rgba(212,167,60,0.35)", duration: 0.2 }, t + 0.2);
+        const end = i < 2 ? starts[i + 1] : S.dur - 0.3;
+        tl.fromTo("#how-b" + i, { scaleX: 0 }, { scaleX: 1, duration: end - t - 0.2, ease: "none" }, t + 0.2);
+        if (i < 2) {
+          tl.to(card, { borderColor: "#2b2b36", boxShadow: "0 0 0px rgba(212,167,60,0)", opacity: 0.6, duration: 0.25 }, end);
+          tl.to("#how-b" + i, { opacity: 0, duration: 0.2 }, end);
+        }
+        GM.shake(tl, "#how-cards", t + 0.05, { amp: 6, dur: 0.14, seed: 60 + i });
+      });
+
+      // Exit: cards whip out left, staggered.
+      [0, 1, 2].forEach((i) => tl.to("#how-c" + i, { x: -1100, filter: "blur(12px)", duration: 0.22, ease: "power3.in" }, S.dur - 0.26 + i * 0.03));
+      tl.to("#how-title", { opacity: 0, duration: 0.15 }, S.dur - 0.18);
+
+      window.__timelines["how"] = tl;
+    })();
+  </script>
+</template>

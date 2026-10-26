@@ -1,0 +1,5 @@
+node_modules/
+.hyperframes/
+*.log
+!assets/*.wav
+!assets/audio/*.wav

@@ -1,0 +1,19 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    #risk-text { position: absolute; left: 80px; right: 80px; top: 1396px; text-align: center; font-family: "Inter", sans-serif;
+      font-weight: 500; font-size: 28px; line-height: 1.38; color: #b9b9c4; text-shadow: 0 2px 8px rgba(0,0,0,0.8); }
+  </style>
+  <div id="root" data-composition-id="risk" data-width="1080" data-height="1920">
+    <div id="risk-text"></div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG;
+      const tl = gsap.timeline({ paused: true });
+      document.getElementById("risk-text").textContent = C.text.cta.disclaimer;
+      tl.fromTo("#risk-text", { opacity: 0 }, { opacity: 1, duration: 0.25 }, 0.1);
+      window.__timelines["risk"] = tl;
+    })();
+  </script>
+</template>

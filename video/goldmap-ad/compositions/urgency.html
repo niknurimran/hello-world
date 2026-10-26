@@ -1,0 +1,72 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #urg-cam { position: absolute; inset: 0; }
+    #urg-pulse-r, #urg-pulse-g { position: absolute; left: -200px; top: 240px; width: 1480px; height: 1480px; border-radius: 50%; opacity: 0; }
+    #urg-pulse-r { background: radial-gradient(circle, rgba(239,68,68,0.45) 0%, rgba(239,68,68,0.1) 40%, rgba(239,68,68,0) 66%); }
+    #urg-pulse-g { background: radial-gradient(circle, rgba(212,167,60,0.45) 0%, rgba(212,167,60,0.1) 40%, rgba(212,167,60,0) 66%); }
+    #urg-text { position: absolute; left: 50px; right: 50px; top: 320px; text-align: center; }
+    #urg-text .ln { display: block; font-size: 214px; }
+    #urg-lbl { position: absolute; left: 90px; top: 860px; font-family: "Inter"; font-weight: 800; font-size: 34px; letter-spacing: 0.2em; color: var(--mute); text-transform: uppercase; }
+    #urg-bar { position: absolute; left: 90px; top: 916px; width: 900px; height: 120px; border-radius: 22px; border: 3px solid rgba(212,167,60,0.7); padding: 12px; display: flex; gap: 10px; }
+    .seg { flex: 1; border-radius: 10px; background: var(--gold); }
+    #urg-band { position: absolute; left: -100px; width: 1400px; top: 1180px; height: 140px; background: var(--gold); transform: rotate(-4deg); overflow: hidden; }
+    #urg-marq { position: absolute; left: 0; top: 14px; white-space: nowrap; font-family: "Bebas Neue"; font-size: 116px; line-height: 1; color: #0b0b0f; }
+  </style>
+  <div id="root" data-composition-id="urgency" data-width="1080" data-height="1920">
+    <div id="urg-cam">
+      <div id="urg-pulse-r"></div>
+      <div id="urg-pulse-g"></div>
+      <div id="urg-text" class="disp"><span id="urg-l1" class="ln"></span><span id="urg-l2" class="ln acc"></span></div>
+      <div id="urg-lbl"></div>
+      <div id="urg-bar"></div>
+      <div id="urg-band" data-layout-ignore><div id="urg-marq"></div></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.urgency;
+      const S = GM.slot("urgency"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      // Pulse red / gold, alternating every beat.
+      for (let b = 0; b < S.beats; b++) {
+        const id = b % 2 ? "#urg-pulse-g" : "#urg-pulse-r";
+        tl.fromTo(id, { opacity: 1, scale: 0.85 }, { opacity: 0, scale: 1.1, duration: GM.beat(1) * 1.6, ease: "power2.out", immediateRender: false }, B(b));
+      }
+
+      // Headline.
+      const w1 = GM.words(document.getElementById("urg-l1"), T.lines[0]);
+      const w2 = GM.words(document.getElementById("urg-l2"), T.lines[1]);
+      GM.slamLine(tl, document.getElementById("urg-l1"), w1, 0, { from: 1.7 });
+      GM.slamLine(tl, document.getElementById("urg-l2"), w2, B(2), { from: 1.7 });
+      GM.shake(tl, "#urg-cam", 0, { amp: 18, dur: 0.26, seed: 71 });
+      GM.shake(tl, "#urg-cam", B(2), { amp: 12, dur: 0.2, seed: 72 });
+
+      // Slot bar: segments drain from the right; the last ones flash red/gold. No counts shown.
+      document.getElementById("urg-lbl").textContent = T.barLabel;
+      const bar = document.getElementById("urg-bar");
+      const N = 12, KEEP = 3;
+      const segs = Array.from({ length: N }, () => GM.el("div", { class: "seg" }, bar));
+      tl.fromTo("#urg-bar", { scaleX: 0, transformOrigin: "0% 50%" }, { scaleX: 1, duration: 0.35, ease: "expo.out" }, B(1));
+      tl.fromTo("#urg-lbl", { opacity: 0 }, { opacity: 1, duration: 0.2 }, B(1));
+      for (let k = N - 1; k >= KEEP; k--) {
+        const t = B(3) + (N - 1 - k) * 0.16;
+        tl.to(segs[k], { backgroundColor: "#26262F", scaleY: 0.35, duration: 0.12, ease: "power3.in" }, t);
+      }
+      for (let b = 4; b < S.beats; b++) {
+        tl.fromTo(segs.slice(0, KEEP), { backgroundColor: "#EF4444" }, { backgroundColor: "#D4A73C", duration: GM.beat(1) * 0.9, ease: "power1.in", immediateRender: false }, B(b));
+      }
+
+      // Marquee band.
+      document.getElementById("urg-marq").textContent = (T.lines.join(" · ") + " · ").repeat(6);
+      tl.fromTo("#urg-band", { y: 220, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: "expo.out" }, B(3));
+      tl.fromTo("#urg-marq", { x: 0 }, { x: -900, duration: S.dur, ease: "none" }, 0);
+
+      // Exit: dip and punch toward the end card.
+      tl.to("#urg-cam", { scale: 1.15, opacity: 0, duration: 0.16, ease: "power3.in" }, S.dur - 0.16);
+
+      window.__timelines["urgency"] = tl;
+    })();
+  </script>
+</template>

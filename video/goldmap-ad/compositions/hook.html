@@ -1,0 +1,92 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    #hook-cam { position: absolute; inset: 0; }
+    #hook-chartbox { position: absolute; left: 0; top: 760px; width: 1080px; height: 800px; }
+    #hook-chartwrap { position: absolute; inset: 0; }
+    #hook-flash { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 70%, rgba(239,68,68,0.55), rgba(239,68,68,0) 62%); opacity: 0; }
+    #hook-text { position: absolute; left: 70px; right: 70px; top: 290px; text-align: center; }
+    #hook-text .ln { display: block; font-size: 196px; }
+    #hook-text .acc-red { text-shadow: 0 0 40px rgba(239,68,68,0.45); }
+    #hook-cap { left: 40px; top: 18px; }
+  </style>
+  <div id="root" data-composition-id="hook" data-width="1080" data-height="1920">
+    <div id="hook-cam">
+      <div id="hook-flash"></div>
+      <div id="hook-chartbox">
+        <div id="hook-chartwrap"></div>
+        <div id="hook-cap" class="gm-chartcap"></div>
+      </div>
+      <div id="hook-text" class="disp">
+        <span id="hook-l1" class="ln"></span>
+        <span id="hook-l2" class="ln"></span>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      const C = window.GM_CONFIG, GM = window.GM, T = C.text.hook;
+      const S = GM.slot("hook"), B = S.lb;
+      const tl = gsap.timeline({ paused: true });
+
+      // --- Chart: a fast stream, one huge red candle on the downbeat of bar 1.5 ---
+      const N = 64, CRASH = 40;
+      const ev = {}; ev[CRASH] = -9; ev[CRASH + 1] = -2.2; ev[CRASH + 2] = -1.6;
+      const candles = GM.candles(C.chart.seeds.hook, N, { vol: 1, drift: (i) => (i < CRASH ? 0.22 : -0.15), events: ev });
+      const box = document.getElementById("hook-chartbox");
+      const ch = GM.chart(document.getElementById("hook-chartwrap"), candles, { w: 1080, h: 800, step: 30, padT: 120, padB: 40, scaleW: 90, seedId: 101 });
+      document.getElementById("hook-cap").innerHTML = `<b>${C.chart.symbol}</b> · ${C.chart.timeframe}`;
+      GM.label(box, { right: "110px", top: "16px" });
+
+      // Reveal schedule: 0..CRASH-1 stream in before the crash beat, then slower.
+      const tCrash = B(3); // "EMOTIONS." lands on beat 3
+      const visible = 26; // candles in view
+      let lastPre = null;
+      ch.items.forEach((it, i) => {
+        let t;
+        if (i < CRASH) t = tCrash - (CRASH - i) * 0.065;
+        else t = tCrash + (i - CRASH) * 0.16;
+        if (t > S.dur) { it.g.setAttribute("opacity", 0); return; }
+        if (t <= 0) { lastPre = it; return; } // already on screen at frame 0
+        if (i === CRASH) GM.growCandle(tl, it, t, 0.22, "expo.out");
+        else GM.growCandle(tl, it, t, i < CRASH ? 0.05 : 0.12);
+        // Keep the newest candle near the right edge: scroll the plot.
+        const shift = Math.max(0, i - visible) * ch.step;
+        tl.to(ch.plot, { x: -shift, duration: i < CRASH ? 0.03 : 0.16, ease: "none" }, t);
+        tl.to(ch.bid, { attr: { y1: it.yC, y2: it.yC }, duration: i < CRASH ? 0.03 : 0.12, ease: "none" }, t);
+      });
+
+      if (lastPre) tl.set(ch.bid, { attr: { y1: lastPre.yC, y2: lastPre.yC } }, 0);
+
+      // Camera: slow push on the chart, punch on the crash.
+      tl.fromTo("#hook-chartwrap", { scale: 1.0, transformOrigin: "70% 50%" }, { scale: 1.12, duration: S.dur, ease: "none" }, 0);
+      tl.fromTo("#hook-flash", { opacity: 0 }, { opacity: 1, duration: 0.05 }, tCrash);
+      tl.to("#hook-flash", { opacity: 0.25, duration: 0.6, ease: "power2.out" }, tCrash + 0.05);
+      GM.shake(tl, "#hook-cam", tCrash, { amp: 26, dur: 0.36, rot: 0.8, seed: 9 });
+      GM.shake(tl, "#hook-cam", 0, { amp: 14, dur: 0.2, seed: 3 });
+
+      // --- Text: one word per beat, frame 0 already shows "STOP" ---
+      const w1 = GM.words(document.getElementById("hook-l1"), T.lines[0]);
+      const w2 = GM.words(document.getElementById("hook-l2"), T.lines[1], T.accent, "acc-red");
+      const words = w1.concat(w2);
+      words.forEach((w, i) => {
+        // Frame 0 is the thumbnail: the first line is already on screen, punching in.
+        if (i < w1.length) return; // the whole first line punches in together (below)
+        else {
+          tl.set(w, { opacity: 0 }, 0);
+          GM.slam(tl, w, B(i), { from: i === words.length - 1 ? 1.7 : 1.5, origin: "0% 0%" });
+        }
+      });
+
+      tl.fromTo("#hook-l1", { scale: 1.12 }, { scale: 1, duration: 0.22, ease: "expo.out" }, 0);
+
+      // Exit: glitch the whole frame out on the last beat.
+      const gl = document.getElementById("hook-cam");
+      GM.glitch(tl, gl, B(7), { frames: 6, amp: 40, seed: 77 });
+      tl.to("#hook-text", { scale: 1.08, duration: B(8) - B(7), ease: "power3.in" }, B(7));
+      tl.to(gl, { opacity: 0, duration: 0.07 }, S.dur - 0.07);
+
+      window.__timelines["hook"] = tl;
+    })();
+  </script>
+</template>
