@@ -61,6 +61,26 @@ def source(name):
 
 
 @lru_cache(None)
+def clip_frames(name, start, dur):
+    """Decode part of a video source to 1080x1920 RGB frames (cover-cropped)."""
+    rel, _ = SOURCES[name]
+    path = ASSETS / rel
+    fps = float(eval(subprocess.run(
+        ["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries",
+         "stream=r_frame_rate", "-of", "csv=p=0", str(path)],
+        check=True, capture_output=True, text=True).stdout.strip()))
+    raw = subprocess.run(
+        ["ffmpeg", "-hide_banner", "-loglevel", "error", "-ss", f"{start:.3f}", "-i", str(path),
+         "-t", f"{dur:.3f}", "-vf", f"scale={W}:{H}:force_original_aspect_ratio=increase,"
+         f"crop={W}:{H}", "-f", "rawvideo", "-pix_fmt", "rgb24", "-"],
+        check=True, capture_output=True).stdout
+    n = len(raw) // (W * H * 3)
+    frames = [Image.frombuffer("RGB", (W, H), raw[i * W * H * 3:(i + 1) * W * H * 3])
+              for i in range(n)]
+    return frames, fps
+
+
+@lru_cache(None)
 def font(size):
     return ImageFont.truetype(str(FONT_ANTON), size)
 
@@ -93,10 +113,15 @@ class Shot:
         self.e = entry
         self.spec = dict(SHOTS[entry["shot"]])
         self.t0, self.t1 = entry["start"], entry["end"]
-        self.img = source(self.spec["src"])
+        if self.spec["mode"] == "video":
+            self.img = None
+            self.frames, self.vfps = clip_frames(self.spec["src"], self.spec["clip"],
+                                                 round(self.t1 - self.t0 + 0.2, 2))
+        else:
+            self.img = source(self.spec["src"])
         self.rng = random.Random(seed)
         self.phase = [self.rng.uniform(0, 6.28) for _ in range(3)]
-        if self.spec["mode"] == "fill" and entry.get("reverse"):
+        if self.spec["mode"] in ("fill", "video") and entry.get("reverse"):
             self.spec["v0"], self.spec["v1"] = self.spec["v1"], self.spec["v0"]
         if self.spec["mode"] == "card":
             self._prepare_card()
@@ -138,7 +163,10 @@ class Shot:
         dx, dy, rot = self.shake(t)
         if dx or dy:
             w *= 0.94  # margin so shake never reveals an edge
-        im = render_view(self.img, (cx, cy, w), rot, dx, dy)
+        img = self.img
+        if img is None:   # video: source frame at this moment, real-time speed
+            img = self.frames[min(int((t - self.t0) * self.vfps), len(self.frames) - 1)]
+        im = render_view(img, (cx, cy, w), rot, dx, dy)
         scale = W / w
         if scale > 1.25:
             im = im.filter(ImageFilter.UnsharpMask(radius=2.2, percent=55, threshold=2))
@@ -345,7 +373,7 @@ class Labels:
 
 # ---------------------------------------------------------------- CTA
 def selfie_circle():
-    img = source("senyum")
+    img = source(CTA.get("circle_src", "senyum"))
     cx, cy = CTA["selfie_center"]
     r = CTA["selfie_radius"]
     d = CTA["circle_d"]
@@ -465,6 +493,32 @@ class CtaOverlay:
                              pop(at - 0.3, 0.36) * 0.82, 0)
 
 
+# ---------------------------------------------------------------- alert
+ALERT_RED = (225, 18, 32)
+ALARM_PERIOD = 0.5   # one high + one low tone
+
+
+def alert_pulse(lt):
+    """Visual flash strength: peaks on each high alarm tone, then decays."""
+    return 0.25 + 0.75 * math.exp(-(lt % ALARM_PERIOD) / 0.14)
+
+
+def alarm(dur):
+    """Two-tone warning alarm (hi/lo), soft-edged so it sits under the VO."""
+    n = int(dur * SR)
+    t = np.arange(n) / SR
+    half = ALARM_PERIOD / 2
+    hi = (t % ALARM_PERIOD) < half
+    f = np.where(hi, 1046.0, 784.0)
+    ph = 2 * np.pi * np.cumsum(f) / SR
+    y = np.sin(ph) + 0.28 * np.sin(3 * ph) + 0.1 * np.sin(5 * ph)
+    lt = t % half
+    gate = np.clip(lt / 0.01, 0, 1) * np.clip((half - 0.03 - lt) / 0.015, 0, 1)
+    fade = np.clip((dur - t) / 0.3, 0, 1)
+    y = y * gate * fade
+    return (y / np.abs(y).max()).astype(np.float32)
+
+
 # ---------------------------------------------------------------- frame
 class Composer:
     def __init__(self, plan):
@@ -475,6 +529,11 @@ class Composer:
         self.labels = Labels(plan)
         self.cta = CtaOverlay(plan)
         self.reveal_t = [s.t0 for s in self.shots if s.spec.get("reveal")]
+        self.alert = [(sc["start"], sc["end"]) for sc, b in zip(plan["scenes"], BEATS)
+                      if b.get("alert")]
+        yy, xx = np.mgrid[0:H, 0:W].astype(np.float32)
+        r = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2) / math.sqrt(2)
+        self.vignette = (np.clip((r - 0.32) / 0.68, 0, 1) ** 1.5)[..., None]
 
     def shot_at(self, t):
         for s in self.shots:
@@ -483,7 +542,15 @@ class Composer:
         return self.shots[-1]
 
     def frame(self, t):
-        base = self.shot_at(t).frame(t).convert("RGBA")
+        base = self.shot_at(t).frame(t)
+        for a0, a1 in self.alert:   # red warning pulse, in time with the alarm
+            if a0 <= t < a1:
+                k = alert_pulse(t - a0) * clamp((a1 - t) / 0.3)
+                arr = np.asarray(base, dtype=np.float32)
+                alpha = k * (0.78 * self.vignette + 0.10)
+                arr = arr * (1 - alpha) + np.array(ALERT_RED, np.float32) * alpha
+                base = Image.fromarray(arr.astype(np.uint8))
+        base = base.convert("RGBA")
         for rt in self.reveal_t:   # white flash on the product reveal
             if 0 <= t - rt < 0.17:
                 a = int(200 * (1 - (t - rt) / 0.17))
@@ -543,6 +610,9 @@ def build_audio(plan):
             place(sfx, w, max(0, s["start"] - 0.22), -17)
         if SHOTS[s["shot"]].get("end_frame"):
             place(sfx, whoosh(0.35, seed=9), max(0, s["start"] - 0.12), -24)
+    for sc, beat in zip(plan["scenes"], BEATS):
+        if beat.get("alert"):
+            place(sfx, alarm(sc["end"] - sc["start"]), sc["start"], -27)
     p = pop_sfx()
     for sc in plan["scenes"]:
         place(sfx, p, sc["start"] + 0.02, -26)

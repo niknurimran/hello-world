@@ -45,8 +45,8 @@ MUSIC_LUFS = -20.0
 PRODUCT_SQUARE = (0, 681, 1170, 1851)
 
 SOURCES = {
-    "geram":  ("me/geram.jpg", "photo"),
-    "senyum": ("me/senyum.jpg", "photo"),
+    "cat_scratch": ("hook/cat_scratch.mp4", "video"),   # hook: cat pawing the glass
+    "cat_face": ("cta/cat_face.jpg", "photo"),          # CTA circle
     "p02": ("product/raw/p02_hero.png", "product"),          # 3 cats, living room
     "p03": ("product/raw/p03_ladder_pompom.png", "product"),  # ladder + pom-pom insets
     "p07": ("product/raw/p07_engineered.png", "product"),    # sisal/perch/base insets
@@ -58,12 +58,13 @@ SOURCES = {
 
 SHOTS = {
     # ---- 1 HOOK -------------------------------------------------------
-    "geram_punch": dict(src="geram", mode="fill", v0=(1000, 1288, 1449),
-                        v1=(900, 1430, 1080), motion="punch", shake=1.0),
-    "geram_tight": dict(src="geram", mode="fill", v0=(860, 1500, 880),
-                        v1=(860, 1545, 760), motion="kick", shake=0.6),
-    "geram_alt":   dict(src="geram", mode="fill", v0=(1150, 1330, 1000),
-                        v1=(1080, 1300, 1180), motion="kick", shake=0.5),
+    # "clip" is the start time (s) inside the source video
+    "cat_scratch_a": dict(src="cat_scratch", mode="video", clip=1.0,
+                          v0=(540, 960, 1080), v1=(540, 900, 900), motion="punch", shake=0.6),
+    "cat_scratch_b": dict(src="cat_scratch", mode="video", clip=5.6,
+                          v0=(560, 860, 820), v1=(560, 860, 720), motion="kick", shake=0.4),
+    "cat_scratch_c": dict(src="cat_scratch", mode="video", clip=8.4,
+                          v0=(540, 960, 1000), v1=(540, 960, 880), motion="kick", shake=0.4),
     # ---- 2 INTRO ------------------------------------------------------
     "hero_full":   dict(src="p02", mode="fill", v0=(592, 585, 650),
                         v1=(592, 600, 560), motion="ease", reveal=True),
@@ -125,7 +126,7 @@ FEATURES = [
 
 BEATS = [
     dict(id=1, name="HOOK", headline=["SOFA", "HANCUR?!"], color="yellow",
-         pool=["geram_punch", "geram_tight", "geram_alt"],
+         pool=["cat_scratch_a", "cat_scratch_b", "cat_scratch_c"], alert=True,
          kw=["sofa", "hancur", "cakar", "rosak", "koyak", "geram", "baru", "beli"]),
     dict(id=2, name="INTRO", headline=["CAT TREE", "KAYU SOLID"], color="white",
          pool=["hero_full", "tree_lounge", "tree_window", "tree_retro"],
@@ -147,7 +148,8 @@ BEATS = [
 ]
 
 CTA = dict(
-    selfie_center=(757, 790), selfie_radius=290,   # in senyum.jpg
+    circle_src="cat_face",
+    selfie_center=(960, 1330), selfie_radius=640,  # in cat_face.jpg
     circle_xy=(250, 905), circle_d=350,           # on screen
     price_text="RM77.60", price_kicker="HARGA",
     price_xy=(712, 905),

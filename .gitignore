@@ -7,3 +7,5 @@ assets/vo/*
 assets/product/raw/*
 assets/music/*
 !assets/**/.gitkeep
+assets/hook/*
+assets/cta/*
