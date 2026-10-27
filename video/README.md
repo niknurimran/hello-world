@@ -14,6 +14,7 @@ The first run downloads the Whisper `medium` model (about 1.5 GB) from huggingfa
 | Step | Script | Output |
 |---|---|---|
 | 1. Transcribe (word timestamps, Malay) | `transcribe.py` | `build/words_raw.json` |
+| 1b. *or* force-align the known script `video/script.txt` (pocketsphinx, no Whisper needed) | `align.py` | `build/words_raw.json` |
 | 2. Clean VO: high-pass, light denoise, drop false starts, shrink pauses > 0.3 s, −14 LUFS. Pitch and speed are never changed. | `clean_audio.py` | `build/vo_clean.wav`, `build/words.json`, `build/audio_edits.json` |
 | 3. Map phrases to 5 beats, cut into ≤ 2 s shots on word boundaries | `plan.py` | `build/plan.json`, `build/timeline.md` |
 | 4. Render 1080×1920 @ 30 fps, mix SFX (+ optional music) | `render.py` | `out/alvique_tiktok_ad.mp4`, `build/contact_sheet.jpg` |

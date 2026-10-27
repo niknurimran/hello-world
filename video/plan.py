@@ -192,7 +192,7 @@ def main():
                 if a and j == 0:
                     name, rev = a[1], a[1] in used
                     if a[2]:
-                        labels.append(dict(t=round(p0, 3), end=round(s1, 3), text=a[2]))
+                        labels.append(dict(t=round(p0, 3), end=round(p1, 3), text=a[2]))
                 else:
                     pool = [p for p in beat["pool"]
                             if p not in {x[1] for x in anchors}]
