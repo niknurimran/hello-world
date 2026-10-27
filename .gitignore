@@ -1,0 +1,9 @@
+build/
+out/
+__pycache__/
+# personal media and seller photos stay local (public repo)
+assets/me/*
+assets/vo/*
+assets/product/raw/*
+assets/music/*
+!assets/**/.gitkeep
