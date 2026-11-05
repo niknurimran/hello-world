@@ -1,0 +1,33 @@
+{
+  "name": "ceritafakta3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cerita Fakta 3D \u2014 vertical 3D fact videos (Remotion + three.js)",
+  "scripts": {
+    "dev": "remotion studio",
+    "typecheck": "tsc -p .",
+    "transcribe:v01": "node scripts/transcribe.mjs v01 public/audio/v01_sotong_kurita.wav medium",
+    "words:v01": "node scripts/make-words.mjs v01",
+    "stills:v01": "node scripts/stills.mjs V01-SotongKurita 25,101,190,300,397,611,840,1081,1359,1546",
+    "render:v01": "remotion render V01-SotongKurita out/V01_sotong_kurita.mp4 --gl=angle"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.3.0",
+    "@fontsource/jetbrains-mono": "^5.3.0",
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "@remotion/cli": "^4.0.541",
+    "@remotion/install-whisper-cpp": "^4.0.541",
+    "@remotion/media-utils": "^4.0.541",
+    "@remotion/three": "^4.0.541",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.541",
+    "three": "^0.180.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/three": "^0.180.0",
+    "typescript": "5.6"
+  }
+}
