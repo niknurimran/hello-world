@@ -1,0 +1,383 @@
+{
+ "source": "segments+char-length",
+ "duration": 26.75,
+ "lines": [
+  {
+   "text": "Kau tahu tak, benda yang kau nampak hari-hari...",
+   "start": 0.09,
+   "end": 3.22
+  },
+  {
+   "text": "ada cerita yang kau tak pernah dengar?",
+   "start": 3.64,
+   "end": 5.59
+  },
+  {
+   "text": "Kat akaun ni, setiap hari aku cerita satu fakta menarik.",
+   "start": 6.1,
+   "end": 9.86
+  },
+  {
+   "text": "Bukan cakap kosong.",
+   "start": 10.27,
+   "end": 11.34
+  },
+  {
+   "text": "Semua aku tunjuk dalam bentuk 3D, senang faham.",
+   "start": 11.7,
+   "end": 15.2
+  },
+  {
+   "text": "Haiwan, badan manusia, angkasa, benda dalam rumah.",
+   "start": 15.64,
+   "end": 19.51
+  },
+  {
+   "text": "Semua random.",
+   "start": 19.77,
+   "end": 20.89
+  },
+  {
+   "text": "Follow sekarang.",
+   "start": 21.28,
+   "end": 22.44
+  },
+  {
+   "text": "Esok, fakta pertama: haiwan yang ada tiga jantung.",
+   "start": 22.78,
+   "end": 26.6
+  }
+ ],
+ "words": [
+  {
+   "text": "Kau",
+   "start": 0.09,
+   "end": 0.254,
+   "line": 0
+  },
+  {
+   "text": "tahu",
+   "start": 0.254,
+   "end": 0.456,
+   "line": 0
+  },
+  {
+   "text": "tak,",
+   "start": 0.456,
+   "end": 0.62,
+   "line": 0
+  },
+  {
+   "text": "benda",
+   "start": 1.01,
+   "end": 1.439,
+   "line": 0
+  },
+  {
+   "text": "yang",
+   "start": 1.439,
+   "end": 1.802,
+   "line": 0
+  },
+  {
+   "text": "kau",
+   "start": 1.802,
+   "end": 2.099,
+   "line": 0
+  },
+  {
+   "text": "nampak",
+   "start": 2.099,
+   "end": 2.593,
+   "line": 0
+  },
+  {
+   "text": "hari-hari...",
+   "start": 2.593,
+   "end": 3.22,
+   "line": 0
+  },
+  {
+   "text": "ada",
+   "start": 3.64,
+   "end": 3.851,
+   "line": 1
+  },
+  {
+   "text": "cerita",
+   "start": 3.851,
+   "end": 4.204,
+   "line": 1
+  },
+  {
+   "text": "yang",
+   "start": 4.204,
+   "end": 4.462,
+   "line": 1
+  },
+  {
+   "text": "kau",
+   "start": 4.462,
+   "end": 4.674,
+   "line": 1
+  },
+  {
+   "text": "tak",
+   "start": 4.674,
+   "end": 4.885,
+   "line": 1
+  },
+  {
+   "text": "pernah",
+   "start": 4.885,
+   "end": 5.238,
+   "line": 1
+  },
+  {
+   "text": "dengar?",
+   "start": 5.238,
+   "end": 5.59,
+   "line": 1
+  },
+  {
+   "text": "Kat",
+   "start": 6.1,
+   "end": 6.441,
+   "line": 2
+  },
+  {
+   "text": "akaun",
+   "start": 6.441,
+   "end": 6.934,
+   "line": 2
+  },
+  {
+   "text": "ni,",
+   "start": 6.934,
+   "end": 7.2,
+   "line": 2
+  },
+  {
+   "text": "setiap",
+   "start": 7.33,
+   "end": 7.789,
+   "line": 2
+  },
+  {
+   "text": "hari",
+   "start": 7.789,
+   "end": 8.126,
+   "line": 2
+  },
+  {
+   "text": "aku",
+   "start": 8.126,
+   "end": 8.401,
+   "line": 2
+  },
+  {
+   "text": "cerita",
+   "start": 8.401,
+   "end": 8.86,
+   "line": 2
+  },
+  {
+   "text": "satu",
+   "start": 9.01,
+   "end": 9.238,
+   "line": 2
+  },
+  {
+   "text": "fakta",
+   "start": 9.238,
+   "end": 9.508,
+   "line": 2
+  },
+  {
+   "text": "menarik.",
+   "start": 9.508,
+   "end": 9.86,
+   "line": 2
+  },
+  {
+   "text": "Bukan",
+   "start": 10.27,
+   "end": 10.609,
+   "line": 3
+  },
+  {
+   "text": "cakap",
+   "start": 10.609,
+   "end": 10.949,
+   "line": 3
+  },
+  {
+   "text": "kosong.",
+   "start": 10.949,
+   "end": 11.34,
+   "line": 3
+  },
+  {
+   "text": "Semua",
+   "start": 11.7,
+   "end": 12.146,
+   "line": 4
+  },
+  {
+   "text": "aku",
+   "start": 12.146,
+   "end": 12.455,
+   "line": 4
+  },
+  {
+   "text": "tunjuk",
+   "start": 12.455,
+   "end": 12.969,
+   "line": 4
+  },
+  {
+   "text": "dalam",
+   "start": 12.969,
+   "end": 13.415,
+   "line": 4
+  },
+  {
+   "text": "bentuk",
+   "start": 13.415,
+   "end": 13.93,
+   "line": 4
+  },
+  {
+   "text": "3D,",
+   "start": 13.93,
+   "end": 14.17,
+   "line": 4
+  },
+  {
+   "text": "senang",
+   "start": 14.35,
+   "end": 14.805,
+   "line": 4
+  },
+  {
+   "text": "faham.",
+   "start": 14.805,
+   "end": 15.2,
+   "line": 4
+  },
+  {
+   "text": "Haiwan,",
+   "start": 15.64,
+   "end": 16.253,
+   "line": 5
+  },
+  {
+   "text": "badan",
+   "start": 16.253,
+   "end": 16.785,
+   "line": 5
+  },
+  {
+   "text": "manusia,",
+   "start": 16.785,
+   "end": 17.48,
+   "line": 5
+  },
+  {
+   "text": "angkasa,",
+   "start": 17.63,
+   "end": 18.44,
+   "line": 5
+  },
+  {
+   "text": "benda",
+   "start": 18.56,
+   "end": 18.877,
+   "line": 5
+  },
+  {
+   "text": "dalam",
+   "start": 18.877,
+   "end": 19.193,
+   "line": 5
+  },
+  {
+   "text": "rumah.",
+   "start": 19.193,
+   "end": 19.51,
+   "line": 5
+  },
+  {
+   "text": "Semua",
+   "start": 19.77,
+   "end": 20.29,
+   "line": 6
+  },
+  {
+   "text": "random.",
+   "start": 20.29,
+   "end": 20.89,
+   "line": 6
+  },
+  {
+   "text": "Follow",
+   "start": 21.28,
+   "end": 21.792,
+   "line": 7
+  },
+  {
+   "text": "sekarang.",
+   "start": 21.792,
+   "end": 22.44,
+   "line": 7
+  },
+  {
+   "text": "Esok,",
+   "start": 22.78,
+   "end": 23.16,
+   "line": 8
+  },
+  {
+   "text": "fakta",
+   "start": 23.41,
+   "end": 23.796,
+   "line": 8
+  },
+  {
+   "text": "pertama:",
+   "start": 23.796,
+   "end": 24.3,
+   "line": 8
+  },
+  {
+   "text": "haiwan",
+   "start": 24.62,
+   "end": 25.023,
+   "line": 8
+  },
+  {
+   "text": "yang",
+   "start": 25.023,
+   "end": 25.318,
+   "line": 8
+  },
+  {
+   "text": "ada",
+   "start": 25.318,
+   "end": 25.56,
+   "line": 8
+  },
+  {
+   "text": "tiga",
+   "start": 25.71,
+   "end": 26.06,
+   "line": 8
+  },
+  {
+   "text": "jantung.",
+   "start": 26.06,
+   "end": 26.6,
+   "line": 8
+  }
+ ]
+}

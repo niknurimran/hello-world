@@ -1,0 +1,114 @@
+{
+ "note": "Speech segments found with ffmpeg silencedetect (noise=-38dB, d=0.12s) on public/audio/v02_intro.mp3, mapped to the script.",
+ "duration": 26.75,
+ "segments": [
+  {
+   "line": 0,
+   "start": 0.09,
+   "end": 0.62,
+   "text": "Kau tahu tak,"
+  },
+  {
+   "line": 0,
+   "start": 1.01,
+   "end": 3.22,
+   "text": "benda yang kau nampak hari-hari..."
+  },
+  {
+   "line": 1,
+   "start": 3.64,
+   "end": 5.59,
+   "text": "ada cerita yang kau tak pernah dengar?"
+  },
+  {
+   "line": 2,
+   "start": 6.1,
+   "end": 7.2,
+   "text": "Kat akaun ni,"
+  },
+  {
+   "line": 2,
+   "start": 7.33,
+   "end": 8.86,
+   "text": "setiap hari aku cerita"
+  },
+  {
+   "line": 2,
+   "start": 9.01,
+   "end": 9.86,
+   "text": "satu fakta menarik."
+  },
+  {
+   "line": 3,
+   "start": 10.27,
+   "end": 11.34,
+   "text": "Bukan cakap kosong."
+  },
+  {
+   "line": 4,
+   "start": 11.7,
+   "end": 14.17,
+   "text": "Semua aku tunjuk dalam bentuk 3D,"
+  },
+  {
+   "line": 4,
+   "start": 14.35,
+   "end": 15.2,
+   "text": "senang faham."
+  },
+  {
+   "line": 5,
+   "start": 15.64,
+   "end": 17.48,
+   "text": "Haiwan, badan manusia,"
+  },
+  {
+   "line": 5,
+   "start": 17.63,
+   "end": 18.44,
+   "text": "angkasa,"
+  },
+  {
+   "line": 5,
+   "start": 18.56,
+   "end": 19.51,
+   "text": "benda dalam rumah."
+  },
+  {
+   "line": 6,
+   "start": 19.77,
+   "end": 20.89,
+   "text": "Semua random."
+  },
+  {
+   "line": 7,
+   "start": 21.28,
+   "end": 22.44,
+   "text": "Follow sekarang."
+  },
+  {
+   "line": 8,
+   "start": 22.78,
+   "end": 23.16,
+   "text": "Esok,"
+  },
+  {
+   "line": 8,
+   "start": 23.41,
+   "end": 24.3,
+   "text": "fakta pertama:"
+  },
+  {
+   "line": 8,
+   "start": 24.62,
+   "end": 25.56,
+   "text": "haiwan yang ada"
+  },
+  {
+   "line": 8,
+   "start": 25.71,
+   "end": 26.6,
+   "text": "tiga jantung."
+  }
+ ]
+}

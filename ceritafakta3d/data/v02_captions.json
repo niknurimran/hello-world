@@ -1,0 +1,51 @@
+{
+ "note": "Lines = caption groups of the intro VO (script from Nik). Times from ffmpeg silencedetect.",
+ "duration": 26.75,
+ "lines": [
+  {
+   "start": 0.09,
+   "end": 3.22,
+   "text": "Kau tahu tak, benda yang kau nampak hari-hari..."
+  },
+  {
+   "start": 3.64,
+   "end": 5.59,
+   "text": "ada cerita yang kau tak pernah dengar?"
+  },
+  {
+   "start": 6.1,
+   "end": 9.86,
+   "text": "Kat akaun ni, setiap hari aku cerita satu fakta menarik."
+  },
+  {
+   "start": 10.27,
+   "end": 11.34,
+   "text": "Bukan cakap kosong."
+  },
+  {
+   "start": 11.7,
+   "end": 15.2,
+   "text": "Semua aku tunjuk dalam bentuk 3D, senang faham."
+  },
+  {
+   "start": 15.64,
+   "end": 19.51,
+   "text": "Haiwan, badan manusia, angkasa, benda dalam rumah."
+  },
+  {
+   "start": 19.77,
+   "end": 20.89,
+   "text": "Semua random."
+  },
+  {
+   "start": 21.28,
+   "end": 22.44,
+   "text": "Follow sekarang."
+  },
+  {
+   "start": 22.78,
+   "end": 26.6,
+   "text": "Esok, fakta pertama: haiwan yang ada tiga jantung."
+  }
+ ]
+}
