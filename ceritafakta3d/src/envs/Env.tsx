@@ -4,7 +4,7 @@ import { ContactShadows } from '@react-three/drei';
 import { rand } from '../lib/easing';
 import { C } from '../lib/theme';
 
-export type EnvName = 'studio' | 'seabed' | 'deep' | 'lab' | 'darklab' | 'water' | 'night' | 'neon' | 'macro' | 'split';
+export type EnvName = 'studio' | 'seabed' | 'deep' | 'lab' | 'darklab' | 'water' | 'night' | 'neon' | 'macro' | 'split' | 'tomb' | 'space' | 'desert';
 
 /** CSS background drawn behind the (transparent) WebGL canvas. */
 export const ENV_BG: Record<EnvName, string> = {
@@ -17,10 +17,13 @@ export const ENV_BG: Record<EnvName, string> = {
   night: 'linear-gradient(180deg, #070B22 0%, #111A44 45%, #22306A 75%, #2E3D7A 100%)',
   neon: 'radial-gradient(ellipse at 50% 42%, #10182E 0%, #070A14 60%, #020306 100%)',
   macro: 'radial-gradient(ellipse at 50% 42%, #7A2A44 0%, #4A1328 50%, #22070F 100%)',
+  tomb: 'radial-gradient(ellipse at 50% 40%, #6A4426 0%, #3A2414 50%, #1A0F08 100%)',
+  space: 'radial-gradient(ellipse at 50% 40%, #1A1440 0%, #0A0820 55%, #020208 100%)',
+  desert: 'linear-gradient(180deg, #FFC98A 0%, #FFB27A 35%, #F2A06A 55%, #EBC48C 70%, #E8C48E 100%)',
   split: 'linear-gradient(90deg, #4FB8E8 0%, #3A9FD8 49.6%, #FFFFFF 49.6%, #FFFFFF 50.4%, #E6D3A3 50.4%, #D9C18A 100%)',
 };
 
-export const DARK_ENVS: EnvName[] = ['deep', 'darklab', 'night', 'neon', 'macro'];
+export const DARK_ENVS: EnvName[] = ['deep', 'darklab', 'night', 'neon', 'macro', 'tomb', 'space'];
 
 const FOG: Record<EnvName, [string, number, number] | null> = {
   studio: ['#B8BCC5', 14, 42],
@@ -33,6 +36,9 @@ const FOG: Record<EnvName, [string, number, number] | null> = {
   neon: ['#05070D', 6, 22],
   macro: ['#3A0F1F', 9, 24],
   split: null,
+  tomb: ['#2A190D', 7, 22],
+  space: null,
+  desert: ['#F0B985', 18, 55],
 };
 
 export const Lights: React.FC<{ env: EnvName; key2?: number }> = ({ env }) => {
@@ -169,6 +175,14 @@ export const Env: React.FC<{ env: EnvName; t: number; shadowScale?: number; deco
           <spotLight position={[0, 9, 2]} angle={0.38} penumbra={0.6} intensity={120} color="#FFF4E0" castShadow />
         </>
       )}
+      {env === 'tomb' && (
+        <>
+          <Floor color="#B58A55" />
+          <Particles t={t} n={40} color="#FFD9A0" size={0.025} area={[10, 8, 8]} speed={0.05} />
+        </>
+      )}
+      {env === 'desert' && <Floor color="#E6C188" />}
+      {env === 'space' && <Stars t={t} />}
       {env === 'night' && (
         <>
           <Stars t={t} />
@@ -211,7 +225,7 @@ export const Env: React.FC<{ env: EnvName; t: number; shadowScale?: number; deco
       )}
       {env === 'deep' && <Particles t={t} n={80} color="#9CC8FF" size={0.03} area={[14, 12, 12]} speed={0.08} />}
       {env === 'macro' && <Particles t={t} n={40} color="#FFB3C8" size={0.03} area={[8, 8, 6]} center={[0, 2, 0]} />}
-      {(env === 'studio' || env === 'lab' || env === 'split' || env === 'seabed') && (
+      {(env === 'studio' || env === 'lab' || env === 'split' || env === 'seabed' || env === 'tomb' || env === 'desert') && (
         <ContactShadows position={[0, 0.01, 0]} scale={shadowScale} blur={2.6} opacity={env === 'seabed' ? 0.35 : 0.45} far={4} resolution={512} color="#1A1D24" />
       )}
       {children}

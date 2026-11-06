@@ -133,3 +133,24 @@ export const SplitDivider: React.FC<{ t: number }> = ({ t }) => {
   const p = easeOutCubic(prog(t, 0, 0.3));
   return <div style={{ position: 'absolute', left: W / 2 - 4, top: 300, width: 8, height: 1000 * p, background: '#fff', borderRadius: 4, boxShadow: '0 0 12px rgba(0,0,0,0.2)' }} />;
 };
+
+/** Gauge that moves from `from` to `to` between `at` and `at+dur` seconds. Colour follows the level. */
+export const GaugePanel: React.FC<{ t: number; from: number; to: number; at?: number; dur?: number; ends: [string, string]; label: string }> = ({
+  t, from, to, at = 0.2, dur = 0.6, ends, label,
+}) => {
+  const v = from + (to - from) * easeOutCubic(prog(t, at, dur));
+  const col = v > 0.66 ? C.red : v > 0.33 ? C.yellow : C.blue;
+  const w = 540;
+  return (
+    <PanelBox t={t} delay={0.05}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 24, fontWeight: 800, marginBottom: 8 }}>
+        <span>{ends[0]}</span>
+        <span>{ends[1]}</span>
+      </div>
+      <div style={{ position: 'relative', width: w, height: 22, background: '#2E323B', borderRadius: 11, margin: '0 auto', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', left: 0, top: 0, bottom: 0, width: w * v, background: col, borderRadius: 11 }} />
+      </div>
+      <Label>{label}</Label>
+    </PanelBox>
+  );
+};

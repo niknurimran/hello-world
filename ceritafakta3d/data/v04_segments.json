@@ -1,0 +1,192 @@
+{
+ "note": "Speech segments found with ffmpeg silencedetect (noise=-38dB, d=0.12s) on public/audio/v04_madu.mp3, mapped to the script. Segment 0 split by character length.",
+ "duration": 60.29,
+ "segments": [
+  {
+   "line": 0,
+   "start": 0.05,
+   "end": 2.86,
+   "text": "Ahli arkeologi pernah jumpa balang madu"
+  },
+  {
+   "line": 1,
+   "start": 2.86,
+   "end": 4.6,
+   "text": "dalam makam Mesir purba."
+  },
+  {
+   "line": 2,
+   "start": 5.08,
+   "end": 6.94,
+   "text": "Umur dia beribu tahun."
+  },
+  {
+   "line": 3,
+   "start": 7.38,
+   "end": 9.45,
+   "text": "Dan madu tu masih belum basi."
+  },
+  {
+   "line": 4,
+   "start": 9.88,
+   "end": 10.92,
+   "text": "Sebab pertama,"
+  },
+  {
+   "line": 4,
+   "start": 11.17,
+   "end": 13.02,
+   "text": "madu sangat kurang air."
+  },
+  {
+   "line": 5,
+   "start": 13.45,
+   "end": 15.42,
+   "text": "Bakteria perlukan air untuk hidup,"
+  },
+  {
+   "line": 6,
+   "start": 15.78,
+   "end": 17.3,
+   "text": "jadi dalam madu dia"
+  },
+  {
+   "line": 6,
+   "start": 17.46,
+   "end": 17.98,
+   "text": "“kering”"
+  },
+  {
+   "line": 6,
+   "start": 18.12,
+   "end": 18.8,
+   "text": "dan mati."
+  },
+  {
+   "line": 7,
+   "start": 19.31,
+   "end": 20.22,
+   "text": "Sebab kedua,"
+  },
+  {
+   "line": 7,
+   "start": 20.53,
+   "end": 22.41,
+   "text": "madu sebenarnya berasid."
+  },
+  {
+   "line": 8,
+   "start": 22.87,
+   "end": 25.16,
+   "text": "Bakteria tak suka tempat masam."
+  },
+  {
+   "line": 9,
+   "start": 25.65,
+   "end": 26.62,
+   "text": "Sebab ketiga,"
+  },
+  {
+   "line": 9,
+   "start": 26.93,
+   "end": 29.09,
+   "text": "lebah tambah enzim dalam madu."
+  },
+  {
+   "line": 10,
+   "start": 29.55,
+   "end": 31.22,
+   "text": "Enzim ni hasilkan sedikit"
+  },
+  {
+   "line": 10,
+   "start": 31.36,
+   "end": 32.83,
+   "text": "hidrogen peroksida,"
+  },
+  {
+   "line": 11,
+   "start": 33.17,
+   "end": 35.83,
+   "text": "sejenis bahan pembunuh kuman semula jadi."
+  },
+  {
+   "line": 12,
+   "start": 36.26,
+   "end": 37.42,
+   "text": "Tapi ada syarat:"
+  },
+  {
+   "line": 12,
+   "start": 37.92,
+   "end": 39.71,
+   "text": "tutup balang rapat-rapat."
+  },
+  {
+   "line": 13,
+   "start": 40.23,
+   "end": 42.36,
+   "text": "Kalau madu serap air dari udara,"
+  },
+  {
+   "line": 13,
+   "start": 42.59,
+   "end": 43.43,
+   "text": "dia boleh rosak."
+  },
+  {
+   "line": 14,
+   "start": 43.85,
+   "end": 44.94,
+   "text": "Kalau madu kau"
+  },
+  {
+   "line": 14,
+   "start": 45.11,
+   "end": 46.51,
+   "text": "berketul atau berkristal,"
+  },
+  {
+   "line": 14,
+   "start": 46.77,
+   "end": 47.46,
+   "text": "itu normal."
+  },
+  {
+   "line": 15,
+   "start": 47.95,
+   "end": 49.55,
+   "text": "Rendam balang dalam air suam,"
+  },
+  {
+   "line": 15,
+   "start": 49.72,
+   "end": 50.72,
+   "text": "nanti dia cair balik."
+  },
+  {
+   "line": 16,
+   "start": 51.2,
+   "end": 54.25,
+   "text": "Makanan yang boleh tahan lebih lama dari tamadun."
+  },
+  {
+   "line": 17,
+   "start": 54.89,
+   "end": 55.24,
+   "text": "Esok:"
+  },
+  {
+   "line": 17,
+   "start": 55.84,
+   "end": 56.91,
+   "text": "kau tengok matahari,"
+  },
+  {
+   "line": 18,
+   "start": 57.38,
+   "end": 60.1,
+   "text": "tapi sebenarnya kau tengok masa lalu."
+  }
+ ]
+}

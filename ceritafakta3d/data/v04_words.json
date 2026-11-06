@@ -1,0 +1,805 @@
+{
+ "source": "segments+char-length",
+ "duration": 60.29,
+ "lines": [
+  {
+   "text": "Ahli arkeologi pernah jumpa balang madu",
+   "start": 0.05,
+   "end": 2.86
+  },
+  {
+   "text": "dalam makam Mesir purba.",
+   "start": 2.86,
+   "end": 4.6
+  },
+  {
+   "text": "Umur dia beribu tahun.",
+   "start": 5.08,
+   "end": 6.94
+  },
+  {
+   "text": "Dan madu tu masih belum basi.",
+   "start": 7.38,
+   "end": 9.45
+  },
+  {
+   "text": "Sebab pertama, madu sangat kurang air.",
+   "start": 9.88,
+   "end": 13.02
+  },
+  {
+   "text": "Bakteria perlukan air untuk hidup,",
+   "start": 13.45,
+   "end": 15.42
+  },
+  {
+   "text": "jadi dalam madu dia “kering” dan mati.",
+   "start": 15.78,
+   "end": 18.8
+  },
+  {
+   "text": "Sebab kedua, madu sebenarnya berasid.",
+   "start": 19.31,
+   "end": 22.41
+  },
+  {
+   "text": "Bakteria tak suka tempat masam.",
+   "start": 22.87,
+   "end": 25.16
+  },
+  {
+   "text": "Sebab ketiga, lebah tambah enzim dalam madu.",
+   "start": 25.65,
+   "end": 29.09
+  },
+  {
+   "text": "Enzim ni hasilkan sedikit hidrogen peroksida,",
+   "start": 29.55,
+   "end": 32.83
+  },
+  {
+   "text": "sejenis bahan pembunuh kuman semula jadi.",
+   "start": 33.17,
+   "end": 35.83
+  },
+  {
+   "text": "Tapi ada syarat: tutup balang rapat-rapat.",
+   "start": 36.26,
+   "end": 39.71
+  },
+  {
+   "text": "Kalau madu serap air dari udara, dia boleh rosak.",
+   "start": 40.23,
+   "end": 43.43
+  },
+  {
+   "text": "Kalau madu kau berketul atau berkristal, itu normal.",
+   "start": 43.85,
+   "end": 47.46
+  },
+  {
+   "text": "Rendam balang dalam air suam, nanti dia cair balik.",
+   "start": 47.95,
+   "end": 50.72
+  },
+  {
+   "text": "Makanan yang boleh tahan lebih lama dari tamadun.",
+   "start": 51.2,
+   "end": 54.25
+  },
+  {
+   "text": "Esok: kau tengok matahari,",
+   "start": 54.89,
+   "end": 56.91
+  },
+  {
+   "text": "tapi sebenarnya kau tengok masa lalu.",
+   "start": 57.38,
+   "end": 60.1
+  }
+ ],
+ "words": [
+  {
+   "text": "Ahli",
+   "start": 0.05,
+   "end": 0.409,
+   "line": 0
+  },
+  {
+   "text": "arkeologi",
+   "start": 0.409,
+   "end": 1.096,
+   "line": 0
+  },
+  {
+   "text": "pernah",
+   "start": 1.096,
+   "end": 1.586,
+   "line": 0
+  },
+  {
+   "text": "jumpa",
+   "start": 1.586,
+   "end": 2.01,
+   "line": 0
+  },
+  {
+   "text": "balang",
+   "start": 2.01,
+   "end": 2.501,
+   "line": 0
+  },
+  {
+   "text": "madu",
+   "start": 2.501,
+   "end": 2.86,
+   "line": 0
+  },
+  {
+   "text": "dalam",
+   "start": 2.86,
+   "end": 3.295,
+   "line": 1
+  },
+  {
+   "text": "makam",
+   "start": 3.295,
+   "end": 3.73,
+   "line": 1
+  },
+  {
+   "text": "Mesir",
+   "start": 3.73,
+   "end": 4.165,
+   "line": 1
+  },
+  {
+   "text": "purba.",
+   "start": 4.165,
+   "end": 4.6,
+   "line": 1
+  },
+  {
+   "text": "Umur",
+   "start": 5.08,
+   "end": 5.506,
+   "line": 2
+  },
+  {
+   "text": "dia",
+   "start": 5.506,
+   "end": 5.855,
+   "line": 2
+  },
+  {
+   "text": "beribu",
+   "start": 5.855,
+   "end": 6.436,
+   "line": 2
+  },
+  {
+   "text": "tahun.",
+   "start": 6.436,
+   "end": 6.94,
+   "line": 2
+  },
+  {
+   "text": "Dan",
+   "start": 7.38,
+   "end": 7.671,
+   "line": 3
+  },
+  {
+   "text": "madu",
+   "start": 7.671,
+   "end": 8.027,
+   "line": 3
+  },
+  {
+   "text": "tu",
+   "start": 8.027,
+   "end": 8.253,
+   "line": 3
+  },
+  {
+   "text": "masih",
+   "start": 8.253,
+   "end": 8.674,
+   "line": 3
+  },
+  {
+   "text": "belum",
+   "start": 8.674,
+   "end": 9.094,
+   "line": 3
+  },
+  {
+   "text": "basi.",
+   "start": 9.094,
+   "end": 9.45,
+   "line": 3
+  },
+  {
+   "text": "Sebab",
+   "start": 9.88,
+   "end": 10.331,
+   "line": 4
+  },
+  {
+   "text": "pertama,",
+   "start": 10.331,
+   "end": 10.92,
+   "line": 4
+  },
+  {
+   "text": "madu",
+   "start": 11.17,
+   "end": 11.577,
+   "line": 4
+  },
+  {
+   "text": "sangat",
+   "start": 11.577,
+   "end": 12.132,
+   "line": 4
+  },
+  {
+   "text": "kurang",
+   "start": 12.132,
+   "end": 12.687,
+   "line": 4
+  },
+  {
+   "text": "air.",
+   "start": 12.687,
+   "end": 13.02,
+   "line": 4
+  },
+  {
+   "text": "Bakteria",
+   "start": 13.45,
+   "end": 13.963,
+   "line": 5
+  },
+  {
+   "text": "perlukan",
+   "start": 13.963,
+   "end": 14.475,
+   "line": 5
+  },
+  {
+   "text": "air",
+   "start": 14.475,
+   "end": 14.718,
+   "line": 5
+  },
+  {
+   "text": "untuk",
+   "start": 14.718,
+   "end": 15.069,
+   "line": 5
+  },
+  {
+   "text": "hidup,",
+   "start": 15.069,
+   "end": 15.42,
+   "line": 5
+  },
+  {
+   "text": "jadi",
+   "start": 15.78,
+   "end": 16.16,
+   "line": 6
+  },
+  {
+   "text": "dalam",
+   "start": 16.16,
+   "end": 16.609,
+   "line": 6
+  },
+  {
+   "text": "madu",
+   "start": 16.609,
+   "end": 16.989,
+   "line": 6
+  },
+  {
+   "text": "dia",
+   "start": 16.989,
+   "end": 17.3,
+   "line": 6
+  },
+  {
+   "text": "“kering”",
+   "start": 17.46,
+   "end": 17.98,
+   "line": 6
+  },
+  {
+   "text": "dan",
+   "start": 18.12,
+   "end": 18.426,
+   "line": 6
+  },
+  {
+   "text": "mati.",
+   "start": 18.426,
+   "end": 18.8,
+   "line": 6
+  },
+  {
+   "text": "Sebab",
+   "start": 19.31,
+   "end": 19.765,
+   "line": 7
+  },
+  {
+   "text": "kedua,",
+   "start": 19.765,
+   "end": 20.22,
+   "line": 7
+  },
+  {
+   "text": "madu",
+   "start": 20.53,
+   "end": 20.935,
+   "line": 7
+  },
+  {
+   "text": "sebenarnya",
+   "start": 20.935,
+   "end": 21.783,
+   "line": 7
+  },
+  {
+   "text": "berasid.",
+   "start": 21.783,
+   "end": 22.41,
+   "line": 7
+  },
+  {
+   "text": "Bakteria",
+   "start": 22.87,
+   "end": 23.519,
+   "line": 8
+  },
+  {
+   "text": "tak",
+   "start": 23.519,
+   "end": 23.827,
+   "line": 8
+  },
+  {
+   "text": "suka",
+   "start": 23.827,
+   "end": 24.203,
+   "line": 8
+  },
+  {
+   "text": "tempat",
+   "start": 24.203,
+   "end": 24.716,
+   "line": 8
+  },
+  {
+   "text": "masam.",
+   "start": 24.716,
+   "end": 25.16,
+   "line": 8
+  },
+  {
+   "text": "Sebab",
+   "start": 25.65,
+   "end": 26.1,
+   "line": 9
+  },
+  {
+   "text": "ketiga,",
+   "start": 26.1,
+   "end": 26.62,
+   "line": 9
+  },
+  {
+   "text": "lebah",
+   "start": 26.93,
+   "end": 27.362,
+   "line": 9
+  },
+  {
+   "text": "tambah",
+   "start": 27.362,
+   "end": 27.86,
+   "line": 9
+  },
+  {
+   "text": "enzim",
+   "start": 27.86,
+   "end": 28.292,
+   "line": 9
+  },
+  {
+   "text": "dalam",
+   "start": 28.292,
+   "end": 28.724,
+   "line": 9
+  },
+  {
+   "text": "madu.",
+   "start": 28.724,
+   "end": 29.09,
+   "line": 9
+  },
+  {
+   "text": "Enzim",
+   "start": 29.55,
+   "end": 29.938,
+   "line": 10
+  },
+  {
+   "text": "ni",
+   "start": 29.938,
+   "end": 30.146,
+   "line": 10
+  },
+  {
+   "text": "hasilkan",
+   "start": 30.146,
+   "end": 30.713,
+   "line": 10
+  },
+  {
+   "text": "sedikit",
+   "start": 30.713,
+   "end": 31.22,
+   "line": 10
+  },
+  {
+   "text": "hidrogen",
+   "start": 31.36,
+   "end": 32.058,
+   "line": 10
+  },
+  {
+   "text": "peroksida,",
+   "start": 32.058,
+   "end": 32.83,
+   "line": 10
+  },
+  {
+   "text": "sejenis",
+   "start": 33.17,
+   "end": 33.684,
+   "line": 11
+  },
+  {
+   "text": "bahan",
+   "start": 33.684,
+   "end": 34.077,
+   "line": 11
+  },
+  {
+   "text": "pembunuh",
+   "start": 34.077,
+   "end": 34.651,
+   "line": 11
+  },
+  {
+   "text": "kuman",
+   "start": 34.651,
+   "end": 35.044,
+   "line": 11
+  },
+  {
+   "text": "semula",
+   "start": 35.044,
+   "end": 35.497,
+   "line": 11
+  },
+  {
+   "text": "jadi.",
+   "start": 35.497,
+   "end": 35.83,
+   "line": 11
+  },
+  {
+   "text": "Tapi",
+   "start": 36.26,
+   "end": 36.625,
+   "line": 12
+  },
+  {
+   "text": "ada",
+   "start": 36.625,
+   "end": 36.923,
+   "line": 12
+  },
+  {
+   "text": "syarat:",
+   "start": 36.923,
+   "end": 37.42,
+   "line": 12
+  },
+  {
+   "text": "tutup",
+   "start": 37.92,
+   "end": 38.376,
+   "line": 12
+  },
+  {
+   "text": "balang",
+   "start": 38.376,
+   "end": 38.903,
+   "line": 12
+  },
+  {
+   "text": "rapat-rapat.",
+   "start": 38.903,
+   "end": 39.71,
+   "line": 12
+  },
+  {
+   "text": "Kalau",
+   "start": 40.23,
+   "end": 40.626,
+   "line": 13
+  },
+  {
+   "text": "madu",
+   "start": 40.626,
+   "end": 40.96,
+   "line": 13
+  },
+  {
+   "text": "serap",
+   "start": 40.96,
+   "end": 41.356,
+   "line": 13
+  },
+  {
+   "text": "air",
+   "start": 41.356,
+   "end": 41.63,
+   "line": 13
+  },
+  {
+   "text": "dari",
+   "start": 41.63,
+   "end": 41.964,
+   "line": 13
+  },
+  {
+   "text": "udara,",
+   "start": 41.964,
+   "end": 42.36,
+   "line": 13
+  },
+  {
+   "text": "dia",
+   "start": 42.59,
+   "end": 42.806,
+   "line": 13
+  },
+  {
+   "text": "boleh",
+   "start": 42.806,
+   "end": 43.118,
+   "line": 13
+  },
+  {
+   "text": "rosak.",
+   "start": 43.118,
+   "end": 43.43,
+   "line": 13
+  },
+  {
+   "text": "Kalau",
+   "start": 43.85,
+   "end": 44.279,
+   "line": 14
+  },
+  {
+   "text": "madu",
+   "start": 44.279,
+   "end": 44.643,
+   "line": 14
+  },
+  {
+   "text": "kau",
+   "start": 44.643,
+   "end": 44.94,
+   "line": 14
+  },
+  {
+   "text": "berketul",
+   "start": 45.11,
+   "end": 45.612,
+   "line": 14
+  },
+  {
+   "text": "atau",
+   "start": 45.612,
+   "end": 45.902,
+   "line": 14
+  },
+  {
+   "text": "berkristal,",
+   "start": 45.902,
+   "end": 46.51,
+   "line": 14
+  },
+  {
+   "text": "itu",
+   "start": 46.77,
+   "end": 47.029,
+   "line": 14
+  },
+  {
+   "text": "normal.",
+   "start": 47.029,
+   "end": 47.46,
+   "line": 14
+  },
+  {
+   "text": "Rendam",
+   "start": 47.95,
+   "end": 48.331,
+   "line": 15
+  },
+  {
+   "text": "balang",
+   "start": 48.331,
+   "end": 48.712,
+   "line": 15
+  },
+  {
+   "text": "dalam",
+   "start": 48.712,
+   "end": 49.042,
+   "line": 15
+  },
+  {
+   "text": "air",
+   "start": 49.042,
+   "end": 49.271,
+   "line": 15
+  },
+  {
+   "text": "suam,",
+   "start": 49.271,
+   "end": 49.55,
+   "line": 15
+  },
+  {
+   "text": "nanti",
+   "start": 49.72,
+   "end": 50.003,
+   "line": 15
+  },
+  {
+   "text": "dia",
+   "start": 50.003,
+   "end": 50.198,
+   "line": 15
+  },
+  {
+   "text": "cair",
+   "start": 50.198,
+   "end": 50.437,
+   "line": 15
+  },
+  {
+   "text": "balik.",
+   "start": 50.437,
+   "end": 50.72,
+   "line": 15
+  },
+  {
+   "text": "Makanan",
+   "start": 51.2,
+   "end": 51.689,
+   "line": 16
+  },
+  {
+   "text": "yang",
+   "start": 51.689,
+   "end": 52.006,
+   "line": 16
+  },
+  {
+   "text": "boleh",
+   "start": 52.006,
+   "end": 52.38,
+   "line": 16
+  },
+  {
+   "text": "tahan",
+   "start": 52.38,
+   "end": 52.754,
+   "line": 16
+  },
+  {
+   "text": "lebih",
+   "start": 52.754,
+   "end": 53.128,
+   "line": 16
+  },
+  {
+   "text": "lama",
+   "start": 53.128,
+   "end": 53.444,
+   "line": 16
+  },
+  {
+   "text": "dari",
+   "start": 53.444,
+   "end": 53.761,
+   "line": 16
+  },
+  {
+   "text": "tamadun.",
+   "start": 53.761,
+   "end": 54.25,
+   "line": 16
+  },
+  {
+   "text": "Esok:",
+   "start": 54.89,
+   "end": 55.24,
+   "line": 17
+  },
+  {
+   "text": "kau",
+   "start": 55.84,
+   "end": 56.064,
+   "line": 17
+  },
+  {
+   "text": "tengok",
+   "start": 56.064,
+   "end": 56.437,
+   "line": 17
+  },
+  {
+   "text": "matahari,",
+   "start": 56.437,
+   "end": 56.91,
+   "line": 17
+  },
+  {
+   "text": "tapi",
+   "start": 57.38,
+   "end": 57.754,
+   "line": 18
+  },
+  {
+   "text": "sebenarnya",
+   "start": 57.754,
+   "end": 58.536,
+   "line": 18
+  },
+  {
+   "text": "kau",
+   "start": 58.536,
+   "end": 58.842,
+   "line": 18
+  },
+  {
+   "text": "tengok",
+   "start": 58.842,
+   "end": 59.352,
+   "line": 18
+  },
+  {
+   "text": "masa",
+   "start": 59.352,
+   "end": 59.726,
+   "line": 18
+  },
+  {
+   "text": "lalu.",
+   "start": 59.726,
+   "end": 60.1,
+   "line": 18
+  }
+ ]
+}

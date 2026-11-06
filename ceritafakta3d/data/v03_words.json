@@ -1,0 +1,782 @@
+{
+ "source": "segments+char-length",
+ "duration": 48.93,
+ "lines": [
+  {
+   "text": "Cuba geletek diri sendiri sekarang.",
+   "start": 0.05,
+   "end": 1.75
+  },
+  {
+   "text": "Tak geli, kan?",
+   "start": 2.23,
+   "end": 3.11
+  },
+  {
+   "text": "Tapi kalau orang lain buat, kau terus menggelupur.",
+   "start": 3.64,
+   "end": 6.83
+  },
+  {
+   "text": "Rahsia dia ada kat bahagian belakang otak,",
+   "start": 7.37,
+   "end": 9.78
+  },
+  {
+   "text": "namanya serebelum.",
+   "start": 9.9,
+   "end": 11.81
+  },
+  {
+   "text": "Setiap kali kau gerak tangan,",
+   "start": 12.34,
+   "end": 13.87
+  },
+  {
+   "text": "serebelum dah ramal dulu apa yang kau akan rasa.",
+   "start": 14.04,
+   "end": 17.16
+  },
+  {
+   "text": "Bila ramalan tu tepat, otak terus kecilkan rasa tu.",
+   "start": 17.69,
+   "end": 21.14
+  },
+  {
+   "text": "Dia anggap: “Ni aku sendiri, tak payah risau.”",
+   "start": 21.54,
+   "end": 24.27
+  },
+  {
+   "text": "Geli sebenarnya datang dari kejutan.",
+   "start": 24.73,
+   "end": 27.3
+  },
+  {
+   "text": "Bila orang lain geletek,",
+   "start": 27.78,
+   "end": 28.71
+  },
+  {
+   "text": "otak tak tahu bila dan kat mana sentuhan tu datang.",
+   "start": 28.84,
+   "end": 32.77
+  },
+  {
+   "text": "Sistem ni penting.",
+   "start": 33.31,
+   "end": 34.5
+  },
+  {
+   "text": "Kalau tak, setiap kali baju kau bergesel,",
+   "start": 34.93,
+   "end": 37.44
+  },
+  {
+   "text": "kau rasa macam ada orang sentuh.",
+   "start": 37.65,
+   "end": 39.25
+  },
+  {
+   "text": "Jadi kalau ada orang kata dia boleh geletek diri sendiri,",
+   "start": 39.8,
+   "end": 43.4
+  },
+  {
+   "text": "mungkin otak dia lain sikit.",
+   "start": 43.8,
+   "end": 45.71
+  },
+  {
+   "text": "Tag kawan kau yang paling tak tahan geli.",
+   "start": 46.26,
+   "end": 48.74
+  }
+ ],
+ "words": [
+  {
+   "text": "Cuba",
+   "start": 0.05,
+   "end": 0.299,
+   "line": 0
+  },
+  {
+   "text": "geletek",
+   "start": 0.299,
+   "end": 0.685,
+   "line": 0
+  },
+  {
+   "text": "diri",
+   "start": 0.685,
+   "end": 0.934,
+   "line": 0
+  },
+  {
+   "text": "sendiri",
+   "start": 0.934,
+   "end": 1.319,
+   "line": 0
+  },
+  {
+   "text": "sekarang.",
+   "start": 1.319,
+   "end": 1.75,
+   "line": 0
+  },
+  {
+   "text": "Tak",
+   "start": 2.23,
+   "end": 2.503,
+   "line": 1
+  },
+  {
+   "text": "geli,",
+   "start": 2.503,
+   "end": 2.837,
+   "line": 1
+  },
+  {
+   "text": "kan?",
+   "start": 2.837,
+   "end": 3.11,
+   "line": 1
+  },
+  {
+   "text": "Tapi",
+   "start": 3.64,
+   "end": 3.944,
+   "line": 2
+  },
+  {
+   "text": "kalau",
+   "start": 3.944,
+   "end": 4.303,
+   "line": 2
+  },
+  {
+   "text": "orang",
+   "start": 4.303,
+   "end": 4.662,
+   "line": 2
+  },
+  {
+   "text": "lain",
+   "start": 4.662,
+   "end": 4.966,
+   "line": 2
+  },
+  {
+   "text": "buat,",
+   "start": 4.966,
+   "end": 5.27,
+   "line": 2
+  },
+  {
+   "text": "kau",
+   "start": 5.53,
+   "end": 5.779,
+   "line": 2
+  },
+  {
+   "text": "terus",
+   "start": 5.779,
+   "end": 6.139,
+   "line": 2
+  },
+  {
+   "text": "menggelupur.",
+   "start": 6.139,
+   "end": 6.83,
+   "line": 2
+  },
+  {
+   "text": "Rahsia",
+   "start": 7.37,
+   "end": 7.767,
+   "line": 3
+  },
+  {
+   "text": "dia",
+   "start": 7.767,
+   "end": 8.006,
+   "line": 3
+  },
+  {
+   "text": "ada",
+   "start": 8.006,
+   "end": 8.244,
+   "line": 3
+  },
+  {
+   "text": "kat",
+   "start": 8.244,
+   "end": 8.482,
+   "line": 3
+  },
+  {
+   "text": "bahagian",
+   "start": 8.482,
+   "end": 8.985,
+   "line": 3
+  },
+  {
+   "text": "belakang",
+   "start": 8.985,
+   "end": 9.489,
+   "line": 3
+  },
+  {
+   "text": "otak,",
+   "start": 9.489,
+   "end": 9.78,
+   "line": 3
+  },
+  {
+   "text": "namanya",
+   "start": 9.9,
+   "end": 10.754,
+   "line": 4
+  },
+  {
+   "text": "serebelum.",
+   "start": 10.754,
+   "end": 11.81,
+   "line": 4
+  },
+  {
+   "text": "Setiap",
+   "start": 12.34,
+   "end": 12.704,
+   "line": 5
+  },
+  {
+   "text": "kali",
+   "start": 12.704,
+   "end": 12.971,
+   "line": 5
+  },
+  {
+   "text": "kau",
+   "start": 12.971,
+   "end": 13.19,
+   "line": 5
+  },
+  {
+   "text": "gerak",
+   "start": 13.19,
+   "end": 13.506,
+   "line": 5
+  },
+  {
+   "text": "tangan,",
+   "start": 13.506,
+   "end": 13.87,
+   "line": 5
+  },
+  {
+   "text": "serebelum",
+   "start": 14.04,
+   "end": 14.779,
+   "line": 6
+  },
+  {
+   "text": "dah",
+   "start": 14.779,
+   "end": 15.096,
+   "line": 6
+  },
+  {
+   "text": "ramal",
+   "start": 15.096,
+   "end": 15.553,
+   "line": 6
+  },
+  {
+   "text": "dulu",
+   "start": 15.553,
+   "end": 15.94,
+   "line": 6
+  },
+  {
+   "text": "apa",
+   "start": 16.14,
+   "end": 16.32,
+   "line": 6
+  },
+  {
+   "text": "yang",
+   "start": 16.32,
+   "end": 16.54,
+   "line": 6
+  },
+  {
+   "text": "kau",
+   "start": 16.54,
+   "end": 16.72,
+   "line": 6
+  },
+  {
+   "text": "akan",
+   "start": 16.72,
+   "end": 16.94,
+   "line": 6
+  },
+  {
+   "text": "rasa.",
+   "start": 16.94,
+   "end": 17.16,
+   "line": 6
+  },
+  {
+   "text": "Bila",
+   "start": 17.69,
+   "end": 17.912,
+   "line": 7
+  },
+  {
+   "text": "ramalan",
+   "start": 17.912,
+   "end": 18.256,
+   "line": 7
+  },
+  {
+   "text": "tu",
+   "start": 18.256,
+   "end": 18.397,
+   "line": 7
+  },
+  {
+   "text": "tepat,",
+   "start": 18.397,
+   "end": 18.66,
+   "line": 7
+  },
+  {
+   "text": "otak",
+   "start": 18.8,
+   "end": 19.222,
+   "line": 7
+  },
+  {
+   "text": "terus",
+   "start": 19.222,
+   "end": 19.721,
+   "line": 7
+  },
+  {
+   "text": "kecilkan",
+   "start": 19.721,
+   "end": 20.45,
+   "line": 7
+  },
+  {
+   "text": "rasa",
+   "start": 20.45,
+   "end": 20.871,
+   "line": 7
+  },
+  {
+   "text": "tu.",
+   "start": 20.871,
+   "end": 21.14,
+   "line": 7
+  },
+  {
+   "text": "Dia",
+   "start": 21.54,
+   "end": 21.72,
+   "line": 8
+  },
+  {
+   "text": "anggap:",
+   "start": 21.72,
+   "end": 22.02,
+   "line": 8
+  },
+  {
+   "text": "“Ni",
+   "start": 22.42,
+   "end": 22.622,
+   "line": 8
+  },
+  {
+   "text": "aku",
+   "start": 22.622,
+   "end": 22.881,
+   "line": 8
+  },
+  {
+   "text": "sendiri,",
+   "start": 22.881,
+   "end": 23.37,
+   "line": 8
+  },
+  {
+   "text": "tak",
+   "start": 23.54,
+   "end": 23.728,
+   "line": 8
+  },
+  {
+   "text": "payah",
+   "start": 23.728,
+   "end": 23.999,
+   "line": 8
+  },
+  {
+   "text": "risau.”",
+   "start": 23.999,
+   "end": 24.27,
+   "line": 8
+  },
+  {
+   "text": "Geli",
+   "start": 24.73,
+   "end": 25.164,
+   "line": 9
+  },
+  {
+   "text": "sebenarnya",
+   "start": 25.164,
+   "end": 26.07,
+   "line": 9
+  },
+  {
+   "text": "datang",
+   "start": 26.23,
+   "end": 26.603,
+   "line": 9
+  },
+  {
+   "text": "dari",
+   "start": 26.603,
+   "end": 26.877,
+   "line": 9
+  },
+  {
+   "text": "kejutan.",
+   "start": 26.877,
+   "end": 27.3,
+   "line": 9
+  },
+  {
+   "text": "Bila",
+   "start": 27.78,
+   "end": 27.977,
+   "line": 10
+  },
+  {
+   "text": "orang",
+   "start": 27.977,
+   "end": 28.209,
+   "line": 10
+  },
+  {
+   "text": "lain",
+   "start": 28.209,
+   "end": 28.406,
+   "line": 10
+  },
+  {
+   "text": "geletek,",
+   "start": 28.406,
+   "end": 28.71,
+   "line": 10
+  },
+  {
+   "text": "otak",
+   "start": 28.84,
+   "end": 29.226,
+   "line": 11
+  },
+  {
+   "text": "tak",
+   "start": 29.226,
+   "end": 29.542,
+   "line": 11
+  },
+  {
+   "text": "tahu",
+   "start": 29.542,
+   "end": 29.928,
+   "line": 11
+  },
+  {
+   "text": "bila",
+   "start": 29.928,
+   "end": 30.314,
+   "line": 11
+  },
+  {
+   "text": "dan",
+   "start": 30.314,
+   "end": 30.63,
+   "line": 11
+  },
+  {
+   "text": "kat",
+   "start": 30.63,
+   "end": 30.945,
+   "line": 11
+  },
+  {
+   "text": "mana",
+   "start": 30.945,
+   "end": 31.331,
+   "line": 11
+  },
+  {
+   "text": "sentuhan",
+   "start": 31.331,
+   "end": 31.998,
+   "line": 11
+  },
+  {
+   "text": "tu",
+   "start": 31.998,
+   "end": 32.244,
+   "line": 11
+  },
+  {
+   "text": "datang.",
+   "start": 32.244,
+   "end": 32.77,
+   "line": 11
+  },
+  {
+   "text": "Sistem",
+   "start": 33.31,
+   "end": 33.768,
+   "line": 12
+  },
+  {
+   "text": "ni",
+   "start": 33.768,
+   "end": 33.981,
+   "line": 12
+  },
+  {
+   "text": "penting.",
+   "start": 33.981,
+   "end": 34.5,
+   "line": 12
+  },
+  {
+   "text": "Kalau",
+   "start": 34.93,
+   "end": 35.237,
+   "line": 13
+  },
+  {
+   "text": "tak,",
+   "start": 35.237,
+   "end": 35.45,
+   "line": 13
+  },
+  {
+   "text": "setiap",
+   "start": 35.63,
+   "end": 36.048,
+   "line": 13
+  },
+  {
+   "text": "kali",
+   "start": 36.048,
+   "end": 36.354,
+   "line": 13
+  },
+  {
+   "text": "baju",
+   "start": 36.354,
+   "end": 36.66,
+   "line": 13
+  },
+  {
+   "text": "kau",
+   "start": 36.66,
+   "end": 36.911,
+   "line": 13
+  },
+  {
+   "text": "bergesel,",
+   "start": 36.911,
+   "end": 37.44,
+   "line": 13
+  },
+  {
+   "text": "kau",
+   "start": 37.65,
+   "end": 37.856,
+   "line": 14
+  },
+  {
+   "text": "rasa",
+   "start": 37.856,
+   "end": 38.107,
+   "line": 14
+  },
+  {
+   "text": "macam",
+   "start": 38.107,
+   "end": 38.404,
+   "line": 14
+  },
+  {
+   "text": "ada",
+   "start": 38.404,
+   "end": 38.61,
+   "line": 14
+  },
+  {
+   "text": "orang",
+   "start": 38.61,
+   "end": 38.907,
+   "line": 14
+  },
+  {
+   "text": "sentuh.",
+   "start": 38.907,
+   "end": 39.25,
+   "line": 14
+  },
+  {
+   "text": "Jadi",
+   "start": 39.8,
+   "end": 40.08,
+   "line": 15
+  },
+  {
+   "text": "kalau",
+   "start": 40.08,
+   "end": 40.411,
+   "line": 15
+  },
+  {
+   "text": "ada",
+   "start": 40.411,
+   "end": 40.639,
+   "line": 15
+  },
+  {
+   "text": "orang",
+   "start": 40.639,
+   "end": 40.97,
+   "line": 15
+  },
+  {
+   "text": "kata",
+   "start": 40.97,
+   "end": 41.25,
+   "line": 15
+  },
+  {
+   "text": "dia",
+   "start": 41.37,
+   "end": 41.578,
+   "line": 15
+  },
+  {
+   "text": "boleh",
+   "start": 41.578,
+   "end": 41.878,
+   "line": 15
+  },
+  {
+   "text": "geletek",
+   "start": 41.878,
+   "end": 42.27,
+   "line": 15
+  },
+  {
+   "text": "diri",
+   "start": 42.43,
+   "end": 42.811,
+   "line": 15
+  },
+  {
+   "text": "sendiri,",
+   "start": 42.811,
+   "end": 43.4,
+   "line": 15
+  },
+  {
+   "text": "mungkin",
+   "start": 43.8,
+   "end": 44.332,
+   "line": 16
+  },
+  {
+   "text": "otak",
+   "start": 44.332,
+   "end": 44.677,
+   "line": 16
+  },
+  {
+   "text": "dia",
+   "start": 44.677,
+   "end": 44.959,
+   "line": 16
+  },
+  {
+   "text": "lain",
+   "start": 44.959,
+   "end": 45.303,
+   "line": 16
+  },
+  {
+   "text": "sikit.",
+   "start": 45.303,
+   "end": 45.71,
+   "line": 16
+  },
+  {
+   "text": "Tag",
+   "start": 46.26,
+   "end": 46.55,
+   "line": 17
+  },
+  {
+   "text": "kawan",
+   "start": 46.55,
+   "end": 46.97,
+   "line": 17
+  },
+  {
+   "text": "kau",
+   "start": 46.97,
+   "end": 47.26,
+   "line": 17
+  },
+  {
+   "text": "yang",
+   "start": 47.41,
+   "end": 47.658,
+   "line": 17
+  },
+  {
+   "text": "paling",
+   "start": 47.658,
+   "end": 47.996,
+   "line": 17
+  },
+  {
+   "text": "tak",
+   "start": 47.996,
+   "end": 48.199,
+   "line": 17
+  },
+  {
+   "text": "tahan",
+   "start": 48.199,
+   "end": 48.492,
+   "line": 17
+  },
+  {
+   "text": "geli.",
+   "start": 48.492,
+   "end": 48.74,
+   "line": 17
+  }
+ ]
+}

@@ -11,7 +11,11 @@
     "stills:v01": "node scripts/stills.mjs V01-SotongKurita 25,101,190,300,397,611,840,1081,1359,1546",
     "render:v01": "remotion render V01-SotongKurita out/V01_sotong_kurita.mp4 --gl=angle",
     "words:v02": "node scripts/make-words.mjs v02",
-    "render:v02": "remotion render V02-Intro out/V02_intro.mp4 --gl=angle"
+    "render:v02": "remotion render V02-Intro out/V02_intro.mp4 --gl=angle",
+    "words:v03": "node scripts/make-words.mjs v03",
+    "render:v03": "remotion render V03-Geletek out/V03_geletek.mp4 --gl=angle",
+    "words:v04": "node scripts/make-words.mjs v04",
+    "render:v04": "remotion render V04-Madu out/V04_madu.mp4 --gl=angle"
   },
   "dependencies": {
     "@fontsource/inter": "^5.3.0",
