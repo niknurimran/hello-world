@@ -1,919 +1,919 @@
 {
  "source": "segments+char-length",
- "duration": 57.51,
+ "duration": 61.88,
  "lines": [
   {
    "text": "Ada satu haiwan ni, jantung dia tiga.",
-   "start": 0.25,
-   "end": 2.4
+   "start": 0.05,
+   "end": 3.15
   },
   {
    "text": "Darah dia pulak...",
-   "start": 2.74,
-   "end": 3.55
-  },
-  {
-   "text": "warna biru.",
-   "start": 4.02,
+   "start": 3.66,
    "end": 4.82
   },
   {
+   "text": "warna biru.",
+   "start": 5.12,
+   "end": 5.88
+  },
+  {
    "text": "Haiwan tu ialah sotong kurita.",
-   "start": 5.27,
-   "end": 7.07
+   "start": 6.38,
+   "end": 8.73
   },
   {
    "text": "Dua jantung kecil kerja pam darah ke insang,",
-   "start": 7.29,
-   "end": 10.34
+   "start": 9.23,
+   "end": 12.23
   },
   {
    "text": "tempat dia ambil oksigen.",
-   "start": 10.79,
-   "end": 12.07
+   "start": 12.48,
+   "end": 13.74
   },
   {
    "text": "Satu jantung lagi pam darah ke seluruh badan.",
-   "start": 12.43,
-   "end": 15.46
+   "start": 14.2,
+   "end": 17.44
   },
   {
    "text": "Yang peliknya,",
-   "start": 15.95,
-   "end": 16.7
+   "start": 17.95,
+   "end": 18.9
   },
   {
    "text": "bila sotong kurita berenang,",
-   "start": 17.19,
-   "end": 18.74
+   "start": 19.15,
+   "end": 20.75
   },
   {
    "text": "jantung badan tu berhenti berdegup.",
-   "start": 18.99,
-   "end": 21.12
+   "start": 21.08,
+   "end": 23.16
   },
   {
    "text": "Sebab tu dia lagi suka merangkak atas dasar laut.",
-   "start": 21.52,
-   "end": 24.85
+   "start": 23.66,
+   "end": 26.59
   },
   {
    "text": "Berenang buat dia cepat penat.",
-   "start": 25.17,
-   "end": 26.91
+   "start": 27.03,
+   "end": 28.82
   },
   {
    "text": "Darah kita merah sebab ada zat besi.",
-   "start": 27.36,
-   "end": 29.94
+   "start": 29.32,
+   "end": 31.98
   },
   {
    "text": "Darah sotong kurita guna tembaga.",
-   "start": 30.23,
-   "end": 32.12
+   "start": 32.47,
+   "end": 34.81
   },
   {
    "text": "Bahan tu namanya hemosianin,",
-   "start": 32.49,
-   "end": 34.14
+   "start": 35.26,
+   "end": 37.6
   },
   {
    "text": "dan dia jadi biru bila bawa oksigen.",
-   "start": 34.47,
-   "end": 36.93
+   "start": 37.99,
+   "end": 40.33
   },
   {
    "text": "Satu lagi:",
-   "start": 37.29,
-   "end": 38.1
+   "start": 40.84,
+   "end": 41.48
   },
   {
    "text": "lebih kurang dua pertiga sel saraf dia ada dalam lengan,",
-   "start": 38.42,
-   "end": 41.7
+   "start": 41.92,
+   "end": 45.51
   },
   {
    "text": "bukan dalam kepala.",
-   "start": 42.08,
-   "end": 43.13
+   "start": 45.69,
+   "end": 46.9
   },
   {
    "text": "Sebab tu setiap lengan boleh fikir sendiri.",
-   "start": 43.46,
-   "end": 46.49
+   "start": 47.34,
+   "end": 49.58
   },
   {
    "text": "Tiga jantung, darah biru, lengan yang boleh fikir.",
-   "start": 46.76,
-   "end": 50.5
+   "start": 49.78,
+   "end": 53.57
   },
   {
    "text": "Rasa macam alien, kan?",
-   "start": 50.7,
-   "end": 51.99
+   "start": 53.72,
+   "end": 54.98
   },
   {
    "text": "Follow akaun aku,",
-   "start": 52.31,
-   "end": 53.49
+   "start": 55.44,
+   "end": 56.84
   },
   {
    "text": "esok aku cerita kenapa kau tak boleh geletek diri sendiri.",
-   "start": 53.85,
-   "end": 57.34
+   "start": 57.38,
+   "end": 61.71
   }
  ],
  "words": [
   {
    "text": "Ada",
-   "start": 0.25,
-   "end": 0.486,
+   "start": 0.05,
+   "end": 0.341,
    "line": 0
   },
   {
    "text": "satu",
-   "start": 0.486,
-   "end": 0.774,
+   "start": 0.341,
+   "end": 0.698,
    "line": 0
   },
   {
    "text": "haiwan",
-   "start": 0.774,
-   "end": 1.167,
+   "start": 0.698,
+   "end": 1.183,
    "line": 0
   },
   {
    "text": "ni,",
-   "start": 1.167,
-   "end": 1.35,
+   "start": 1.183,
+   "end": 1.41,
    "line": 0
   },
   {
    "text": "jantung",
-   "start": 1.51,
-   "end": 1.919,
+   "start": 1.68,
+   "end": 2.223,
    "line": 0
   },
   {
    "text": "dia",
-   "start": 1.919,
-   "end": 2.135,
+   "start": 2.223,
+   "end": 2.51,
    "line": 0
   },
   {
    "text": "tiga.",
-   "start": 2.135,
-   "end": 2.4,
+   "start": 2.67,
+   "end": 3.15,
    "line": 0
   },
   {
    "text": "Darah",
-   "start": 2.74,
-   "end": 3.041,
+   "start": 3.66,
+   "end": 4.091,
    "line": 1
   },
   {
    "text": "dia",
-   "start": 3.041,
-   "end": 3.249,
+   "start": 4.091,
+   "end": 4.389,
    "line": 1
   },
   {
    "text": "pulak...",
-   "start": 3.249,
-   "end": 3.55,
+   "start": 4.389,
+   "end": 4.82,
    "line": 1
   },
   {
    "text": "warna",
-   "start": 4.02,
-   "end": 4.453,
+   "start": 5.12,
+   "end": 5.532,
    "line": 2
   },
   {
    "text": "biru.",
-   "start": 4.453,
-   "end": 4.82,
+   "start": 5.532,
+   "end": 5.88,
    "line": 2
   },
   {
    "text": "Haiwan",
-   "start": 5.27,
-   "end": 5.685,
+   "start": 6.38,
+   "end": 6.98,
    "line": 3
   },
   {
    "text": "tu",
-   "start": 5.685,
-   "end": 5.879,
+   "start": 6.98,
+   "end": 7.26,
    "line": 3
   },
   {
    "text": "ialah",
-   "start": 5.879,
-   "end": 6.239,
+   "start": 7.26,
+   "end": 7.78,
    "line": 3
   },
   {
    "text": "sotong",
-   "start": 6.239,
-   "end": 6.655,
+   "start": 7.92,
+   "end": 8.325,
    "line": 3
   },
   {
    "text": "kurita.",
-   "start": 6.655,
-   "end": 7.07,
+   "start": 8.325,
+   "end": 8.73,
    "line": 3
   },
   {
    "text": "Dua",
-   "start": 7.29,
-   "end": 7.638,
+   "start": 9.23,
+   "end": 9.59,
    "line": 4
   },
   {
    "text": "jantung",
-   "start": 7.638,
-   "end": 8.297,
+   "start": 9.59,
+   "end": 10.27,
    "line": 4
   },
   {
    "text": "kecil",
-   "start": 8.297,
-   "end": 8.8,
+   "start": 10.27,
+   "end": 10.79,
    "line": 4
   },
   {
    "text": "kerja",
-   "start": 9.2,
-   "end": 9.46,
+   "start": 10.93,
+   "end": 11.226,
    "line": 4
   },
   {
    "text": "pam",
-   "start": 9.46,
-   "end": 9.64,
+   "start": 11.226,
+   "end": 11.432,
    "line": 4
   },
   {
    "text": "darah",
-   "start": 9.64,
-   "end": 9.9,
+   "start": 11.432,
+   "end": 11.728,
    "line": 4
   },
   {
    "text": "ke",
-   "start": 9.9,
-   "end": 10.04,
+   "start": 11.728,
+   "end": 11.888,
    "line": 4
   },
   {
    "text": "insang,",
-   "start": 10.04,
-   "end": 10.34,
+   "start": 11.888,
+   "end": 12.23,
    "line": 4
   },
   {
    "text": "tempat",
-   "start": 10.79,
-   "end": 11.146,
+   "start": 12.48,
+   "end": 12.83,
    "line": 5
   },
   {
    "text": "dia",
-   "start": 11.146,
-   "end": 11.359,
+   "start": 12.83,
+   "end": 13.04,
    "line": 5
   },
   {
    "text": "ambil",
-   "start": 11.359,
-   "end": 11.667,
+   "start": 13.04,
+   "end": 13.343,
    "line": 5
   },
   {
    "text": "oksigen.",
-   "start": 11.667,
-   "end": 12.07,
+   "start": 13.343,
+   "end": 13.74,
    "line": 5
   },
   {
    "text": "Satu",
-   "start": 12.43,
-   "end": 12.754,
+   "start": 14.2,
+   "end": 14.533,
    "line": 6
   },
   {
    "text": "jantung",
-   "start": 12.754,
-   "end": 13.256,
+   "start": 14.533,
+   "end": 15.047,
    "line": 6
   },
   {
    "text": "lagi",
-   "start": 13.256,
-   "end": 13.58,
+   "start": 15.047,
+   "end": 15.38,
    "line": 6
   },
   {
    "text": "pam",
-   "start": 13.99,
-   "end": 14.214,
+   "start": 15.55,
+   "end": 15.838,
    "line": 6
   },
   {
    "text": "darah",
-   "start": 14.214,
-   "end": 14.538,
+   "start": 15.838,
+   "end": 16.255,
    "line": 6
   },
   {
    "text": "ke",
-   "start": 14.538,
-   "end": 14.713,
+   "start": 16.255,
+   "end": 16.479,
    "line": 6
   },
   {
    "text": "seluruh",
-   "start": 14.713,
-   "end": 15.136,
+   "start": 16.479,
+   "end": 17.024,
    "line": 6
   },
   {
    "text": "badan.",
-   "start": 15.136,
-   "end": 15.46,
+   "start": 17.024,
+   "end": 17.44,
    "line": 6
   },
   {
    "text": "Yang",
-   "start": 15.95,
-   "end": 16.225,
+   "start": 17.95,
+   "end": 18.298,
    "line": 7
   },
   {
    "text": "peliknya,",
-   "start": 16.225,
-   "end": 16.7,
+   "start": 18.298,
+   "end": 18.9,
    "line": 7
   },
   {
    "text": "bila",
-   "start": 17.19,
-   "end": 17.474,
+   "start": 19.15,
+   "end": 19.443,
    "line": 8
   },
   {
    "text": "sotong",
-   "start": 17.474,
-   "end": 17.862,
+   "start": 19.443,
+   "end": 19.843,
    "line": 8
   },
   {
    "text": "kurita",
-   "start": 17.862,
-   "end": 18.249,
+   "start": 19.843,
+   "end": 20.243,
    "line": 8
   },
   {
    "text": "berenang,",
-   "start": 18.249,
-   "end": 18.74,
+   "start": 20.243,
+   "end": 20.75,
    "line": 8
   },
   {
    "text": "jantung",
-   "start": 18.99,
-   "end": 19.445,
+   "start": 21.08,
+   "end": 21.551,
    "line": 9
   },
   {
    "text": "badan",
-   "start": 19.445,
-   "end": 19.793,
+   "start": 21.551,
+   "end": 21.912,
    "line": 9
   },
   {
    "text": "tu",
-   "start": 19.793,
-   "end": 19.98,
+   "start": 21.912,
+   "end": 22.106,
    "line": 9
   },
   {
    "text": "berhenti",
-   "start": 20.24,
-   "end": 20.68,
+   "start": 22.106,
+   "end": 22.633,
    "line": 9
   },
   {
    "text": "berdegup.",
-   "start": 20.68,
-   "end": 21.12,
+   "start": 22.633,
+   "end": 23.16,
    "line": 9
   },
   {
    "text": "Sebab",
-   "start": 21.52,
-   "end": 21.949,
+   "start": 23.66,
+   "end": 23.829,
    "line": 10
   },
   {
    "text": "tu",
-   "start": 21.949,
-   "end": 22.18,
+   "start": 23.829,
+   "end": 23.92,
    "line": 10
   },
   {
    "text": "dia",
-   "start": 22.48,
-   "end": 22.725,
+   "start": 24.07,
+   "end": 24.331,
    "line": 10
   },
   {
    "text": "lagi",
-   "start": 22.725,
-   "end": 23.025,
+   "start": 24.331,
+   "end": 24.649,
    "line": 10
   },
   {
    "text": "suka",
-   "start": 23.025,
-   "end": 23.324,
+   "start": 24.649,
+   "end": 24.968,
    "line": 10
   },
   {
    "text": "merangkak",
-   "start": 23.324,
-   "end": 23.897,
+   "start": 24.968,
+   "end": 25.576,
    "line": 10
   },
   {
    "text": "atas",
-   "start": 23.897,
-   "end": 24.196,
+   "start": 25.576,
+   "end": 25.895,
    "line": 10
   },
   {
    "text": "dasar",
-   "start": 24.196,
-   "end": 24.55,
+   "start": 25.895,
+   "end": 26.271,
    "line": 10
   },
   {
    "text": "laut.",
-   "start": 24.55,
-   "end": 24.85,
+   "start": 26.271,
+   "end": 26.59,
    "line": 10
   },
   {
    "text": "Berenang",
-   "start": 25.17,
-   "end": 25.679,
+   "start": 27.03,
+   "end": 27.553,
    "line": 11
   },
   {
    "text": "buat",
-   "start": 25.679,
-   "end": 25.973,
+   "start": 27.553,
+   "end": 27.856,
    "line": 11
   },
   {
    "text": "dia",
-   "start": 25.973,
-   "end": 26.214,
+   "start": 27.856,
+   "end": 28.104,
    "line": 11
   },
   {
    "text": "cepat",
-   "start": 26.214,
-   "end": 26.562,
+   "start": 28.104,
+   "end": 28.462,
    "line": 11
   },
   {
    "text": "penat.",
-   "start": 26.562,
-   "end": 26.91,
+   "start": 28.462,
+   "end": 28.82,
    "line": 11
   },
   {
    "text": "Darah",
-   "start": 27.36,
-   "end": 27.718,
+   "start": 29.32,
+   "end": 29.758,
    "line": 12
   },
   {
    "text": "kita",
-   "start": 27.718,
-   "end": 28.022,
+   "start": 29.758,
+   "end": 30.128,
    "line": 12
   },
   {
    "text": "merah",
-   "start": 28.022,
-   "end": 28.38,
+   "start": 30.128,
+   "end": 30.566,
    "line": 12
   },
   {
    "text": "sebab",
-   "start": 28.66,
-   "end": 29.056,
+   "start": 30.566,
+   "end": 31.004,
    "line": 12
   },
   {
    "text": "ada",
-   "start": 29.056,
-   "end": 29.33,
+   "start": 31.004,
+   "end": 31.307,
    "line": 12
   },
   {
    "text": "zat",
-   "start": 29.33,
-   "end": 29.605,
+   "start": 31.307,
+   "end": 31.61,
    "line": 12
   },
   {
    "text": "besi.",
-   "start": 29.605,
-   "end": 29.94,
+   "start": 31.61,
+   "end": 31.98,
    "line": 12
   },
   {
    "text": "Darah",
-   "start": 30.23,
-   "end": 30.576,
+   "start": 32.47,
+   "end": 32.898,
    "line": 13
   },
   {
    "text": "sotong",
-   "start": 30.576,
-   "end": 30.975,
+   "start": 32.898,
+   "end": 33.393,
    "line": 13
   },
   {
    "text": "kurita",
-   "start": 30.975,
-   "end": 31.375,
+   "start": 33.393,
+   "end": 33.887,
    "line": 13
   },
   {
    "text": "guna",
-   "start": 31.375,
-   "end": 31.667,
+   "start": 33.887,
+   "end": 34.25,
    "line": 13
   },
   {
    "text": "tembaga.",
-   "start": 31.667,
-   "end": 32.12,
+   "start": 34.25,
+   "end": 34.81,
    "line": 13
   },
   {
    "text": "Bahan",
-   "start": 32.49,
-   "end": 32.848,
+   "start": 35.26,
+   "end": 35.767,
    "line": 14
   },
   {
    "text": "tu",
-   "start": 32.848,
-   "end": 33.04,
+   "start": 35.767,
+   "end": 36.04,
    "line": 14
   },
   {
    "text": "namanya",
-   "start": 33.04,
-   "end": 33.508,
+   "start": 36.04,
+   "end": 36.703,
    "line": 14
   },
   {
    "text": "hemosianin,",
-   "start": 33.508,
-   "end": 34.14,
+   "start": 36.703,
+   "end": 37.6,
    "line": 14
   },
   {
    "text": "dan",
-   "start": 34.47,
-   "end": 34.722,
+   "start": 37.99,
+   "end": 38.257,
    "line": 15
   },
   {
    "text": "dia",
-   "start": 34.722,
-   "end": 34.974,
+   "start": 38.257,
+   "end": 38.523,
    "line": 15
   },
   {
    "text": "jadi",
-   "start": 34.974,
-   "end": 35.282,
+   "start": 38.523,
+   "end": 38.849,
    "line": 15
   },
   {
    "text": "biru",
-   "start": 35.282,
-   "end": 35.59,
+   "start": 38.849,
+   "end": 39.175,
    "line": 15
   },
   {
    "text": "bila",
-   "start": 35.86,
-   "end": 36.162,
+   "start": 39.175,
+   "end": 39.501,
    "line": 15
   },
   {
    "text": "bawa",
-   "start": 36.162,
-   "end": 36.464,
+   "start": 39.501,
+   "end": 39.826,
    "line": 15
   },
   {
    "text": "oksigen.",
-   "start": 36.464,
-   "end": 36.93,
+   "start": 39.826,
+   "end": 40.33,
    "line": 15
   },
   {
    "text": "Satu",
-   "start": 37.29,
-   "end": 37.695,
+   "start": 40.84,
+   "end": 41.16,
    "line": 16
   },
   {
    "text": "lagi:",
-   "start": 37.695,
-   "end": 38.1,
+   "start": 41.16,
+   "end": 41.48,
    "line": 16
   },
   {
    "text": "lebih",
-   "start": 38.42,
-   "end": 38.738,
+   "start": 41.92,
+   "end": 42.303,
    "line": 17
   },
   {
    "text": "kurang",
-   "start": 38.738,
-   "end": 39.105,
+   "start": 42.303,
+   "end": 42.744,
    "line": 17
   },
   {
    "text": "dua",
-   "start": 39.105,
-   "end": 39.326,
+   "start": 42.744,
+   "end": 43.009,
    "line": 17
   },
   {
    "text": "pertiga",
-   "start": 39.326,
-   "end": 39.742,
+   "start": 43.009,
+   "end": 43.509,
    "line": 17
   },
   {
    "text": "sel",
-   "start": 39.742,
-   "end": 39.962,
+   "start": 43.509,
+   "end": 43.774,
    "line": 17
   },
   {
    "text": "saraf",
-   "start": 39.962,
-   "end": 40.28,
+   "start": 43.774,
+   "end": 44.156,
    "line": 17
   },
   {
    "text": "dia",
-   "start": 40.77,
-   "end": 40.952,
+   "start": 44.156,
+   "end": 44.421,
    "line": 17
   },
   {
    "text": "ada",
-   "start": 40.952,
-   "end": 41.134,
+   "start": 44.421,
+   "end": 44.686,
    "line": 17
   },
   {
    "text": "dalam",
-   "start": 41.134,
-   "end": 41.397,
+   "start": 44.686,
+   "end": 45.069,
    "line": 17
   },
   {
    "text": "lengan,",
-   "start": 41.397,
-   "end": 41.7,
+   "start": 45.069,
+   "end": 45.51,
    "line": 17
   },
   {
    "text": "bukan",
-   "start": 42.08,
-   "end": 42.413,
+   "start": 45.69,
+   "end": 46.074,
    "line": 18
   },
   {
    "text": "dalam",
-   "start": 42.413,
-   "end": 42.746,
+   "start": 46.074,
+   "end": 46.457,
    "line": 18
   },
   {
    "text": "kepala.",
-   "start": 42.746,
-   "end": 43.13,
+   "start": 46.457,
+   "end": 46.9,
    "line": 18
   },
   {
    "text": "Sebab",
-   "start": 43.46,
-   "end": 43.856,
+   "start": 47.34,
+   "end": 47.503,
    "line": 19
   },
   {
    "text": "tu",
-   "start": 43.856,
-   "end": 44.07,
+   "start": 47.503,
+   "end": 47.59,
    "line": 19
   },
   {
    "text": "setiap",
-   "start": 44.34,
-   "end": 44.782,
+   "start": 47.73,
+   "end": 48.11,
    "line": 19
   },
   {
    "text": "lengan",
-   "start": 44.782,
-   "end": 45.224,
+   "start": 48.11,
+   "end": 48.49,
    "line": 19
   },
   {
    "text": "boleh",
-   "start": 45.224,
-   "end": 45.606,
+   "start": 48.49,
+   "end": 48.82,
    "line": 19
   },
   {
    "text": "fikir",
-   "start": 45.606,
-   "end": 45.989,
+   "start": 48.82,
+   "end": 49.149,
    "line": 19
   },
   {
    "text": "sendiri.",
-   "start": 45.989,
-   "end": 46.49,
+   "start": 49.149,
+   "end": 49.58,
    "line": 19
   },
   {
    "text": "Tiga",
-   "start": 46.76,
-   "end": 47.11,
+   "start": 49.78,
+   "end": 50.204,
    "line": 20
   },
   {
    "text": "jantung,",
-   "start": 47.11,
-   "end": 47.65,
+   "start": 50.204,
+   "end": 50.86,
    "line": 20
   },
   {
    "text": "darah",
-   "start": 48.08,
-   "end": 48.465,
+   "start": 51.36,
+   "end": 51.945,
    "line": 20
   },
   {
    "text": "biru,",
-   "start": 48.465,
-   "end": 48.79,
+   "start": 51.945,
+   "end": 52.44,
    "line": 20
   },
   {
    "text": "lengan",
-   "start": 49.29,
-   "end": 49.639,
+   "start": 52.59,
+   "end": 52.873,
    "line": 20
   },
   {
    "text": "yang",
-   "start": 49.639,
-   "end": 49.895,
+   "start": 52.873,
+   "end": 53.08,
    "line": 20
   },
   {
    "text": "boleh",
-   "start": 49.895,
-   "end": 50.198,
+   "start": 53.08,
+   "end": 53.325,
    "line": 20
   },
   {
    "text": "fikir.",
-   "start": 50.198,
-   "end": 50.5,
+   "start": 53.325,
+   "end": 53.57,
    "line": 20
   },
   {
    "text": "Rasa",
-   "start": 50.7,
-   "end": 51.008,
+   "start": 53.72,
+   "end": 54.021,
    "line": 21
   },
   {
    "text": "macam",
-   "start": 51.008,
-   "end": 51.373,
+   "start": 54.021,
+   "end": 54.377,
    "line": 21
   },
   {
    "text": "alien,",
-   "start": 51.373,
-   "end": 51.738,
+   "start": 54.377,
+   "end": 54.733,
    "line": 21
   },
   {
    "text": "kan?",
-   "start": 51.738,
-   "end": 51.99,
+   "start": 54.733,
+   "end": 54.98,
    "line": 21
   },
   {
    "text": "Follow",
-   "start": 52.31,
-   "end": 52.788,
+   "start": 55.44,
+   "end": 56.008,
    "line": 22
   },
   {
    "text": "akaun",
-   "start": 52.788,
-   "end": 53.203,
+   "start": 56.008,
+   "end": 56.499,
    "line": 22
   },
   {
    "text": "aku,",
-   "start": 53.203,
-   "end": 53.49,
+   "start": 56.499,
+   "end": 56.84,
    "line": 22
   },
   {
    "text": "esok",
-   "start": 53.85,
-   "end": 54.155,
+   "start": 57.38,
+   "end": 57.77,
    "line": 23
   },
   {
    "text": "aku",
-   "start": 54.155,
-   "end": 54.404,
+   "start": 58.04,
+   "end": 58.294,
    "line": 23
   },
   {
    "text": "cerita",
-   "start": 54.404,
-   "end": 54.819,
+   "start": 58.294,
+   "end": 58.717,
    "line": 23
   },
   {
    "text": "kenapa",
-   "start": 54.819,
-   "end": 55.235,
+   "start": 58.717,
+   "end": 59.14,
    "line": 23
   },
   {
    "text": "kau",
-   "start": 55.235,
-   "end": 55.484,
+   "start": 59.27,
+   "end": 59.538,
    "line": 23
   },
   {
    "text": "tak",
-   "start": 55.484,
-   "end": 55.733,
+   "start": 59.538,
+   "end": 59.806,
    "line": 23
   },
   {
    "text": "boleh",
-   "start": 55.733,
-   "end": 56.094,
+   "start": 59.806,
+   "end": 60.194,
    "line": 23
   },
   {
    "text": "geletek",
-   "start": 56.094,
-   "end": 56.564,
+   "start": 60.194,
+   "end": 60.7,
    "line": 23
   },
   {
    "text": "diri",
-   "start": 56.564,
-   "end": 56.869,
+   "start": 60.84,
+   "end": 61.182,
    "line": 23
   },
   {
    "text": "sendiri.",
-   "start": 56.869,
-   "end": 57.34,
+   "start": 61.182,
+   "end": 61.71,
    "line": 23
   }
  ]

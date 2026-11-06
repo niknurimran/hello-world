@@ -671,7 +671,7 @@ const scenes: SceneDef[] = [
 if (scenes.length !== 32) throw new Error(`Expected 32 scenes, got ${scenes.length}`);
 
 export const V01_SCENES = scenes;
-export const V01_SotongKurita: React.FC = () => <VideoEngine scenes={scenes} data={DATA} audio="audio/v01_sotong_kurita.wav" />;
+export const V01_SotongKurita: React.FC = () => <VideoEngine scenes={scenes} data={DATA} audio="audio/v01_sotong_kurita.mp3" />;
 
 void bounceOut;
 void C;

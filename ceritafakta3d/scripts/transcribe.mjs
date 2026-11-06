@@ -2,13 +2,13 @@
 // Writes data/<video>_words.json in the same format as scripts/make-words.mjs, but with real word timings.
 // The on-screen words always come from the fact-checked script (data/<video>_captions.json);
 // whisper is only used for WHEN each word is spoken (aligned by character position).
-// Usage: node scripts/transcribe.mjs v01 public/audio/v01_sotong_kurita.wav [medium|large-v3]
+// Usage: node scripts/transcribe.mjs v01 public/audio/v01_sotong_kurita.mp3 [medium|large-v3]
 import fs from 'node:fs';
 import path from 'node:path';
 import { execSync } from 'node:child_process';
 import { installWhisperCpp, downloadWhisperModel, transcribe, toCaptions } from '@remotion/install-whisper-cpp';
 
-const [video = 'v01', audio = 'public/audio/v01_sotong_kurita.wav', model = 'medium'] = process.argv.slice(2);
+const [video = 'v01', audio = 'public/audio/v01_sotong_kurita.mp3', model = 'medium'] = process.argv.slice(2);
 const whisperPath = path.resolve('whisper.cpp');
 await installWhisperCpp({ to: whisperPath, version: '1.5.5' });
 await downloadWhisperModel({ model, folder: whisperPath });

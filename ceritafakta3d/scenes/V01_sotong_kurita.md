@@ -1,8 +1,8 @@
 # V01 — Sotong kurita ada 3 jantung & darah biru
 
-- Audio: `public/audio/v01_sotong_kurita.wav` (57.5 s, TTS by Nik)
+- Audio: `public/audio/v01_sotong_kurita.mp3` (61.9 s, TTS by Nik — new VO)
 - Composition id: `V01-SotongKurita`, 1080×1920, 30 fps, duration = audio length
-- Line timings (from CapCut captions): `data/v01_captions.json`. Times below are approximate —
+- Line timings: `data/v01_segments.json` (silence-detected) → `data/v01_words.json`. Times below are from the first VO —
   snap each scene to the word timestamps.
 - Target: **32 scenes**, ~1.8 s average.
 

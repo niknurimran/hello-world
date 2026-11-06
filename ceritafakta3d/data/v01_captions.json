@@ -1,125 +1,125 @@
 {
- "note": "Line timings read from CapCut on-screen captions (accuracy ~0.2s). Prefer whisper word timestamps.",
- "duration": 57.5,
+ "note": "Line timings for the new VO (from silence detection). Prefer whisper word timestamps.",
+ "duration": 61.88,
  "lines": [
   {
-   "start": 0.0,
-   "end": 2.6,
+   "start": 0.05,
+   "end": 3.15,
    "text": "Ada satu haiwan ni, jantung dia tiga."
   },
   {
-   "start": 2.6,
-   "end": 3.8,
+   "start": 3.66,
+   "end": 4.82,
    "text": "Darah dia pulak..."
   },
   {
-   "start": 3.8,
-   "end": 5.1,
+   "start": 5.12,
+   "end": 5.88,
    "text": "warna biru."
   },
   {
-   "start": 5.1,
-   "end": 7.1,
+   "start": 6.38,
+   "end": 8.73,
    "text": "Haiwan tu ialah sotong kurita."
   },
   {
-   "start": 7.1,
-   "end": 10.6,
+   "start": 9.23,
+   "end": 12.23,
    "text": "Dua jantung kecil kerja pam darah ke insang,"
   },
   {
-   "start": 10.6,
-   "end": 12.3,
+   "start": 12.48,
+   "end": 13.74,
    "text": "tempat dia ambil oksigen."
   },
   {
-   "start": 12.3,
-   "end": 15.7,
+   "start": 14.2,
+   "end": 17.44,
    "text": "Satu jantung lagi pam darah ke seluruh badan."
   },
   {
-   "start": 15.7,
-   "end": 17.0,
+   "start": 17.95,
+   "end": 18.9,
    "text": "Yang peliknya,"
   },
   {
-   "start": 17.0,
-   "end": 18.9,
+   "start": 19.15,
+   "end": 20.75,
    "text": "bila sotong kurita berenang,"
   },
   {
-   "start": 18.9,
-   "end": 21.4,
+   "start": 21.08,
+   "end": 23.16,
    "text": "jantung badan tu berhenti berdegup."
   },
   {
-   "start": 21.4,
-   "end": 25.0,
+   "start": 23.66,
+   "end": 26.59,
    "text": "Sebab tu dia lagi suka merangkak atas dasar laut."
   },
   {
-   "start": 25.0,
-   "end": 27.2,
+   "start": 27.03,
+   "end": 28.82,
    "text": "Berenang buat dia cepat penat."
   },
   {
-   "start": 27.2,
-   "end": 30.1,
+   "start": 29.32,
+   "end": 31.98,
    "text": "Darah kita merah sebab ada zat besi."
   },
   {
-   "start": 30.1,
-   "end": 32.3,
+   "start": 32.47,
+   "end": 34.81,
    "text": "Darah sotong kurita guna tembaga."
   },
   {
-   "start": 32.3,
-   "end": 34.3,
+   "start": 35.26,
+   "end": 37.6,
    "text": "Bahan tu namanya hemosianin,"
   },
   {
-   "start": 34.3,
-   "end": 37.2,
+   "start": 37.99,
+   "end": 40.33,
    "text": "dan dia jadi biru bila bawa oksigen."
   },
   {
-   "start": 37.2,
-   "end": 38.2,
+   "start": 40.84,
+   "end": 41.48,
    "text": "Satu lagi:"
   },
   {
-   "start": 38.2,
-   "end": 41.9,
+   "start": 41.92,
+   "end": 45.51,
    "text": "lebih kurang dua pertiga sel saraf dia ada dalam lengan,"
   },
   {
-   "start": 41.9,
-   "end": 43.3,
+   "start": 45.69,
+   "end": 46.9,
    "text": "bukan dalam kepala."
   },
   {
-   "start": 43.3,
-   "end": 46.6,
+   "start": 47.34,
+   "end": 49.58,
    "text": "Sebab tu setiap lengan boleh fikir sendiri."
   },
   {
-   "start": 46.6,
-   "end": 50.6,
+   "start": 49.78,
+   "end": 53.57,
    "text": "Tiga jantung, darah biru, lengan yang boleh fikir."
   },
   {
-   "start": 50.6,
-   "end": 52.2,
+   "start": 53.72,
+   "end": 54.98,
    "text": "Rasa macam alien, kan?"
   },
   {
-   "start": 52.2,
-   "end": 53.7,
+   "start": 55.44,
+   "end": 56.84,
    "text": "Follow akaun aku,"
   },
   {
-   "start": 53.7,
-   "end": 57.5,
+   "start": 57.38,
+   "end": 61.71,
    "text": "esok aku cerita kenapa kau tak boleh geletek diri sendiri."
   }
  ]

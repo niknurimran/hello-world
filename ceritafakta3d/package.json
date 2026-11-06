@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "remotion studio",
     "typecheck": "tsc -p .",
-    "transcribe:v01": "node scripts/transcribe.mjs v01 public/audio/v01_sotong_kurita.wav medium",
+    "transcribe:v01": "node scripts/transcribe.mjs v01 public/audio/v01_sotong_kurita.mp3 medium",
     "words:v01": "node scripts/make-words.mjs v01",
     "stills:v01": "node scripts/stills.mjs V01-SotongKurita 25,101,190,300,397,611,840,1081,1359,1546",
     "render:v01": "remotion render V01-SotongKurita out/V01_sotong_kurita.mp4 --gl=angle",
