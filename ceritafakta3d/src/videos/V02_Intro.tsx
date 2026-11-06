@@ -67,8 +67,8 @@ const scenes: SceneDef[] = [
     cam: cam([0, 2.0, 8.2], [0, 1.5, 0], [0, 1.9, 6.6], [0, 1.6, 0], 35, 0),
     world: ({ t }) => (
       <>
-        <AbangBlok t={t} pose={t < 0.7 ? 'shocked' : 'point'} side={-1} position={[-0.3, dropY(t, 0, 0.5, 4), 0]} rotation={[0, 0.15, 0]} />
-        <QMark position={[0.75, 2.85, 0.3]} scale={1.1 * pop(t, 0.45)} />
+        <AbangBlok t={t} pose={t < 0.7 ? 'shocked' : 'point'} side={-1} position={[-0.3, dropY(t, -0.22, 0.5, 2.2), 0]} rotation={[0, 0.15, 0]} />
+        <QMark position={[0.75, 2.85, 0.3]} scale={1.1 * pop(t, 0.2)} />
         <QMark position={[1.2, 2.2, 0.1]} scale={0.6 * pop(t, 0.7)} color="#FFFFFF" />
       </>
     ),

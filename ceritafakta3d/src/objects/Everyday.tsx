@@ -209,7 +209,12 @@ export const Calendar: React.FC<G & { page: number; labels: string[]; color?: st
         <group position={[0, H - 0.15, 0.2]} rotation={[-frac * Math.PI, 0, 0]}>
           <mesh position={[0, -(H - 0.12) / 2, 0]}>
             <planeGeometry args={[W - 0.12, H - 0.12]} />
-            <meshStandardMaterial map={tex(labels[idx])} side={THREE.DoubleSide} roughness={0.7} />
+            <meshStandardMaterial map={tex(labels[idx])} side={THREE.FrontSide} roughness={0.7} />
+          </mesh>
+          {/* plain back of the page (avoids mirrored text) */}
+          <mesh position={[0, -(H - 0.12) / 2, -0.002]} rotation={[0, Math.PI, 0]}>
+            <planeGeometry args={[W - 0.12, H - 0.12]} />
+            <meshStandardMaterial color="#ECEEF2" roughness={0.7} />
           </mesh>
         </group>
       )}
